@@ -1,0 +1,213 @@
+scripted_gui = {
+	demand_state_button = {
+	
+		context_type = selected_state_context
+		
+		window_name = "demand_state_button_container"
+		
+		visible = {
+			NOT = {	is_controlled_by = ROOT
+					ROOT = { is_ai = yes}
+				}
+		}
+		
+		effects = {
+			demand_state_button_click = {
+				ROOT = {add_political_power = -200}
+				ROOT = {add_timed_idea = { idea = HasSentDemands days = 30}}
+				FROM.owner = { 
+				country_event = {id = demand_event.1 days = 1}
+				add_opinion_modifier = {target = ROOT modifier = sent_demands}
+				}
+				FROM.owner = {
+    				set_variable = { var_name = FROM.id }
+					}
+				}
+				
+			demand_puppet_button_click = {
+				ROOT = {add_political_power = -300}
+				ROOT = {add_timed_idea = { idea = HasSentDemands days = 30}}
+				FROM.owner = { 
+				country_event = {id = demand_event.4 days = 1}
+				add_opinion_modifier = {target = ROOT modifier = sent_demands}
+				}
+			}
+			
+			demand_tribute_button_click = {
+				ROOT = {add_political_power = -50}
+				ROOT = {add_timed_idea = { idea = HasSentDemands days = 30}}
+				FROM.owner = { 
+				country_event = {id = demand_event.7 days = 1}
+				}
+			}
+			
+			demand_demill_button_click = {
+				ROOT = {add_political_power = -150}
+				ROOT = {add_timed_idea = { idea = HasSentDemands days = 30}}
+				FROM.owner = { 
+				country_event = {id = demand_event.12 days = 1}}
+				FROM.owner = {
+    				set_variable = { var_name = FROM.id }
+					}
+				}
+			
+			}
+		triggers = {
+			demand_state_button_click_enabled = {
+				check_variable = { ROOT.political_power > 249.99 }
+				FROM.owner = {is_neighbor_of = ROOT}
+				NOT = {ROOT ={ is_subject = yes}}
+				NOT = {FROM.owner = {is_puppet_of = ROOT}}
+				NOT = {FROM.owner = {is_in_faction_with = ROOT}}
+				NOT = {ROOT = {has_idea = HasSentDemands}}
+				ROOT = {
+				NOT = {AND = {has_government = democratic threat < 0.7}}
+				NOT = {FROM.owner = { has_war_with = ROOT}}
+				NOT = {FROM.owner = { has_non_aggression_pact_with = ROOT}}
+				}
+			}
+			
+			demand_puppet_button_click_enabled = {
+				check_variable = { ROOT.political_power > 299.99 }
+				FROM.owner = {is_neighbor_of = ROOT}
+				NOT = {FROM.owner = { has_war = yes}}
+				NOT = {ROOT ={ is_subject = yes}}
+				NOT = {FROM.owner = {is_puppet_of = ROOT}}
+				NOT = {FROM.owner = {is_in_faction_with = ROOT}}
+				NOT = {ROOT = {has_idea = HasSentDemands}}
+				ROOT = {
+				NOT = {AND = {has_government = democratic threat < 0.7}}
+				NOT = {FROM.owner = { has_war_with = ROOT}}
+				NOT = {FROM.owner = { is_subject = yes}}
+				NOT = {FROM.owner = { has_non_aggression_pact_with = ROOT}}
+					}
+				}
+			
+			demand_tribute_button_click_enabled = {
+				check_variable = { ROOT.political_power > 49.99 }
+				FROM.owner = {is_neighbor_of = ROOT}
+				NOT = {ROOT ={ is_subject = yes}}
+				NOT = {FROM.owner = {is_puppet_of = ROOT}}
+				NOT = {FROM.owner = {is_in_faction_with = ROOT}}
+				NOT = {ROOT = {has_idea = HasSentDemands}}
+				ROOT = {
+				NOT = {AND = {has_government = democratic threat < 0.7}}
+				NOT = {FROM.owner = { has_war_with = ROOT}}
+				NOT = {FROM.owner = { has_non_aggression_pact_with = ROOT}}
+				NOT = {ROOT = {has_idea = Foreign_Equipment_Production}}
+				NOT = {ROOT = {has_idea = Foreign_Scientist}}
+				NOT = {ROOT = {has_idea = Foreign_Diplomats}}
+					}
+				}
+				
+				demand_demill_button_click_enabled = {
+				check_variable = { ROOT.political_power > 149.99 }
+				FROM.owner = {is_neighbor_of = ROOT}
+				NOT = {ROOT ={ is_subject = yes}}
+				NOT = {FROM.owner = {is_puppet_of = ROOT}}
+				NOT = {FROM.owner = {is_in_faction_with = ROOT}}
+				NOT = {ROOT = {has_idea = HasSentDemands}}
+				ROOT = {
+				NOT = {AND = {has_government = democratic threat < 0.7}}
+				NOT = {FROM.owner = { has_war_with = ROOT}}
+				NOT = {FROM.owner = { has_non_aggression_pact_with = ROOT}}
+					}
+				}
+			}
+		}
+
+
+demand_state_buttonAi = {
+	
+		context_type = selected_state_context
+		
+		window_name = "demand_state_button_container"
+		
+		visible = {
+			NOT = {	is_controlled_by = ROOT
+					ROOT = { is_ai = no}
+				}
+		}
+		
+		effects = {
+			demand_state_button_click = {
+					ROOT = {add_political_power = -50  add_timed_idea = { idea = HasSentDemands days = 180}}
+					IF = { LIMIT = {FROM.owner = {is_ai = yes}} FROM.owner = { country_event = {id = demand_event.101 days = 1} add_opinion_modifier = {target = ROOT modifier = sent_demands}}}
+					IF = { LIMIT = {FROM.owner = {is_ai = no}} FROM.owner = { country_event = {id = demand_event.1 days = 1} add_opinion_modifier = {target = ROOT modifier = sent_demands}}}
+					FROM.owner = {set_variable = { var_name = FROM.id }}
+				}
+				
+			demand_puppet_button_click = {
+					ROOT = {add_timed_idea = { idea = HasSentDemands days = 180}}
+				}
+			
+			demand_tribute_button_click = {
+				}
+			
+			demand_demill_button_click = {
+				}
+			
+			}
+		triggers = {
+			demand_state_button_click_enabled = {
+				check_variable = { ROOT.political_power > 49.99 }
+				NOT = {ROOT = {has_idea = HasSentDemands}}
+				NOT = {ROOT = {is_subject = yes}}
+				NOT = {FROM.owner = {is_puppet_of = ROOT}}
+				NOT = {FROM.owner = {is_in_faction_with = ROOT}}
+				ROOT = {
+				NOT = {AND = {has_government = democratic threat < 0.7}}
+				NOT = {FROM.owner = { has_war_with = ROOT}}
+				NOT = {FROM.owner = { has_non_aggression_pact_with = ROOT}}
+					}
+				}
+			
+			demand_puppet_button_click_enabled = {
+				}
+			
+			demand_tribute_button_click_enabled = {
+				}
+				
+			demand_demill_button_click_enabled = {
+				}	
+			}
+		ai_enabled = {
+			ROOT = { is_ai = yes}
+			}
+		
+		ai_test_interval = 24
+        ai_test_variance = 12
+        ai_test_scopes = test_neighbouring_states
+		        
+		ai_check = {
+			check_variable = { ROOT.political_power > 49.99 }
+			check_variable = { global.Enable_Ai = 1}
+			check_variable = { ai_random < 0.5 }
+		}
+		
+		 ai_check_scope = {
+		 }
+		 
+		ai_weights = {
+			demand_state_button_click = {
+				ai_will_do = {
+					factor = -4
+				modifier = {
+				NOT = {ROOT = {has_war = yes}}
+					add = 5
+				}
+				modifier = {
+					threat < 0.2
+					add = -20
+				}
+				modifier = {
+					ROOT = {has_idea = HasSentDemands}
+					add = -200
+					}
+				}
+			}
+			demand_puppet_button_click = {
+						}
+					}
+				}
+			}

@@ -1,0 +1,7 @@
+randomized_insult_result_is_valid = {
+	ROOT = {
+		OR = {
+			check_variable = { chosen_type_of_insult = 0 }
+		}
+	}
+}
