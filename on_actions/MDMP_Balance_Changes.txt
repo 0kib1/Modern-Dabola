@@ -1,0 +1,53 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = enable_mdmp_custom_balancing
+						option = yes
+					}
+					
+				}
+				SOV = {
+					652 ={
+						add_extra_state_shared_building_slots = 5
+						add_building_construction  = { type = industrial_complex level = 5 instant_build = yes }
+					}
+					644 ={
+						add_extra_state_shared_building_slots = 5
+						add_building_construction  = { type = industrial_complex level = 5 instant_build = yes }
+					}
+					665 ={
+						add_extra_state_shared_building_slots = 3
+						add_building_construction  = { type = industrial_complex level = 3 instant_build = yes }
+					}
+				}
+				SAF = {
+					275 ={
+						add_extra_state_shared_building_slots = 5
+						add_building_construction  = { type = industrial_complex level = 5 instant_build = yes }
+					}
+				}
+				CAN = {
+					763 ={
+						add_extra_state_shared_building_slots = 10
+						add_building_construction  = { type = industrial_complex level = 10 instant_build = yes }
+					}
+				}
+				AST = {
+					742 ={
+						add_extra_state_shared_building_slots = 10
+						add_building_construction  = { type = industrial_complex level = 10 instant_build = yes }
+					}
+				}
+				UKR = {
+					669 ={
+						add_extra_state_shared_building_slots = 5
+						add_building_construction  = { type = industrial_complex level = 5 instant_build = yes }
+					}
+				}
+			}
+		}
+	}
+}	

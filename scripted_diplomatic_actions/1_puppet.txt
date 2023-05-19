@@ -1,0 +1,328 @@
+scripted_diplomatic_actions = {
+    ####################################################################################################
+    ####################################################################################################
+
+
+
+
+	eda_empty_space_1a = {
+        icon = 1
+
+        ##################################
+        ## CONDITIONS TO USE/SEE ACTION ##
+        ##################################
+        cost = 0
+        requires_acceptance = no
+        show_acceptance_on_action_button = no
+
+        allowed = {
+			ROOT = { is_ai = no }
+        }
+		visible = {
+			PREV = {
+				AND = {
+					exists = yes
+					is_subject_of = ROOT
+				}
+			}
+			AND = {
+				has_game_rule = {
+					rule = eda_puppet_actions
+					option = PUPPET_ANY_ACTION_ALLOWED
+				}
+				has_game_rule = {
+					rule = eda_empty_space
+					option = EMPTY_SPACE_ACTION_ALLOWED
+				}
+                OR = {
+                    has_game_rule = {
+                        rule = eda_puppet_independence
+                        option = PUPPET_INDEPENDENCE_ACTION_ALLOWED
+                    }
+                    has_game_rule = {
+                        rule = eda_puppet_militarize
+                        option = PUPPET_MILITARIZE_ACTION_ALLOWED
+                    }
+                }
+			}
+		}
+        selectable = {
+			custom_trigger_tooltip = {
+				tooltip = EMPTY_SPACE_TOOLTIP
+				always = no
+			}
+		}
+
+        send_description = EMPTY_SPACE_SEND_DESC
+    }
+
+    ####################################################################################################
+
+
+
+
+    #####  #   #  ###   ####  ####   ####  #   #  ####   ####  #   #   ###  ####
+      #    ##  #  #  #  #     #   #  #     ##  #  #   #  #     ##  #  #     #
+      #    # # #  #  #  ####  ####   ####  # # #  #   #  ####  # # #  #     ####
+      #    #  ##  #  #  #     #      #     #  ##  #   #  #     #  ##  #     #
+    #####  #   #  ###   ####  #      ####  #   #  ####   ####  #   #   ###  ####
+
+    eda_puppet_independence = {
+        icon = 1
+        cost = 125
+        command_power = 0
+        requires_acceptance = no
+        show_acceptance_on_action_button = no
+        send_description = EDA_PUPPET_INDEPENDENCE_SEND_DESC
+
+        ##################################
+        ## CONDITIONS TO USE/SEE ACTION ##
+        ##################################
+
+        allowed = {
+			ROOT = { is_ai = no }
+		}
+
+		visible = {
+			PREV = {
+				AND = {
+					exists = yes
+					is_subject_of = ROOT
+				}
+			}
+			AND = {
+                has_game_rule = {
+                    rule = eda_puppet_actions
+                    option = PUPPET_ANY_ACTION_ALLOWED
+                }
+                has_game_rule = {
+                    rule = eda_puppet_independence
+                    option = PUPPET_INDEPENDENCE_ACTION_ALLOWED
+                }
+            }
+		}
+
+		selectable = {
+			custom_trigger_tooltip = {
+				tooltip = EDA_PUPPET_INDEPENDENCE_TOOLTIP_1
+				NOT = { has_idea = eda_puppet_demilitarized }
+			}
+		}
+
+        #############
+        ## EFFECTS ##
+        #############
+        can_be_sent = { always = yes }
+        complete_effect = {
+			ROOT = {
+				end_puppet = PREV
+			}
+		}
+    }
+
+    ####################################################################################################
+
+
+
+ 
+    ####   ####  #   #  #####  #     #####  #####   ###   ####   #####  #####   ###  ##### #####   ###   #   #
+    #   #  #     ## ##    #    #       #      #    #   #  #   #    #       #   #   #   #     #    #   #  ##  #
+    ####   ####  # # #    #    #       #      #    #####  ####     #      #    #####   #     #    #   #  # # #
+    #   #  #     #   #    #    #       #      #    #   #  #   #    #     #     #   #   #     #    #   #  #  ##
+    #   #  ####  #   #  #####  ####  #####    #    #   #  #   #  #####  #####  #   #   #   #####   ###   #   #
+
+    eda_puppet_remilitarize = {
+        icon = 1
+        cost = 100
+        command_power = 0
+        requires_acceptance = no
+        show_acceptance_on_action_button = no
+        send_description = EDA_PUPPET_REMILITARIZE_SEND_DESC
+
+        ##################################
+        ## CONDITIONS TO USE/SEE ACTION ##
+        ##################################
+
+        allowed = {
+			ROOT = { is_ai = no }
+		}
+
+		visible = {
+			PREV = {
+				AND = {
+					exists = yes
+					is_subject_of = ROOT
+                    has_idea = eda_puppet_demilitarized
+				}
+			}
+			AND = {
+                has_game_rule = {
+                    rule = eda_puppet_actions
+                    option = PUPPET_ANY_ACTION_ALLOWED
+                }
+                has_game_rule = {
+                    rule = eda_puppet_militarize
+                    option = PUPPET_MILITARIZE_ACTION_ALLOWED
+                }
+            }
+		}
+
+		selectable = {
+			custom_trigger_tooltip = {
+				tooltip = EDA_PUPPET_REMILITARIZE_TOOLTIP_1
+				NOT = { has_idea = eda_puppet_recently_modified }
+			}
+		}
+
+        #############
+        ## EFFECTS ##
+        #############
+        can_be_sent = { always = yes }
+        complete_effect = {
+            country_lock_all_division_template = no
+            remove_ideas = eda_puppet_demilitarized
+            add_timed_idea = {
+                idea = eda_puppet_recently_modified
+                days = 45
+            }
+            remove_opinion_modifier = {
+                target = ROOT
+                modifier = demilitarized_country_modifier                
+            }
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = remilitarized_country_modifier
+            }
+		}
+    }
+
+    ####################################################################################################
+
+
+
+ 
+    ####   ####  #   #  #####  #     #####  #####   ###   ####   #####  #####   ###  ##### #####   ###   #   #
+    #   #  #     ## ##    #    #       #      #    #   #  #   #    #       #   #   #   #     #    #   #  ##  #
+    #   #  ####  # # #    #    #       #      #    #####  ####     #      #    #####   #     #    #   #  # # #
+    #   #  #     #   #    #    #       #      #    #   #  #   #    #     #     #   #   #     #    #   #  #  ##
+    ####   ####  #   #  #####  ####  #####    #    #   #  #   #  #####  #####  #   #   #   #####   ###   #   #
+
+    eda_puppet_demilitarize = {
+        icon = 1
+        cost = 75
+        command_power = 0
+        requires_acceptance = no
+        show_acceptance_on_action_button = no
+        send_description = EDA_PUPPET_DEMILITARIZE_SEND_DESC
+
+        ##################################
+        ## CONDITIONS TO USE/SEE ACTION ##
+        ##################################
+
+        allowed = {
+			ROOT = { is_ai = no }
+		}
+
+		visible = {
+            AND = {
+                exists = yes
+                is_subject_of = ROOT
+                NOT = { has_idea = eda_puppet_demilitarized }
+            }
+			AND = {
+                has_game_rule = {
+                    rule = eda_puppet_actions
+                    option = PUPPET_ANY_ACTION_ALLOWED
+                }
+                has_game_rule = {
+                    rule = eda_puppet_militarize
+                    option = PUPPET_MILITARIZE_ACTION_ALLOWED
+                }
+            }
+		}
+
+		selectable = {
+			custom_trigger_tooltip = {
+				tooltip = EDA_PUPPET_DEMILITARIZE_TOOLTIP_1
+                NOT = { has_idea = eda_puppet_recently_modified }
+			}
+		}
+
+        #############
+        ## EFFECTS ##
+        #############
+        can_be_sent = { always = yes }
+        complete_effect = {
+            country_lock_all_division_template = yes
+            delete_unit = { disband = yes }
+            add_ideas = eda_puppet_demilitarized
+            add_timed_idea = {
+                idea = eda_puppet_recently_modified
+                days = 30
+            }
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = demilitarized_country_modifier
+            }
+		}
+    }
+
+    ####################################################################################################
+
+
+
+
+	eda_empty_space_1b = {
+        icon = 1
+
+        ##################################
+        ## CONDITIONS TO USE/SEE ACTION ##
+        ##################################
+        cost = 0
+        requires_acceptance = no
+        show_acceptance_on_action_button = no
+
+        allowed = {
+			ROOT = { is_ai = no }
+        }
+		visible = {
+			PREV = {
+				AND = {
+					exists = yes
+					is_subject_of = ROOT
+				}
+			}
+			AND = {
+				has_game_rule = {
+					rule = eda_puppet_actions
+					option = PUPPET_ANY_ACTION_ALLOWED
+				}
+				has_game_rule = {
+					rule = eda_empty_space
+					option = EMPTY_SPACE_ACTION_ALLOWED
+				}
+                OR = {
+                    has_game_rule = {
+                        rule = eda_puppet_independence
+                        option = PUPPET_INDEPENDENCE_ACTION_ALLOWED
+                    }
+                    has_game_rule = {
+                        rule = eda_puppet_militarize
+                        option = PUPPET_MILITARIZE_ACTION_ALLOWED
+                    }
+                }
+			}
+		}
+        selectable = {
+			custom_trigger_tooltip = {
+				tooltip = EMPTY_SPACE_TOOLTIP
+				always = no
+			}
+		}
+
+        send_description = EMPTY_SPACE_SEND_DESC
+    }
+
+    ####################################################################################################
+    ####################################################################################################
+}

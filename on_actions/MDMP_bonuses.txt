@@ -1,0 +1,281 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_country = {
+				####AIRCRAFT COST####
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = reduce_aircraft_cost
+							option = a25
+						}
+					}
+					add_ideas = { aircraft_25 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = reduce_aircraft_cost
+							option = a50
+						}
+					}
+					add_ideas = { aircraft_50 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = reduce_aircraft_cost
+							option = a75
+						}
+					}
+					add_ideas = { aircraft_75 }
+				}
+
+				####CONSTRUCTION####
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = add_construction_bonus
+							option = c50
+						}
+					}
+					add_ideas = { construction_50 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = add_construction_bonus
+							option = c100
+						}
+					}
+					add_ideas = { construction_100 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = add_construction_bonus
+							option = c200
+						}
+					}
+					add_ideas = { construction_200 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = add_construction_bonus
+							option = c300
+						}
+					}
+					add_ideas = { construction_300 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = add_construction_bonus
+							option = c500
+						}
+					}
+					add_ideas = { construction_500 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = add_construction_bonus
+							option = c1000
+						}
+					}
+					add_ideas = { construction_1000 }
+				}
+
+				####RESEARCH####
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = add_research_bonus
+							option = r25
+						}
+					}
+					add_ideas = { research_25 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = add_research_bonus
+							option = r50
+						}
+					}
+					add_ideas = { research_50 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = add_research_bonus
+							option = r100
+						}
+					}
+					add_ideas = { research_100 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = add_research_bonus
+							option = r200
+						}
+					}
+					add_ideas = { research_200 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = add_research_bonus
+							option = r300
+						}
+					}
+					add_ideas = { research_300 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = add_research_bonus
+							option = r500
+						}
+					}
+					add_ideas = { research_500 }
+				}
+
+
+				####PRODUCTION####
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = add_production_bonus
+							option = p50
+						}
+					}
+					add_ideas = { production_50 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = add_production_bonus
+							option = p100
+						}
+					}
+					add_ideas = { production_100 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = add_production_bonus
+							option = p100
+						}
+					}
+					add_ideas = { production_200 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = add_production_bonus
+							option = p100
+						}
+					}
+					add_ideas = { production_300 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = add_production_bonus
+							option = p100
+						}
+					}
+					add_ideas = { production_500 }
+				}
+
+				####CAPACITY####
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = add_capacity_bonus
+							option = c25
+						}
+					}
+					add_ideas = { capacity_25 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = add_capacity_bonus
+							option = c50
+						}
+					}
+					add_ideas = { capacity_50 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = add_capacity_bonus
+							option = c100
+						}
+					}
+					add_ideas = { capacity_100 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = add_capacity_bonus
+							option = c100
+						}
+					}
+					add_ideas = { capacity_200 }
+				}
+
+				####FUEL GAIN####
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = add_fuel_bonus
+							option = f50
+						}
+					}
+					add_ideas = { fuel_50 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = add_fuel_bonus
+							option = f100
+						}
+					}
+					add_ideas = { fuel_100 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = add_fuel_bonus
+							option = f200
+						}
+					}
+					add_ideas = { fuel_200 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = add_fuel_bonus
+							option = f300
+						}
+					}
+					add_ideas = { fuel_300 }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = add_fuel_bonus
+							option = f500
+						}
+					}
+					add_ideas = { fuel_500 }
+				}
+			}
+		}
+	}
+}

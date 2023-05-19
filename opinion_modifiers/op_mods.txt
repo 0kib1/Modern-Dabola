@@ -1,0 +1,22 @@
+opinion_modifiers = {
+
+	gave_in = {
+		value = 60
+		months = 6
+		decay = 10
+	}
+	sent_demands = {
+		value = -50
+		months = 6
+		decay = 10
+	}
+	denied_us = {
+	value = -100
+	months = 10
+	decay = 10
+	}
+	insulted_us = {
+		trade = yes
+		value = -250
+	}
+}

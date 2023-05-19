@@ -1,0 +1,114 @@
+update_drift_small_control = {
+	if = { limit = { has_government = fascism }
+		add_ideas = small_control_salafist
+	}
+	else_if = { limit = { has_government = neutrality }
+		add_ideas = small_control_non_alligned
+	}
+	else_if = { limit = { has_government = communism }
+		add_ideas = small_control_emerging
+	}
+	else_if = { limit = { has_government = nationalist }
+		add_ideas = small_control_nationalist
+	}
+	else_if = { limit = { has_government = democratic }
+		add_ideas = small_control_western
+	}
+}
+update_drift_limited_rights = {
+	if = { limit = { has_government = fascism }
+		add_ideas = limited_rights_salafist
+	}
+	else_if = { limit = { has_government = neutrality }
+		add_ideas = limited_rights_non_alligned
+	}
+	else_if = { limit = { has_government = communism }
+		add_ideas = limited_rights_emerging
+	}
+	else_if = { limit = { has_government = nationalist }
+		add_ideas = limited_rights_nationalist
+	}
+	else_if = { limit = { has_government = democratic }
+		add_ideas = limited_rights_western
+	}
+}
+update_drift_total_control = {
+	if = { limit = { has_government = fascism }
+		add_ideas = total_control_salafist
+	}
+	else_if = { limit = { has_government = neutrality }
+		add_ideas = total_control_non_alligned
+	}
+	else_if = { limit = { has_government = communism }
+		add_ideas = total_control_emerging
+	}
+	else_if = { limit = { has_government = nationalist }
+		add_ideas = total_control_nationalist
+	}
+	else_if = { limit = { has_government = democratic }
+		add_ideas = total_control_western
+	}
+}
+
+clear_previous_civil_liberties_drift = {
+	if = { limit = { has_idea = small_control_salafist }
+		remove_ideas = small_control_salafist
+	}
+	else_if = { limit = { has_idea = small_control_non_alligned }
+		remove_ideas = small_control_non_alligned
+	}
+	else_if = { limit = { has_idea = small_control_emerging }
+		remove_ideas = small_control_emerging
+	}
+	else_if = { limit = { has_idea = small_control_nationalist }
+		remove_ideas = small_control_nationalist
+	}
+	else_if = { limit = { has_idea = small_control_western }
+		remove_ideas = small_control_western
+	}
+	else_if = { limit = { has_idea = limited_rights_salafist }
+		remove_ideas = limited_rights_salafist
+	}
+	else_if = { limit = { has_idea = limited_rights_non_alligned }
+		remove_ideas = limited_rights_non_alligned
+	}
+	else_if = { limit = { has_idea = limited_rights_emerging }
+		remove_ideas = limited_rights_emerging
+	}
+	else_if = { limit = { has_idea = limited_rights_nationalist }
+		remove_ideas = limited_rights_nationalist
+	}
+	else_if = { limit = { has_idea = limited_rights_western }
+		remove_ideas = limited_rights_western
+	}
+	else_if = { limit = { has_idea = total_control_salafist }
+		remove_ideas = total_control_salafist
+	}
+	else_if = { limit = { has_idea = total_control_non_alligned }
+		remove_ideas = total_control_non_alligned
+	}
+	else_if = { limit = { has_idea = total_control_emerging }
+		remove_ideas = total_control_emerging
+	}
+	else_if = { limit = { has_idea = total_control_nationalist }
+		remove_ideas = total_control_nationalist
+	}
+	else_if = { limit = { has_idea = total_control_western }
+		remove_ideas = total_control_western
+	}
+}
+
+civil_liberties_drift_popularity = {
+	hidden_effect = {
+		clear_previous_civil_liberties_drift = yes
+		if = { limit = { has_idea = small_control }
+			update_drift_small_control = yes
+		}
+		else_if = { limit = { has_idea = limited_rights }
+			update_drift_limited_rights = yes
+		}
+		else_if = { limit = { has_idea = total_control }
+			update_drift_total_control = yes
+		}
+	}
+}

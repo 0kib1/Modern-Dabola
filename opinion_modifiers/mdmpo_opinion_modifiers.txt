@@ -1,0 +1,5 @@
+opinion_modifiers = {
+	mdmpo_opinion = {
+		value = 500
+	}
+}

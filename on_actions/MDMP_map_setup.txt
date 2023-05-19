@@ -1,0 +1,58 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = remove_south_america
+						option = yes
+					}
+				}
+				ZZZ = {
+					annex_country = { target = BRA transfer_troops = no }
+					annex_country = { target = PRU transfer_troops = no }
+					annex_country = { target = COL transfer_troops = no }
+					annex_country = { target = VEN transfer_troops = no }
+					annex_country = { target = PAR transfer_troops = no }
+					annex_country = { target = ARG transfer_troops = no }
+					annex_country = { target = CHL transfer_troops = no }
+					annex_country = { target = BOL transfer_troops = no }
+					annex_country = { target = ECU transfer_troops = no }
+					annex_country = { target = URG transfer_troops = no }
+					annex_country = { target = SUR transfer_troops = no }
+					annex_country = { target = GUY transfer_troops = no }
+
+					every_state = {
+						limit = {		
+							is_controlled_by = ZZZ
+						}
+						if = {
+							limit = {
+								NOT = { is_core_of = ZZZ }
+							}
+							add_core_of = ZZZ
+						}
+					}
+				}
+			}
+			every_state = {
+				limit = {		
+					is_controlled_by = ZZZ
+				}
+				remove_building = { type = arms_factory  level = 20 } 
+				remove_building = { type = industrial_complex  level = 20 }
+				remove_building = { type = dockyard  level = 20 }
+				remove_building = { type = infrastructure  level = 5 }
+				remove_building = { type = air_base  level = 10 }
+				remove_building = { type = anti_air_building  level = 5 }
+				remove_building = { type = radar_station  level = 5 }
+				if = {
+					limit = {
+						NOT = { is_core_of = ZZZ }
+					}
+					add_core_of = ZZZ
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,109 @@
+type_of_economy_level_up = {
+	if = {
+		limit = { has_idea = statist }
+		swap_ideas = {
+			remove_idea = statist
+			add_idea = mixed_statist
+		}
+	}
+	else_if = {
+		limit = { has_idea = mixed_statist }
+		swap_ideas = {
+			remove_idea = mixed_statist
+			add_idea = capitalist-statist
+		}
+	}
+	else_if = {
+		limit = { has_idea = capitalist-statist }
+		swap_ideas = {
+			remove_idea = capitalist-statist
+			add_idea = mixed_capitalist
+		}
+	}
+	else_if = {
+		limit = { has_idea = mixed_capitalist }
+		swap_ideas = {
+			remove_idea = mixed_capitalist
+			add_idea = capitalist
+		}
+	}
+}
+
+type_of_economy_level_down  = {
+	if = {
+		limit = { has_idea = capitalist }
+		swap_ideas = {
+			remove_idea = capitalist
+			add_idea = mixed_capitalist
+		}
+	}
+	else_if = {
+		limit = { has_idea = mixed_capitalist }
+		swap_ideas = {
+			remove_idea = mixed_capitalist
+			add_idea = capitalist-statist
+		}
+	}
+	else_if = {
+		limit = { has_idea = capitalist-statist }
+		swap_ideas = {
+			remove_idea = capitalist-statist
+			add_idea = mixed_statist
+		}
+	}
+	else_if = {
+		limit = { has_idea = mixed_statist }
+		swap_ideas = {
+			remove_idea = mixed_statist
+			add_idea = statist
+		}
+	}
+}
+
+civil_liberties_level_up = {
+	if = {
+		limit = { has_idea = total_control }
+		swap_ideas = {
+			remove_idea = total_control
+			add_idea = limited_rights
+		}
+	}
+	else_if = {
+		limit = { has_idea = limited_rights }
+		swap_ideas = {
+			remove_idea = limited_rights
+			add_idea = small_control
+		}
+	}
+	else_if = {
+		limit = { has_idea = small_control }
+		swap_ideas = {
+			remove_idea = small_control
+			add_idea = freedom_of_speech
+		}
+	}
+}
+
+civil_liberties_level_down = {
+	if = {
+		limit = { has_idea = freedom_of_speech }
+		swap_ideas = {
+			remove_idea = freedom_of_speech
+			add_idea = small_control
+		}
+	}
+	else_if = {
+		limit = { has_idea = small_control }
+		swap_ideas = {
+			remove_idea = small_control
+			add_idea = limited_rights
+		}
+	}
+	else_if = {
+		limit = { has_idea = limited_rights }
+		swap_ideas = {
+			remove_idea = limited_rights
+			add_idea = total_control
+		}
+	}
+}

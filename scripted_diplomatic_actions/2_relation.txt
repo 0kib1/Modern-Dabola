@@ -1,0 +1,869 @@
+scripted_diplomatic_actions = {
+    ####################################################################################################
+    ####################################################################################################
+
+
+	eda_empty_space_2A = {
+        icon = 1
+
+        ##################################
+        ## CONDITIONS TO USE/SEE ACTION ##
+        ##################################
+        cost = 0
+        requires_acceptance = no
+        show_acceptance_on_action_button = no
+
+        allowed = {
+			ROOT = { is_ai = no }
+        }
+		visible = {
+			AND = {
+				has_game_rule = {
+					rule = eda_relation_actions
+					option = RELATION_ANY_ACTION_ALLOWED
+				}
+				has_game_rule = {
+					rule = eda_empty_space
+					option = EMPTY_SPACE_ACTION_ALLOWED
+				}
+                OR = {
+                    has_game_rule = {
+                        rule = eda_relation_complement
+                        option = RELATION_COMPLEMENT_ACTION_ALLOWED
+                    }
+                    has_game_rule = {
+                        rule = eda_relation_insult
+                        option = RELATION_INSULT_ACTION_ALLOWED
+                    }
+                    has_game_rule = {
+                        rule = eda_relation_give_industries
+                        option = RELATION_GIVE_INDUSTRIES_ACTION_ALLOWED
+                    }
+                    has_game_rule = {
+                        rule = eda_relation_manpower
+                        option = RELATION_MANPOWER_ACTION_ALLOWED
+                    }
+                }
+				NOT = {
+					AND = {
+						has_game_rule = {
+							rule = eda_puppet_independence
+							option = PUPPET_INDEPENDENCE_ACTION_ALLOWED
+						}
+						has_game_rule = {
+							rule = eda_puppet_militarize
+							option = PUPPET_MILITARIZE_ACTION_ALLOWED
+						}
+						PREV = {
+							AND = {
+								exists = yes
+								is_subject_of = ROOT
+							}
+						}						
+					}
+				}
+			}
+		}
+        selectable = {
+			custom_trigger_tooltip = {
+				tooltip = EMPTY_SPACE_TOOLTIP
+				always = no
+			}
+		}
+
+        send_description = EMPTY_SPACE_SEND_DESC
+    }
+
+	####################################################################################################
+
+
+
+ 
+     ##    ###   #   #  ####   #     ####  #   #  ####  #   #  #####
+    #  #  #   #  ## ##  #   #  #     #     ## ##  #     ##  #    #
+    #     #   #  # # #  ####   #     ####  # # #  ####  # # #    #
+    #  #  #   #  #   #  #      #     #     #   #  #     #  ##    #
+     ##    ###   #   #  #      ####  ####  #   #  ####  #   #    #
+    eda_relation_complement = {
+        icon = 1
+        cost = 10
+        command_power = 0
+        requires_acceptance = no
+        show_acceptance_on_action_button = no
+        send_description = EDA_RELATION_COMPLEMENT_SEND_DESC
+
+        ##################################
+        ## CONDITIONS TO USE/SEE ACTION ##
+        ##################################
+
+        allowed = {
+			ROOT = { is_ai = no }
+		}
+
+		visible = {
+			AND = {
+                has_game_rule = {
+                    rule = eda_relation_actions
+                    option = RELATION_ANY_ACTION_ALLOWED
+                }
+                has_game_rule = {
+                    rule = eda_relation_complement
+                    option = RELATION_COMPLEMENT_ACTION_ALLOWED
+                }
+            }
+		}
+
+		selectable = {
+			custom_trigger_tooltip = {
+				tooltip = EDA_RELATION_COMPLEMENT_TOOLTIP_1
+				ROOT = { NOT = { has_country_flag = {
+                        flag = eda_sent_relation_action@PREV
+                    }
+                } }
+			}
+			custom_trigger_tooltip = {
+				tooltip = EDA_RELATION_COMPLEMENT_TOOLTIP_2
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+        #############
+        ## EFFECTS ##
+        #############
+        can_be_sent = { always = yes }
+        complete_effect = {
+			add_opinion_modifier = { 
+				target = ROOT 
+				modifier = complemented_country_modifier
+			}
+			remove_opinion_modifier = { 
+				target = ROOT 
+				modifier = insulted_country_modifier
+			} 
+			ROOT = {
+				set_country_flag = {
+					flag = eda_sent_relation_action@PREV
+					value = 1
+					days = 30
+				}
+			}
+		}
+    }
+
+    ####################################################################################################
+
+
+
+ 
+    #####  #   #   ####  #   #  #     #####
+      #    ##  #  #      #   #  #       #
+      #    # # #   ###   #   #  #       #
+      #    #  ##      #  #   #  #       #
+    #####  #   #  ####    ###   ####    #
+
+    eda_relation_insult = {
+        icon = 1
+        cost = 10
+        command_power = 0
+        requires_acceptance = no
+        show_acceptance_on_action_button = no
+        send_description = EDA_RELATION_INSULT_SEND_DESC
+
+        ##################################
+        ## CONDITIONS TO USE/SEE ACTION ##
+        ##################################
+
+        allowed = {
+			ROOT = { is_ai = no }
+		}
+
+		visible = {
+			AND = {
+                has_game_rule = {
+                    rule = eda_relation_actions
+                    option = RELATION_ANY_ACTION_ALLOWED
+                }
+                has_game_rule = {
+                    rule = eda_relation_insult
+                    option = RELATION_INSULT_ACTION_ALLOWED
+                }
+            }
+		}
+
+		selectable = {
+			custom_trigger_tooltip = {
+				tooltip = EDA_RELATION_INSULT_TOOLTIP_1
+				ROOT = { NOT = { has_country_flag = {
+                        flag = eda_sent_relation_action@PREV
+                    }
+                } }
+			}
+		}
+
+        #############
+        ## EFFECTS ##
+        #############
+        can_be_sent = { always = yes }
+        complete_effect = {
+			add_opinion_modifier = { 
+				target = ROOT 
+				modifier = insulted_country_modifier
+			}
+			remove_opinion_modifier = { 
+				target = ROOT 
+				modifier = complemented_country_modifier
+			} 
+			ROOT = {
+				set_country_flag = {
+					flag = eda_sent_relation_action@PREV
+					value = 1
+					days = 30
+				}
+			}
+		}
+    }
+
+    ####################################################################################################
+
+
+
+ 
+     ##   #####  #   #
+    #  #    #    #   #
+    #       #    #   #
+    #  #    #     # #
+     ##   #####    #
+
+    eda_relation_give_civ = {
+        icon = 1
+        cost = 35
+        command_power = 0
+        requires_acceptance = no
+        show_acceptance_on_action_button = no
+        send_description = EDA_RELATION_GIVE_CIV_SEND_DESC
+
+        ##################################
+        ## CONDITIONS TO USE/SEE ACTION ##
+        ##################################
+
+        allowed = {
+			ROOT = { is_ai = no }
+		}
+
+		visible = {
+			AND = {
+                has_game_rule = {
+                    rule = eda_relation_actions
+                    option = RELATION_ANY_ACTION_ALLOWED
+                }
+                has_game_rule = {
+                    rule = eda_relation_give_industries
+                    option = RELATION_GIVE_INDUSTRIES_ACTION_ALLOWED
+                }
+                NOT = { has_war_with = ROOT }
+            }
+		}
+
+		selectable = {
+			custom_trigger_tooltip = {
+				tooltip = EDA_RELATION_GIVE_CIV_TOOLTIP_1
+				ROOT = { NOT = { has_country_flag = {
+                        flag = eda_sent_relation_action@PREV
+                    }
+                } }
+			}
+			custom_trigger_tooltip = {
+				tooltip = EDA_RELATION_GIVE_CIV_TOOLTIP_2
+				ROOT = { NOT = { has_country_flag = {
+                        flag = eda_sent_building_action@PREV
+                    }
+                } }
+			}
+			custom_trigger_tooltip = {
+				tooltip = EDA_RELATION_GIVE_CIV_TOOLTIP_3
+				ROOT = {
+					any_owned_state = {
+						is_controlled_by = ROOT
+						industrial_complex > 1
+					}
+				}
+			}
+		}
+
+        #############
+        ## EFFECTS ##
+        #############
+        can_be_sent = { always = yes }
+        complete_effect = {
+			add_opinion_modifier = { 
+				target = ROOT 
+				modifier = given_building_country_modifier
+			}
+			ROOT = {
+				set_country_flag = {
+					flag = eda_sent_relation_action@PREV
+					value = 1
+					days = 30
+				}
+                set_country_flag = {
+					flag = eda_sent_building_action@PREV
+					value = 1
+					days = 15
+				}
+			}
+			ROOT = {
+				random_owned_controlled_state = {
+					limit = {
+						industrial_complex > 1
+					}
+					remove_building = {
+						type = industrial_complex
+						level = 1
+					}
+				}
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+    }
+
+    ####################################################################################################
+
+
+
+ 
+    #   #  #####  #
+    ## ##    #    #
+    # # #    #    #
+    #   #    #    #
+    #   #  #####  ####
+
+    eda_relation_give_mil = {
+        icon = 1
+        cost = 35
+        command_power = 0
+        requires_acceptance = no
+        show_acceptance_on_action_button = no
+        send_description = EDA_RELATION_GIVE_MIL_SEND_DESC
+
+        ##################################
+        ## CONDITIONS TO USE/SEE ACTION ##
+        ##################################
+
+        allowed = {
+			ROOT = { is_ai = no }
+		}
+
+		visible = {
+			AND = {
+                has_game_rule = {
+                    rule = eda_relation_actions
+                    option = RELATION_ANY_ACTION_ALLOWED
+                }
+                has_game_rule = {
+                    rule = eda_relation_give_industries
+                    option = RELATION_GIVE_INDUSTRIES_ACTION_ALLOWED
+                }
+                NOT = { has_war_with = ROOT }
+            }
+		}
+
+		selectable = {
+			custom_trigger_tooltip = {
+				tooltip = EDA_RELATION_GIVE_MIL_TOOLTIP_1
+				ROOT = { NOT = { has_country_flag = {
+                        flag = eda_sent_relation_action@PREV
+                    }
+                } }
+			}
+			custom_trigger_tooltip = {
+				tooltip = EDA_RELATION_GIVE_MIL_TOOLTIP_2
+				ROOT = { NOT = { has_country_flag = {
+                        flag = eda_sent_building_action@PREV
+                    }
+                } }
+			}
+			custom_trigger_tooltip = {
+				tooltip = EDA_RELATION_GIVE_MIL_TOOLTIP_3
+				ROOT = {
+					any_owned_state = {
+						is_controlled_by = ROOT
+						arms_factory > 1
+					}
+				}
+			}
+		}
+
+        #############
+        ## EFFECTS ##
+        #############
+        can_be_sent = { always = yes }
+        complete_effect = {
+			add_opinion_modifier = { 
+				target = ROOT 
+				modifier = given_building_country_modifier
+			}
+			ROOT = {
+				set_country_flag = {
+					flag = eda_sent_relation_action@PREV
+					value = 1
+					days = 30
+				}
+                set_country_flag = {
+					flag = eda_sent_building_action@PREV
+					value = 1
+					days = 15
+				}
+			}
+			ROOT = {
+				random_owned_controlled_state = {
+					limit = {
+						arms_factory > 1
+					}
+					remove_building = {
+						type = arms_factory
+						level = 1
+					}
+				}
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 1
+			}
+		}
+    }
+
+    ####################################################################################################
+
+
+
+ 
+    ####    ###    ###   #  #
+    #   #  #   #  #   #  # #
+    #   #  #   #  #      ##
+    #   #  #   #  #   #  # #
+    ####    ###    ###   #  #
+
+    eda_relation_give_dock = {
+        icon = 1
+        cost = 35
+        command_power = 0
+        requires_acceptance = no
+        show_acceptance_on_action_button = no
+        send_description = EDA_RELATION_GIVE_DOCK_SEND_DESC
+
+        ##################################
+        ## CONDITIONS TO USE/SEE ACTION ##
+        ##################################
+
+        allowed = {
+			ROOT = { is_ai = no }
+		}
+
+		visible = {
+			AND = {
+                has_game_rule = {
+                    rule = eda_relation_actions
+                    option = RELATION_ANY_ACTION_ALLOWED
+                }
+                has_game_rule = {
+                    rule = eda_relation_give_industries
+                    option = RELATION_GIVE_INDUSTRIES_ACTION_ALLOWED
+                }
+                NOT = { has_war_with = ROOT }
+            }
+		}
+
+		selectable = {
+			custom_trigger_tooltip = {
+				tooltip = EDA_RELATION_GIVE_DOCK_TOOLTIP_1
+				ROOT = { NOT = { has_country_flag = {
+                        flag = eda_sent_relation_action@PREV
+                    }
+                } }
+			}
+			custom_trigger_tooltip = {
+				tooltip = EDA_RELATION_GIVE_DOCK_TOOLTIP_2
+				ROOT = { NOT = { has_country_flag = {
+                        flag = eda_sent_building_action@PREV
+                    }
+                } }
+			}
+			custom_trigger_tooltip = {
+				tooltip = EDA_RELATION_GIVE_DOCK_TOOLTIP_3
+				ROOT = {
+					any_owned_state = {
+						is_controlled_by = ROOT
+						dockyard > 1
+					}
+				}
+			}
+		}
+
+        #############
+        ## EFFECTS ##
+        #############
+        can_be_sent = { always = yes }
+        complete_effect = {
+			add_opinion_modifier = { 
+				target = ROOT 
+				modifier = given_building_country_modifier
+			}
+			ROOT = {
+				set_country_flag = {
+					flag = eda_sent_relation_action@PREV
+					value = 1
+					days = 30
+				}
+                set_country_flag = {
+					flag = eda_sent_building_action@PREV
+					value = 1
+					days = 15
+				}
+			}
+			ROOT = {
+				random_owned_controlled_state = {
+					limit = {
+						dockyard > 1
+					}
+					remove_building = {
+						type = dockyard
+						level = 1
+					}
+				}
+			}
+			add_offsite_building = {
+				type = dockyard
+				level = 1
+			}
+		}
+    }
+
+    ####################################################################################################
+
+
+
+ 
+    #   #   ###   #   #  ####    ###   #     #  ####  ####        ####   #####  #   #  ####
+    ## ##  #   #  ##  #  #   #  #   #  #  #  #  #     #   #      #         #    #   #  #
+    # # #  #####  # # #  ####   #   #  #  #  #  ####  ####       #   ##    #    #   #  ####
+    #   #  #   #  #  ##  #      #   #  #  #  #  #     #   #      #    #    #     # #   #
+    #   #  #   #  #   #  #       ###    ## ##   ####  #   #       ####   #####    #    ####
+
+    eda_relation_give_manpower = {
+        icon = 1
+        cost = 100
+        command_power = 0
+        requires_acceptance = no
+        show_acceptance_on_action_button = no
+        send_description = EDA_RELATION_GIVE_MANPOWER_SEND_DESC
+
+        ##################################
+        ## CONDITIONS TO USE/SEE ACTION ##
+        ##################################
+
+        allowed = {
+			ROOT = { is_ai = no }
+		}
+
+		visible = {
+			AND = {
+                has_game_rule = {
+                    rule = eda_relation_actions
+                    option = RELATION_ANY_ACTION_ALLOWED
+                }
+                has_game_rule = {
+                    rule = eda_relation_manpower
+                    option = RELATION_MANPOWER_ACTION_ALLOWED
+                }
+                NOT = { has_war_with = ROOT }
+            }
+		}
+
+		selectable = {
+			custom_trigger_tooltip = {
+				tooltip = EDA_RELATION_GIVE_MANPOWER_TOOLTIP_1
+				ROOT = { NOT = { has_country_flag = {
+                        flag = eda_sent_relation_action@PREV
+                    }
+                } }
+			}
+			custom_trigger_tooltip = {
+				tooltip = EDA_RELATION_GIVE_MANPOWER_TOOLTIP_2
+				ROOT = { NOT = { has_country_flag = {
+                        flag = eda_sent_manpower_action@PREV
+                    }
+                } }
+			}
+			custom_trigger_tooltip = {
+				tooltip = EDA_RELATION_GIVE_MANPOWER_TOOLTIP_3
+				ROOT = {
+					has_manpower > 25000
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = EDA_RELATION_GIVE_MANPOWER_TOOLTIP_4
+				OR = {
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
+				}
+			}
+		}
+
+        #############
+        ## EFFECTS ##
+        #############
+        can_be_sent = { always = yes }
+        complete_effect = {
+			add_opinion_modifier = { 
+				target = ROOT 
+				modifier = given_manpower_country_modifier
+			}
+			ROOT = {
+				set_country_flag = {
+					flag = eda_sent_relation_action@PREV
+					value = 1
+					days = 30
+				}
+                set_country_flag = {
+					flag = eda_sent_manpower_action@PREV
+					value = 1
+					days = 45
+				}
+			}
+			ROOT = {
+				add_manpower = -10000
+			}
+			add_manpower = 10000
+		}
+    }
+
+    ####################################################################################################
+
+
+
+ 
+    #   #   ###   #   #  ####    ###   #     #  ####  ####
+    ## ##  #   #  ##  #  #   #  #   #  #  #  #  #     #   #
+    # # #  #####  # # #  ####   #   #  #  #  #  ####  ####
+    #   #  #   #  #  ##  #      #   #  #  #  #  #     #   #
+    #   #  #   #  #   #  #       ###    ## ##   ####  #   # 
+
+    eda_relation_request_manpower = {
+        icon = 1
+        cost = 125
+        command_power = 0
+        requires_acceptance = yes
+        show_acceptance_on_action_button = yes
+        send_description = EDA_RELATION_REQUEST_MANPOWER_SEND_DESC
+        accept_title = EDA_RELATION_REQUEST_MANPOWER_ACCEPTED_TITLE
+        accept_description = EDA_RELATION_REQUEST_MANPOWER_ACCEPTED_DESC
+        reject_title = EDA_RELATION_REQUEST_MANPOWER_REJECTED_TITLE
+        reject_description = EDA_RELATION_REQUEST_MANPOWER_REJECTED_DESC
+
+        ##################################
+        ## CONDITIONS TO USE/SEE ACTION ##
+        ##################################
+
+        allowed = {
+			ROOT = { is_ai = no }
+		}
+
+		visible = {
+			AND = {
+                has_game_rule = {
+                    rule = eda_relation_actions
+                    option = RELATION_ANY_ACTION_ALLOWED
+                }
+                has_game_rule = {
+                    rule = eda_relation_manpower
+                    option = RELATION_MANPOWER_ACTION_ALLOWED
+                }
+                NOT = { has_war_with = ROOT }
+            }
+		}
+
+		selectable = {
+			custom_trigger_tooltip = {
+				tooltip = EDA_RELATION_REQUEST_MANPOWER_TOOLTIP_1
+				ROOT = { NOT = { has_country_flag = {
+                        flag = eda_sent_relation_action@PREV
+                    }
+                } }
+			}
+			custom_trigger_tooltip = {
+				tooltip = EDA_RELATION_REQUEST_MANPOWER_TOOLTIP_2
+				ROOT = { NOT = { has_country_flag = {
+                        flag = eda_requested_manpower_action
+                    }
+                } }
+			}
+			custom_trigger_tooltip = {
+				tooltip = EDA_RELATION_REQUEST_MANPOWER_TOOLTIP_3
+				has_manpower > 25000
+			}
+			custom_trigger_tooltip = {
+				tooltip = EDA_RELATION_REQUEST_MANPOWER_TOOLTIP_4
+				OR = {
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
+				}
+			}
+		}
+
+        #############
+        ## EFFECTS ##
+        #############
+        can_be_sent = { always = yes }
+        complete_effect = {
+			ROOT = {
+				set_country_flag = {
+					flag = eda_sent_relation_action@PREV
+					value = 1
+					days = 30
+				}
+                set_country_flag = {
+					flag = eda_requested_manpower_action
+					value = 1
+					days = 45
+				}
+			}
+			ROOT = {
+				add_manpower = 10000
+			}
+			add_manpower = -10000
+		}
+
+        #################
+        ## AI BEHAVOIR ##
+        #################
+		ai_desire = {}
+		ai_acceptance = {
+			eda_request_manpower_ai_base = {
+				base = -35
+				modifier = {
+					add = 0
+				}
+			}
+			eda_request_manpower_ai_is_puppet = {
+				base = 0	
+				modifier = {
+					is_subject_of = ROOT
+					add = 500
+				}								
+			}
+			eda_request_manpower_ai_high_opinion = {
+				base = 0
+				modifier = {
+					has_opinion = {
+						target = ROOT
+						value > 60 
+					}
+					add = 30
+				}									
+			}
+			eda_request_manpower_ai_med_opinion = {
+				base = 0
+				modifier = {
+					has_opinion = {
+						target = ROOT
+						value < 60
+						value > 30 
+					}
+					add = 20
+				}									
+			}
+			eda_request_manpower_ai_low_opinion = {
+				base = 0
+				modifier = {
+					has_opinion = {
+						target = ROOT
+						value < 30
+						value > 0 
+					}
+					add = 10
+				}
+			}
+			eda_request_manpower_ai_negative_opinion = {
+				base = 0
+				modifier = {
+					has_opinion = {
+						target = ROOT
+						value < 0 
+					}
+					add = -25
+				}
+			}
+			eda_request_manpower_ai_is_at_war = {
+				base = 0
+				modifier = {
+					AND = {
+						NOT = { has_war_together_with = ROOT }
+						has_war = yes
+					}
+					add = -35
+				}
+			}
+		}
+    }
+
+    ####################################################################################################
+
+	eda_empty_space_2B = {
+        icon = 1
+
+        ##################################
+        ## CONDITIONS TO USE/SEE ACTION ##
+        ##################################
+        cost = 0
+        requires_acceptance = no
+        show_acceptance_on_action_button = no
+
+        allowed = {
+			ROOT = { is_ai = no }
+        }
+		visible = {
+			AND = {
+				has_game_rule = {
+					rule = eda_relation_actions
+					option = RELATION_ANY_ACTION_ALLOWED
+				}
+				has_game_rule = {
+					rule = eda_empty_space
+					option = EMPTY_SPACE_ACTION_ALLOWED
+				}
+                OR = {
+                    has_game_rule = {
+                        rule = eda_relation_complement
+                        option = RELATION_COMPLEMENT_ACTION_ALLOWED
+                    }
+                    has_game_rule = {
+                        rule = eda_relation_insult
+                        option = RELATION_INSULT_ACTION_ALLOWED
+                    }
+                    has_game_rule = {
+                        rule = eda_relation_give_industries
+                        option = RELATION_GIVE_INDUSTRIES_ACTION_ALLOWED
+                    }
+                    has_game_rule = {
+                        rule = eda_relation_manpower
+                        option = RELATION_MANPOWER_ACTION_ALLOWED
+                    }
+                }
+			}
+		}
+        selectable = {
+			custom_trigger_tooltip = {
+				tooltip = EMPTY_SPACE_TOOLTIP
+				always = no
+			}
+		}
+
+        send_description = EMPTY_SPACE_SEND_DESC
+    }
+
+    ####################################################################################################
+    ####################################################################################################
+}

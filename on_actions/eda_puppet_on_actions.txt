@@ -1,0 +1,27 @@
+on_actions = {
+	
+	#ROOT is subject FROM is previous overlord
+	on_subject_free = {
+		effect = {
+			if = {
+				limit = {
+				has_idea = eda_puppet_demilitarized
+				}
+			remove_ideas = eda_puppet_demilitarized
+			}
+		}
+	}
+	
+	on_monthly = {
+		effect = {
+			if = {
+				limit = {
+					AND = {
+					NOT = { has_idea = eda_puppet_demilitarized }
+					}
+				}
+			country_lock_all_division_template = no
+			}
+		}
+	}
+}

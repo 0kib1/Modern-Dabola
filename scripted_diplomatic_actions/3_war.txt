@@ -1,0 +1,518 @@
+scripted_diplomatic_actions = {
+    ####################################################################################################
+    ####################################################################################################
+    
+	eda_empty_space_3A = {
+        icon = 1
+
+        ##################################
+        ## CONDITIONS TO USE/SEE ACTION ##
+        ##################################
+        cost = 0
+        requires_acceptance = no
+        show_acceptance_on_action_button = no
+
+        allowed = {
+			ROOT = { is_ai = no }
+        }
+		visible = {
+			AND = {
+				has_game_rule = {
+					rule = eda_war_actions
+					option = WAR_ANY_ACTION_ALLOWED
+				}
+				has_game_rule = {
+					rule = eda_empty_space
+					option = EMPTY_SPACE_ACTION_ALLOWED
+				}
+                OR = {
+                    has_game_rule = {
+                        rule = eda_war_opinion
+                        option = WAR_OPINION_ACTION_ALLOWED
+                    }
+					has_game_rule = {
+						rule = eda_war_peace_deal
+						option = WAR_PEACE_DEAL_ACTION_ALLOWED
+					}
+                }
+				NOT = { is_subject_of = ROOT }
+				has_offensive_war = yes           
+				NOT = {
+					AND = {
+						has_game_rule = {
+							rule = eda_relation_complement
+							option = RELATION_COMPLEMENT_ACTION_ALLOWED
+						}
+						has_game_rule = {
+							rule = eda_relation_insult
+							option = RELATION_INSULT_ACTION_ALLOWED
+						}
+						has_game_rule = {
+							rule = eda_relation_give_industries
+							option = RELATION_GIVE_INDUSTRIES_ACTION_ALLOWED
+						}
+						has_game_rule = {
+							rule = eda_relation_manpower
+							option = RELATION_MANPOWER_ACTION_ALLOWED
+						}
+					}
+				}     
+			}
+		}
+        selectable = {
+			custom_trigger_tooltip = {
+				tooltip = EMPTY_SPACE_TOOLTIP
+				always = no
+			}
+		}
+
+        send_description = EMPTY_SPACE_SEND_DESC
+    }
+
+    ####################################################################################################
+
+
+
+
+    eda_war_support = {
+        icon = 1
+        cost = 50
+        command_power = 0
+        requires_acceptance = no
+        show_acceptance_on_action_button = no
+        send_description = EDA_WAR_SUPPORT_SEND_DESC
+
+        ##################################
+        ## CONDITIONS TO USE/SEE ACTION ##
+        ##################################
+
+        allowed = {
+			ROOT = { is_ai = no }
+		}
+
+		visible = {
+			AND = {
+                has_game_rule = {
+                    rule = eda_war_actions
+                    option = WAR_ANY_ACTION_ALLOWED
+                }
+                has_game_rule = {
+                    rule = eda_war_opinion
+                    option = WAR_OPINION_ACTION_ALLOWED
+                }
+				NOT = { is_subject_of = ROOT }
+				has_offensive_war = yes
+            }
+		}
+
+		selectable = {
+			custom_trigger_tooltip = {
+				tooltip = EDA_WAR_SUPPORT_TOOLTIP_1
+				ROOT = { NOT = { has_country_flag = {
+                        flag = eda_voiced_war_opinion@PREV
+                    }
+                } }
+			}
+			custom_trigger_tooltip = {
+				tooltip = EDA_WAR_SUPPORT_TOOLTIP_2
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+        #############
+        ## EFFECTS ##
+        #############
+        can_be_sent = { always = yes }
+        complete_effect = {
+            if = {
+                limit = { 
+                    ROOT = { is_major = yes }
+                }
+                add_opinion_modifier = { 
+                    target = ROOT 
+                    modifier =  major_supported_country_modifier
+                }
+                remove_opinion_modifier = { 
+                    target = ROOT 
+                    modifier = denounced_country_modifier
+                }
+            }
+            if = {
+                limit = { 
+                    ROOT = { is_major = no }
+                }
+                add_opinion_modifier = { 
+                    target = ROOT 
+                    modifier =  minor_supported_country_modifier
+                }
+                remove_opinion_modifier = { 
+                    target = ROOT 
+                    modifier = denounced_country_modifier
+                }
+            }
+			ROOT = {
+				set_country_flag = {
+					flag = eda_voiced_war_opinion@PREV
+					value = 1
+					days = 45
+				}
+			}
+            news_event = war_support_event.1
+		}
+    }
+
+    ####################################################################################################
+
+
+
+
+    eda_war_denounce = {
+        icon = 1
+        cost = 50
+        command_power = 0
+        requires_acceptance = no
+        show_acceptance_on_action_button = no
+        send_description = EDA_WAR_DENOUNCE_SEND_DESC
+
+        ##################################
+        ## CONDITIONS TO USE/SEE ACTION ##
+        ##################################
+
+        allowed = {
+			ROOT = { is_ai = no }
+		}
+
+		visible = {
+			AND = {
+                has_game_rule = {
+                    rule = eda_war_actions
+                    option = WAR_ANY_ACTION_ALLOWED
+                }
+                has_game_rule = {
+                    rule = eda_war_opinion
+                    option = WAR_OPINION_ACTION_ALLOWED
+                }
+				NOT = { is_subject_of = ROOT }
+				has_offensive_war = yes
+            }
+		}
+
+		selectable = {
+			custom_trigger_tooltip = {
+				tooltip = EDA_WAR_DENOUNCE_TOOLTIP_1
+				ROOT = { NOT = { has_country_flag = {
+                        flag = eda_voiced_war_opinion@PREV
+                    }
+                } }
+			}
+			custom_trigger_tooltip = {
+				tooltip = EDA_WAR_DENOUNCE_TOOLTIP_2
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+        #############
+        ## EFFECTS ##
+        #############
+        can_be_sent = { always = yes }
+        complete_effect = {
+            if = {
+                limit = { 
+                    ROOT = { is_major = yes }
+                }
+                add_opinion_modifier = { 
+                    target = ROOT 
+                    modifier =  denounced_country_modifier
+                }
+                remove_opinion_modifier = { 
+                    target = ROOT 
+                    modifier = major_supported_country_modifier
+                }
+            }
+            if = {
+                limit = { 
+                    ROOT = { is_major = no }
+                }
+                add_opinion_modifier = { 
+                    target = ROOT 
+                    modifier =  denounced_country_modifier
+                }
+                remove_opinion_modifier = { 
+                    target = ROOT 
+                    modifier = minor_supported_country_modifier
+                }
+            }
+			ROOT = {
+				set_country_flag = {
+					flag = eda_voiced_war_opinion@PREV
+					value = 1
+					days = 45
+				}
+			}
+            news_event = war_disapproval_event.1
+		}
+    }
+
+    ####################################################################################################
+
+
+
+
+    offer_peace_deal = {
+	
+		# root is the initiator of action and this is the target country
+		allowed = {
+			always = yes
+		}
+		visible = {
+			AND = {
+                has_game_rule = {
+                    rule = eda_war_actions
+                    option = WAR_ANY_ACTION_ALLOWED
+                }
+                has_game_rule = {
+                    rule = eda_war_peace_deal
+                    option = WAR_PEACE_DEAL_ACTION_ALLOWED
+                }
+				has_war_with = ROOT
+            }
+		}
+		selectable = { 
+			ROOT = { 
+				NOT = { civilwar_target = PREV }
+			}
+            
+			OR = {
+				AND = {
+					is_in_faction = yes
+					is_major = yes
+				}
+				is_in_faction = no
+			}
+			is_puppet = no
+		}
+
+		requires_acceptance = yes
+		show_acceptance_on_action_button = yes # set to no if acceptance shouldn't be displayed on the action button
+		cost = 0
+
+		icon = 1
+
+		on_sent_effect = {
+			ROOT = { set_country_flag = pd_waiting_response }
+		}
+
+		complete_effect = {
+			clear_vp = yes
+			execute_peace_deal = yes
+			ROOT = { 
+				clr_country_flag = pd_waiting_response
+				clr_country_flag = pd_ai_want_peace
+				clear_variable = pd_ai_want_peace_with 
+			}
+		}
+		
+		reject_effect = {
+			ROOT = { 
+				clr_country_flag = pd_waiting_response
+				clr_country_flag = pd_ai_want_peace
+				clear_variable = pd_ai_want_peace_with 
+			}
+		}
+		
+		send_scripted_gui = pd_offer_peace_deal
+		reset_send_effect = {
+			ROOT = { clr_country_flag = pd_root_gives }
+			reset_peace_deal_proposal = yes
+		}
+		
+		can_be_sent = { # send button will be disabled if no
+			OR = {
+				check_variable = { ROOT.vp@PREV > ROOT.pd_total_cost }
+				check_variable = { ROOT.vp@PREV = ROOT.pd_total_cost }
+			}
+			ROOT = {
+				NOT = { 
+					has_country_flag = pd_waiting_response 
+					
+					# Can't give away all states!
+					all_of = {
+						array = ROOT.owned_states
+
+						OR = {
+							is_in_array = {
+								array = pd_take_array
+								value = v
+							}
+							is_in_array = {
+								array = pd_puppet_array
+								value = v
+							}
+							is_in_array = {
+								array = pd_liberate_array
+								value = v
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		receive_scripted_gui = pd_offer_peace_deal_receive
+		
+		ai_acceptance = {
+			pd_base_reluctance = {
+				base = -100
+			}
+			
+			pd_close_to_surrender = {
+				base = 0
+				modifier = {
+					set_temp_variable = { sp = var:THIS.surrender_progress }
+					multiply_temp_variable = { sp = 200 }
+					round_temp_variable = sp
+					subtract_from_temp_variable = { sp = 100 }
+					clamp_temp_variable = {
+						var = sp
+						min = 0
+						max = 100
+					}
+					add = var:sp
+				}
+			}
+			
+			pd_war_support = {
+				base = 0
+				modifier = {
+					set_temp_variable = { ws = var:THIS.has_war_support }
+					multiply_temp_variable = { ws = -200 }
+					round_temp_variable = ws
+					add_to_temp_variable = { ws = 100 }
+					add = var:ws
+				}
+			}
+			
+			pd_stability = {
+				base = 0
+				modifier = {
+					set_temp_variable = { s = var:THIS.has_stability }
+					multiply_temp_variable = { s = -200 }
+					round_temp_variable = s
+					add_to_temp_variable = { s = 100 }
+					add = var:s
+				}
+			}
+			
+			pd_relative_war_score = {
+				base = 0
+				modifier = {
+					set_temp_variable = { rvp = ROOT.vp@PREV }
+					set_temp_variable = { tvp = THIS.vp@ROOT }
+					subtract_from_temp_variable = { rvp = tvp }
+					round_temp_variable = rvp
+					add = var:rvp
+				}
+			}
+			
+			pd_strength_ratio = {
+				base = 0
+				modifier = {
+					set_temp_variable = { str = THIS.enemies_strength_ratio@ROOT }
+					multiply_temp_variable = { str = 100 }
+					round_temp_variable = str
+					subtract_from_temp_variable = { str = 100 }
+					clamp_temp_variable = {
+						var = str
+						max = 1000
+					}
+					add = var:str
+				}
+			}
+			
+			pd_proposal_cost = {
+				base = 0
+				modifier = {
+					set_temp_variable = { tc = ROOT.pd_total_cost }
+					multiply_temp_variable = { tc = -1 }
+					add = tc
+				}
+			}
+			
+			pd_geopolitical_situation = {
+				base = 0
+				modifier = {
+					add = -100
+					is_major = yes
+				}
+				modifier = {
+					add = -200
+					is_in_faction = yes
+				}
+				modifier = {
+					# while threat < 0.2 -> 0, later -100 for each 0.1
+					set_temp_variable = { wt = global.threat }
+					multiply_temp_variable = { wt = -1000 }
+					round_temp_variable = wt
+					add_to_temp_variable = { wt = 200 }
+					clamp_temp_variable = {
+						var = wt
+						max = 0
+					}
+					add = var:wt
+				}
+			}
+		}
+	}
+
+    ####################################################################################################
+    
+	eda_empty_space_3B = {
+        icon = 1
+
+        ##################################
+        ## CONDITIONS TO USE/SEE ACTION ##
+        ##################################
+        cost = 0
+        requires_acceptance = no
+        show_acceptance_on_action_button = no
+
+        allowed = {
+			ROOT = { is_ai = no }
+        }
+		visible = {
+			AND = {
+				has_game_rule = {
+					rule = eda_war_actions
+					option = WAR_ANY_ACTION_ALLOWED
+				}
+				has_game_rule = {
+					rule = eda_empty_space
+					option = EMPTY_SPACE_ACTION_ALLOWED
+				}
+                OR = {
+                    has_game_rule = {
+                        rule = eda_war_opinion
+                        option = WAR_OPINION_ACTION_ALLOWED
+                    }
+					has_game_rule = {
+						rule = eda_war_peace_deal
+						option = WAR_PEACE_DEAL_ACTION_ALLOWED
+					}
+                }
+				NOT = { is_subject_of = ROOT }
+				has_offensive_war = yes                
+			}
+		}
+        selectable = {
+			custom_trigger_tooltip = {
+				tooltip = EMPTY_SPACE_TOOLTIP
+				always = no
+			}
+		}
+
+        send_description = EMPTY_SPACE_SEND_DESC
+    }
+
+    ####################################################################################################
+    ####################################################################################################
+}

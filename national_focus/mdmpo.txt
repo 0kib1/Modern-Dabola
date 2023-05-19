@@ -1,0 +1,6 @@
+focus_tree = {
+	id = mdmpo_focus
+	default = no
+	reset_on_civilwar = no
+	continuous_focus_position = { x = 1 y = 1 }
+}

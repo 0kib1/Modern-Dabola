@@ -1,0 +1,10 @@
+TUR_startup = {
+	set_variable = { TUR_union_acceptance = -35 }
+}
+TUR_union_acceptance = {
+	clamp_variable = {
+		var = TUR_union_acceptance
+		min = 0
+		max = 100
+	}
+}

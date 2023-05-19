@@ -1,0 +1,199 @@
+set_power_balance_ideas_for_every_country = {
+	remove_ideas = {
+		power_balance_bamboocurtain1
+		power_balance_bamboocurtain2
+		power_balance_bamboocurtain3
+		power_balance_bamboocurtain4
+		power_balance_bamboocurtain5
+		power_balance_bamboocurtain6
+		power_balance_bamboocurtain7
+		power_balance_bamboocurtain8
+		power_balance_bamboocurtain9
+		power_balance_bamboocurtain10
+		power_balance_bamboocurtain11
+		power_balance_bamboocurtain12
+		power_balance_bamboocurtain13
+		power_balance_bamboocurtain14
+		power_balance_bamboocurtain15
+		power_balance_bamboocurtain16
+		power_balance_bamboocurtain17
+		power_balance_bamboocurtain18
+		power_balance_bamboocurtain19
+		power_balance_bamboocurtain20
+		power_balance_bamboocurtain21
+		power_balance_ironcurtain1
+		power_balance_ironcurtain2
+		power_balance_ironcurtain3
+		power_balance_ironcurtain4
+		power_balance_ironcurtain5
+		power_balance_ironcurtain6
+		power_balance_ironcurtain7
+		power_balance_ironcurtain8
+		power_balance_ironcurtain9
+		power_balance_ironcurtain10
+		power_balance_ironcurtain11
+		power_balance_ironcurtain12
+		power_balance_ironcurtain13
+		power_balance_ironcurtain14
+		power_balance_ironcurtain15
+		power_balance_ironcurtain16
+		power_balance_ironcurtain17
+		power_balance_ironcurtain18
+		power_balance_ironcurtain19
+		power_balance_ironcurtain20
+		power_balance_ironcurtain21
+	}
+
+	if = { limit = { CHI = { has_government = communism } }			
+	every_country = {
+		limit = { is_asian_nation = yes }
+		determine_power_balance_bamboocurtain = yes
+		}
+	}
+	if = { limit = { SOV = { has_government = communism } }		
+	every_country = {
+		limit = { is_european_nation = yes }
+		determine_power_balance_ironcurtain = yes
+		}
+	}
+}
+
+determine_power_balance_bamboocurtain = {
+		clear_variable = power_balance_bamboocurtain
+		set_variable = { power_balance_bamboocurtain = CHI.percentage_of_global_factories }
+		divide_variable = { power_balance_bamboocurtain = USA.percentage_of_global_factories }	
+		divide_variable = { power_balance_bamboocurtain = 0.5 }	
+	if = { limit = { check_variable = { power_balance_bamboocurtain < 0.05 } }
+		add_ideas = power_balance_bamboocurtain1
+	}
+	else_if = { limit = { check_variable = { power_balance_bamboocurtain < 0.15 } }
+		add_ideas = power_balance_bamboocurtain2
+	}
+	else_if = { limit = { check_variable = { power_balance_bamboocurtain < 0.25 } }
+		add_ideas = power_balance_bamboocurtain3
+	}
+	else_if = { limit = { check_variable = { power_balance_bamboocurtain < 0.35 } }
+		add_ideas = power_balance_bamboocurtain4
+	}
+	else_if = { limit = { check_variable = { power_balance_bamboocurtain < 0.45 } }
+		add_ideas = power_balance_bamboocurtain5
+	}
+	else_if = { limit = { check_variable = { power_balance_bamboocurtain < 0.55 } }
+		add_ideas = power_balance_bamboocurtain6
+	}
+	else_if = { limit = { check_variable = { power_balance_bamboocurtain < 0.65 } }
+		add_ideas = power_balance_bamboocurtain7
+	}
+	else_if = { limit = { check_variable = { power_balance_bamboocurtain < 0.75 } }
+		add_ideas = power_balance_bamboocurtain8
+	}
+	else_if = { limit = { check_variable = { power_balance_bamboocurtain < 0.85 } }
+		add_ideas = power_balance_bamboocurtain9
+	}
+	else_if = { limit = { check_variable = { power_balance_bamboocurtain < 0.95 } }
+		add_ideas = power_balance_bamboocurtain10
+	}
+	else_if = { limit = { check_variable = { power_balance_bamboocurtain < 1.05 } }
+		add_ideas = power_balance_bamboocurtain11
+	}
+	else_if = { limit = { check_variable = { power_balance_bamboocurtain < 1.15 } }
+		add_ideas = power_balance_bamboocurtain12
+	}
+	else_if = { limit = { check_variable = { power_balance_bamboocurtain < 1.25 } }
+		add_ideas = power_balance_bamboocurtain13
+	}
+	else_if = { limit = { check_variable = { power_balance_bamboocurtain < 1.35 } }
+		add_ideas = power_balance_bamboocurtain14
+	}
+	else_if = { limit = { check_variable = { power_balance_bamboocurtain < 1.45 } }
+		add_ideas = power_balance_bamboocurtain15
+	}
+	else_if = { limit = { check_variable = { power_balance_bamboocurtain < 1.55 } }
+		add_ideas = power_balance_bamboocurtain16
+	}
+	else_if = { limit = { check_variable = { power_balance_bamboocurtain < 1.65 } }
+		add_ideas = power_balance_bamboocurtain17
+	}
+	else_if = { limit = { check_variable = { power_balance_bamboocurtain < 1.75 } }
+		add_ideas = power_balance_bamboocurtain18
+	}
+	else_if = { limit = { check_variable = { power_balance_bamboocurtain < 1.85 } }
+		add_ideas = power_balance_bamboocurtain19
+	}
+	else_if = { limit = { check_variable = { power_balance_bamboocurtain < 1.95 } }
+		add_ideas = power_balance_bamboocurtain20
+	}
+	else = {
+		add_ideas = power_balance_bamboocurtain21
+	}
+}
+
+determine_power_balance_ironcurtain = {
+		clear_variable = power_balance_ironcurtain
+		set_variable = { power_balance_ironcurtain = SOV.percentage_of_global_factories }
+		divide_variable = { power_balance_ironcurtain = USA.percentage_of_global_factories }
+		divide_variable = { power_balance_ironcurtain = 0.5 }	
+	if = { limit = { check_variable = { power_balance_ironcurtain < 0.05 } }
+		add_ideas = power_balance_ironcurtain1
+	}
+	else_if = { limit = { check_variable = { power_balance_ironcurtain < 0.15 } }
+		add_ideas = power_balance_ironcurtain2
+	}
+	else_if = { limit = { check_variable = { power_balance_ironcurtain < 0.25 } }
+		add_ideas = power_balance_ironcurtain3
+	}
+	else_if = { limit = { check_variable = { power_balance_ironcurtain < 0.35 } }
+		add_ideas = power_balance_ironcurtain4
+	}
+	else_if = { limit = { check_variable = { power_balance_ironcurtain < 0.45 } }
+		add_ideas = power_balance_ironcurtain5
+	}
+	else_if = { limit = { check_variable = { power_balance_ironcurtain < 0.55 } }
+		add_ideas = power_balance_ironcurtain6
+	}
+	else_if = { limit = { check_variable = { power_balance_ironcurtain < 0.65 } }
+		add_ideas = power_balance_ironcurtain7
+	}
+	else_if = { limit = { check_variable = { power_balance_ironcurtain < 0.75 } }
+		add_ideas = power_balance_ironcurtain8
+	}
+	else_if = { limit = { check_variable = { power_balance_ironcurtain < 0.85 } }
+		add_ideas = power_balance_ironcurtain9
+	}
+	else_if = { limit = { check_variable = { power_balance_ironcurtain < 0.95 } }
+		add_ideas = power_balance_ironcurtain10
+	}
+	else_if = { limit = { check_variable = { power_balance_ironcurtain < 1.05 } }
+		add_ideas = power_balance_ironcurtain11
+	}
+	else_if = { limit = { check_variable = { power_balance_ironcurtain < 1.15 } }
+		add_ideas = power_balance_ironcurtain12
+	}
+	else_if = { limit = { check_variable = { power_balance_ironcurtain < 1.25 } }
+		add_ideas = power_balance_ironcurtain13
+	}
+	else_if = { limit = { check_variable = { power_balance_ironcurtain < 1.35 } }
+		add_ideas = power_balance_ironcurtain14
+	}
+	else_if = { limit = { check_variable = { power_balance_ironcurtain < 1.45 } }
+		add_ideas = power_balance_ironcurtain15
+	}
+	else_if = { limit = { check_variable = { power_balance_ironcurtain < 1.55 } }
+		add_ideas = power_balance_ironcurtain16
+	}
+	else_if = { limit = { check_variable = { power_balance_ironcurtain < 1.65 } }
+		add_ideas = power_balance_ironcurtain17
+	}
+	else_if = { limit = { check_variable = { power_balance_ironcurtain < 1.75 } }
+		add_ideas = power_balance_ironcurtain18
+	}
+	else_if = { limit = { check_variable = { power_balance_ironcurtain < 1.85 } }
+		add_ideas = power_balance_ironcurtain19
+	}
+	else_if = { limit = { check_variable = { power_balance_ironcurtain < 1.95 } }
+		add_ideas = power_balance_ironcurtain20
+	}
+	else = {
+		add_ideas = power_balance_ironcurtain21
+	}
+}

@@ -1,0 +1,298 @@
+update_first_party = {
+	if = { limit = { check_variable = { max_index_1 = 0 } }
+		add_ideas = bipartisan_western_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 1 } }
+		add_ideas = bipartisan_western_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 2 } }
+		add_ideas = bipartisan_western_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 3 } }
+		add_ideas = bipartisan_western_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 4 } }
+		add_ideas = bipartisan_emerging_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 5 } }
+		add_ideas = bipartisan_emerging_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 6 } }
+		add_ideas = bipartisan_emerging_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 7 } }
+		add_ideas = bipartisan_emerging_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 8 } }
+		add_ideas = bipartisan_emerging_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 9 } }
+		add_ideas = bipartisan_emerging_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 10 } }
+	   add_ideas = bipartisan_salafist_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 11 } }
+	   add_ideas = bipartisan_salafist_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 12 } }
+	   add_ideas = bipartisan_non_alligned_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 13 } }
+	   add_ideas = bipartisan_non_alligned_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 14 } }
+	   add_ideas = bipartisan_non_alligned_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 15 } }
+	   add_ideas = bipartisan_non_alligned_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 16 } }
+	   add_ideas = bipartisan_non_alligned_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 17 } }
+	   add_ideas = bipartisan_non_alligned_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 18 } }
+	   add_ideas = bipartisan_non_alligned_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 19 } }
+	   add_ideas = bipartisan_non_alligned_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 20 } }
+		add_ideas = bipartisan_nationalist_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 21 } }
+		add_ideas = bipartisan_nationalist_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 22 } }
+		add_ideas = bipartisan_nationalist_1
+	}
+	else_if = { limit = { check_variable = { max_index_1 = 23 } }
+		add_ideas = bipartisan_nationalist_1
+	}
+}
+
+update_second_party = {
+	if = { limit = { check_variable = { max_index_2 = 0 } }
+		add_ideas = bipartisan_western_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 1 } }
+		add_ideas = bipartisan_western_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 2 } }
+		add_ideas = bipartisan_western_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 3 } }
+		add_ideas = bipartisan_western_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 4 } }
+		add_ideas = bipartisan_emerging_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 5 } }
+		add_ideas = bipartisan_emerging_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 6 } }
+		add_ideas = bipartisan_emerging_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 7 } }
+		add_ideas = bipartisan_emerging_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 8 } }
+		add_ideas = bipartisan_emerging_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 9 } }
+		add_ideas = bipartisan_emerging_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 10 } }
+	   add_ideas = bipartisan_salafist_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 11 } }
+	   add_ideas = bipartisan_salafist_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 12 } }
+	   add_ideas = bipartisan_non_alligned_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 13 } }
+	   add_ideas = bipartisan_non_alligned_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 14 } }
+	   add_ideas = bipartisan_non_alligned_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 15 } }
+	   add_ideas = bipartisan_non_alligned_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 16 } }
+	   add_ideas = bipartisan_non_alligned_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 17 } }
+	   add_ideas = bipartisan_non_alligned_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 18 } }
+	   add_ideas = bipartisan_non_alligned_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 19 } }
+	   add_ideas = bipartisan_non_alligned_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 20 } }
+		add_ideas = bipartisan_nationalist_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 21 } }
+		add_ideas = bipartisan_nationalist_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 22 } }
+		add_ideas = bipartisan_nationalist_2
+	}
+	else_if = { limit = { check_variable = { max_index_2 = 23 } }
+		add_ideas = bipartisan_nationalist_2
+	}
+}
+
+update_dominant_party = {
+	if = { limit = { has_government = fascism }
+		add_ideas = dominant_party_salafist
+	}
+	else_if = { limit = { has_government = neutrality }
+		add_ideas = dominant_party_non_alligned
+	}
+	else_if = { limit = { has_government = communism }
+		add_ideas = dominant_party_emerging
+	}
+	else_if = { limit = { has_government = nationalist }
+		add_ideas = dominant_party_nationalist
+	}
+	else_if = { limit = { has_government = democratic }
+		add_ideas = dominant_party_western
+	}
+}
+update_one_party = {
+	if = { limit = { has_government = fascism }
+		add_ideas = one_party_salafist
+	}
+	else_if = { limit = { has_government = neutrality }
+		add_ideas = one_party_non_alligned
+	}
+	else_if = { limit = { has_government = communism }
+		add_ideas = one_party_emerging
+	}
+	else_if = { limit = { has_government = nationalist }
+		add_ideas = one_party_nationalist
+	}
+	else_if = { limit = { has_government = democratic }
+		add_ideas = one_party_western
+	}
+}
+update_non_partisan = {
+	if = { limit = { has_government = fascism }
+		add_ideas = non_partisan_salafist
+	}
+	else_if = { limit = { has_government = neutrality }
+		add_ideas = non_partisan_non_alligned
+	}
+	else_if = { limit = { has_government = communism }
+		add_ideas = non_partisan_emerging
+	}
+	else_if = { limit = { has_government = nationalist }
+		add_ideas = non_partisan_nationalist
+	}
+	else_if = { limit = { has_government = democratic }
+		add_ideas = non_partisan_western
+	}
+}
+
+clear_previous_parties_drift = {
+	if = { limit = { has_idea = bipartisan_salafist_1 }
+		remove_ideas = bipartisan_salafist_1
+	}
+	else_if = { limit = { has_idea = bipartisan_non_alligned_1 }
+		remove_ideas = bipartisan_non_alligned_1
+	}
+	else_if = { limit = { has_idea = bipartisan_emerging_1 }
+		remove_ideas = bipartisan_emerging_1
+	}
+	else_if = { limit = { has_idea = bipartisan_nationalist_1 }
+		remove_ideas = bipartisan_nationalist_1
+	}
+	else_if = { limit = { has_idea = bipartisan_western_1 }
+		remove_ideas = bipartisan_western_1
+	}
+	else_if = { limit = { has_idea = bipartisan_salafist }
+		remove_ideas = bipartisan_salafist
+	}
+	else_if = { limit = { has_idea = bipartisan_non_alligned }
+		remove_ideas = bipartisan_non_alligned
+	}
+	else_if = { limit = { has_idea = bipartisan_emerging }
+		remove_ideas = bipartisan_emerging
+	}
+	else_if = { limit = { has_idea = bipartisan_nationalist }
+		remove_ideas = bipartisan_nationalist
+	}
+	else_if = { limit = { has_idea = bipartisan_western }
+		remove_ideas = bipartisan_western
+	}
+	if = { limit = { has_idea = dominant_party_salafist }
+		remove_ideas = dominant_party_salafist
+	}
+	else_if = { limit = { has_idea = dominant_party_non_alligned }
+		remove_ideas = dominant_party_non_alligned
+	}
+	else_if = { limit = { has_idea = dominant_party_emerging }
+		remove_ideas = dominant_party_emerging
+	}
+	else_if = { limit = { has_idea = dominant_party_nationalist }
+		remove_ideas = dominant_party_nationalist
+	}
+	else_if = { limit = { has_idea = dominant_party_western }
+		remove_ideas = dominant_party_western
+	}
+	else_if = { limit = { has_idea = one_party_salafist }
+		remove_ideas = one_party_salafist
+	}
+	else_if = { limit = { has_idea = one_party_non_alligned }
+		remove_ideas = one_party_non_alligned
+	}
+	else_if = { limit = { has_idea = one_party_emerging }
+		remove_ideas = one_party_emerging
+	}
+	else_if = { limit = { has_idea = one_party_nationalist }
+		remove_ideas = one_party_nationalist
+	}
+	else_if = { limit = { has_idea = one_party_western }
+		remove_ideas = one_party_western
+	}
+	else_if = { limit = { has_idea = non_partisan_salafist }
+		remove_ideas = non_partisan_salafist
+	}
+	else_if = { limit = { has_idea = non_partisan_non_alligned }
+		remove_ideas = non_partisan_non_alligned
+	}
+	else_if = { limit = { has_idea = non_partisan_emerging }
+		remove_ideas = non_partisan_emerging
+	}
+	else_if = { limit = { has_idea = non_partisan_nationalist }
+		remove_ideas = non_partisan_nationalist
+	}
+	else_if = { limit = { has_idea = non_partisan_western }
+		remove_ideas = non_partisan_western
+	}
+}
+
+parties_drift_popularity = {
+	hidden_effect = {
+		clear_previous_parties_drift = yes
+		if = { limit = { has_idea = two_party }
+			update_first_party = yes
+			update_second_party = yes
+		}
+		if = { limit = { has_idea = dominant_party }
+			update_dominant_party = yes
+		}
+		if = { limit = { has_idea = one_party }
+			update_one_party = yes
+		}
+		if = { limit = { has_idea = non_partisan }
+			update_non_partisan = yes
+		}
+	}
+}

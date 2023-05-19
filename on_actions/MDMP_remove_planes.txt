@@ -1,0 +1,298 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = remove_starting_planes
+						option = yes
+					}
+				}
+				every_country = {
+					####
+					add_equipment_to_stockpile = {
+						type = naval_plane1
+						amount = -1000
+					}
+					add_equipment_to_stockpile = {
+						type = naval_plane2
+						amount = -1000
+					}
+					add_equipment_to_stockpile = {
+						type = naval_plane3
+						amount = -1000
+					}
+					add_equipment_to_stockpile = {
+						type = naval_plane4
+						amount = -1000
+					}
+					add_equipment_to_stockpile = {
+						type = naval_plane5
+						amount = -1000
+					}
+					
+					####
+					add_equipment_to_stockpile = {
+						type = CV_MR_Fighter1
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = CV_MR_Fighter2
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = CV_MR_Fighter3
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = CV_MR_Fighter4
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = CV_MR_Fighter5
+						amount = -10000
+					}
+
+					####
+					add_equipment_to_stockpile = {
+						type = CV_L_Strike_fighter1
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = CV_L_Strike_fighter2
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = CV_L_Strike_fighter3
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = CV_L_Strike_fighter4
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = CV_L_Strike_fighter5
+						amount = -10000
+					}
+
+					####
+					add_equipment_to_stockpile = {
+						type = attack_helicopter1
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = attack_helicopter2
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = attack_helicopter3
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = attack_helicopter4
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = attack_helicopter5
+						amount = -10000
+					}
+
+					####
+					add_equipment_to_stockpile = {
+						type = AS_Fighter1 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = AS_Fighter2 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = AS_Fighter3 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = AS_Fighter4 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = AS_Fighter5 
+						amount = -10000
+					}
+
+					####
+					add_equipment_to_stockpile = {
+						type = MR_Fighter1 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = MR_Fighter2 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = MR_Fighter3 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = MR_Fighter4 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = MR_Fighter5 
+						amount = -10000
+					}
+
+					####
+					add_equipment_to_stockpile = {
+						type = L_Strike_fighter1 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = L_Strike_fighter2 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = L_Strike_fighter3 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = L_Strike_fighter4 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = L_Strike_fighter5 
+						amount = -10000
+					}
+
+					####
+					add_equipment_to_stockpile = {
+						type = Strike_fighter1 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = Strike_fighter2 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = Strike_fighter3 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = Strike_fighter4 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = Strike_fighter5 
+						amount = -10000
+					}
+
+					####
+					add_equipment_to_stockpile = {
+						type = cas1 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = cas2 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = cas3 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = cas4 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = cas5 
+						amount = -10000
+					}
+
+					####
+					add_equipment_to_stockpile = {
+						type = Air_UAV1 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = Air_UAV2 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = Air_UAV3 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = Air_UAV4 
+						amount = -10000
+					}
+
+					####
+					add_equipment_to_stockpile = {
+						type = transport_plane1 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = transport_plane2 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = transport_plane3 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = transport_plane4 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = transport_plane5 
+						amount = -10000
+					}
+
+					####	
+					# add_equipment_to_stockpile = {
+					# 	type = transport_helicopter1
+					# 	amount = -10000
+					# }
+					# add_equipment_to_stockpile = {
+					# 	type = transport_helicopter2
+					# 	amount = -10000
+					# }
+					# add_equipment_to_stockpile = {
+					# 	type = transport_helicopter3
+					# 	amount = -10000
+					# }
+					# add_equipment_to_stockpile = {
+					# 	type = transport_helicopter4
+					# 	amount = -10000
+					# }
+					# add_equipment_to_stockpile = {
+					# 	type = transport_helicopter5
+					# 	amount = -10000
+					# }
+					
+					
+					####
+					add_equipment_to_stockpile = {
+						type = strategic_bomber1 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = strategic_bomber2 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = strategic_bomber3 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = strategic_bomber4 
+						amount = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = strategic_bomber5 
+						amount = -10000
+					}
+				}
+			}
+		}
+	}
+}

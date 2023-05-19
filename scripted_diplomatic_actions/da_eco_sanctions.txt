@@ -1,0 +1,331 @@
+scripted_diplomatic_actions = {
+	#####################################################################################################################
+	# COMMENTS HAVE BEEN INCLUDED FOR SAKE OF EXPLANATION, CAN BE REMOVED #
+	# > REMEMBER < the default scope in this file is the TARGET COUNTRY! NOT THE COUNTRY SENDING THE DIPLOMATIC REQUEST #
+	#####################################################################################################################
+	
+	### LIGHT SANCTIONS
+	light_sanctions = {
+		
+		#### CONDITIONS TO USE/SEE ACTION ###
+		
+		allowed = {		#	Used for the send window, if not true player/AI wont be able to send the diplomatic request even if can_be_sent is true.
+		}
+		visible = {		#	Conditions to make this diplomatic action appear in the diplomacy screen.
+		}
+		selectable = {	#	Conditions to allow player/AI to click the option in the diplomacy screen, this is what the player sees as "prerequisets" to use this action. Must be at least a major power.
+			ROOT = {
+				OR = {
+					has_idea = superpower
+					has_idea = great_power
+					has_idea = large_power
+				}
+			}
+			ROOT = { 
+				NOT = { has_idea = enforcing_light_eco_sanctions_idea }
+				}
+			THIS = { NOT = { is_in_faction_with = ROOT } }
+			THIS = { has_added_tension_amount > 15 }
+			THIS = {
+				NOT = { has_idea = heavy_eco_sanctions_idea }
+				NOT = { has_idea = light_eco_sanctions_idea }
+			}
+		}
+		
+		cost = 200		# The cost to execute this diplomatic action, by default is political power
+
+		requires_acceptance = no		#	Does this diplomatic request requires acceptance, if set to NO reject_effect is invalid
+		show_acceptance_on_action_button = no #	Should accept/decline tooltip be shown in the user interface when using this diplomatic action on AI countries		
+
+		#### ACTION LOCALISATION ###
+
+		send_description = LIGHT_SANCTIONS_LOC		# The text the country that is executing the diplomatic action sees.
+		receive_description = LIGHT_SANCTIONS_RECIEVER_LOC	# The text the target country sees when recieving the diplomation action.
+
+
+		#### EFFECTS ###		
+
+		on_sent_effect = {		#	An effect that can be applied when sending the diplomatic action.
+		}
+		complete_effect = {		#	An effect that can be applied the action is ACCEPTED (accepted always if requires_acceptance is set to NO)
+			THIS = { 
+				add_timed_idea = {
+					idea = light_eco_sanctions_idea
+					days = 730
+				}
+				add_opinion_modifier = { 
+					target = ROOT 
+					modifier = light_sanction_opinion 
+				}
+			}
+			ROOT = { 
+				add_timed_idea = {
+					idea = enforcing_light_eco_sanctions_idea
+					days = 730
+				}
+				reverse_add_opinion_modifier = { 
+					target = ROOT 
+					modifier = light_sanction_opinion 
+				}
+			}
+		}
+		reject_effect = {		#	An effect that can be applied the action is REJECTED (only valid if requires_acceptance is set to YES )
+		}
+		
+		#### AI SECTION ###
+		
+		ai_desire = {		# AI modifiers to use this diplomatic action
+			}
+		ai_acceptance = {		# AI modifiers to accept this diplomatic action, not valid if requires_acceptance is set to NO.
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	### HEAVY SANCTIONS
+	heavy_sanctions = {
+		
+		#### CONDITIONS TO USE/SEE ACTION ###
+		
+		allowed = {		#	Used for the send window, if not true player/AI wont be able to send the diplomatic request even if can_be_sent is true.
+		}
+		visible = {		#	Conditions to make this diplomatic action appear in the diplomacy screen.
+		}
+		selectable = {	#	Conditions to allow player/AI to click the option in the diplomacy screen, this is what the player sees as "prerequisets" to use this action. Must be at least a major power.
+			ROOT = {
+				OR = {
+					has_idea = superpower
+					has_idea = great_power
+				}
+			}
+			THIS = { NOT = { is_in_faction_with = ROOT } }
+			THIS = { has_added_tension_amount > 30 }
+			THIS = {
+				NOT = { has_idea = heavy_eco_sanctions_idea }
+				NOT = { has_idea = light_eco_sanctions_idea }
+			}
+		}
+		
+		cost = 400		# The cost to execute this diplomatic action, by default is political power
+
+		requires_acceptance = no		#	Does this diplomatic request requires acceptance, if set to NO reject_effect is invalid
+		show_acceptance_on_action_button = no #	Should accept/decline tooltip be shown in the user interface when using this diplomatic action on AI countries		
+
+		#### ACTION LOCALISATION ###
+
+		send_description = HEAVY_SANCTIONS_LOC		# The text the country that is executing the diplomatic action sees.
+		receive_description = HEAVY_SANCTIONS_RECIEVER_LOC	# The text the target country sees when recieving the diplomation action.
+
+
+		#### EFFECTS ###		
+
+		on_sent_effect = {		#	An effect that can be applied when sending the diplomatic action.
+		}
+		complete_effect = {		#	An effect that can be applied the action is ACCEPTED (accepted always if requires_acceptance is set to NO)
+			THIS = { 
+				add_timed_idea = {
+					idea = heavy_eco_sanctions_idea
+					days = 730
+				}
+				add_opinion_modifier = { 
+					target = ROOT 
+					modifier = heavy_sanction_opinion 
+				}
+			}
+			ROOT = { 
+				add_timed_idea = {
+					idea = enforcing_heavy_eco_sanctions_idea
+					days = 730
+				}
+				reverse_add_opinion_modifier = { 
+					target = ROOT 
+					modifier = heavy_sanction_opinion 
+				}
+			}
+		}
+		reject_effect = {		#	An effect that can be applied the action is REJECTED (only valid if requires_acceptance is set to YES )
+		}
+		
+		#### AI SECTION ###
+		
+		ai_desire = {		# AI modifiers to use this diplomatic action
+			}
+		ai_acceptance = {		# AI modifiers to accept this diplomatic action, not valid if requires_acceptance is set to NO.
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	### LIFT LIGHT SANCTIONS
+	lift_light_sanctions = {
+		
+		#### CONDITIONS TO USE/SEE ACTION ###
+		
+		allowed = {		#	Used for the send window, if not true player/AI wont be able to send the diplomatic request even if can_be_sent is true.
+		}
+		visible = {		#	Conditions to make this diplomatic action appear in the diplomacy screen. 
+			THIS = {
+				OR = { 
+					has_idea = light_eco_sanctions_idea 
+				}
+			}
+			ROOT = {
+				OR = { 
+					has_idea = enforcing_light_eco_sanctions_idea 
+				}
+			}
+		}
+		selectable = {	#	Conditions to allow player/AI to click the option in the diplomacy screen, this is what the player sees as "prerequisets" to use this action. Must be at least a major power.
+			
+		}
+		cost = 100		# The cost to execute this diplomatic action, by default is political power
+
+		requires_acceptance = no		#	Does this diplomatic request requires acceptance, if set to NO reject_effect is invalid
+		show_acceptance_on_action_button = no #	Should accept/decline tooltip be shown in the user interface when using this diplomatic action on AI countries		
+
+		#### ACTION LOCALISATION ###
+
+		send_description = LIFT_SANCTIONS_LOC		# The text the country that is executing the diplomatic action sees.
+		receive_description = LIFT_SANCTIONS_RECIEVER_LOC	# The text the target country sees when recieving the diplomation action.
+
+
+		#### EFFECTS ###		
+
+		on_sent_effect = {		#	An effect that can be applied when sending the diplomatic action.
+		}
+		complete_effect = {		#	An effect that can be applied the action is ACCEPTED (accepted always if requires_acceptance is set to NO)
+			THIS = { 
+				remove_ideas = { 
+					light_eco_sanctions_idea
+				}
+				add_opinion_modifier = { 
+					target = ROOT 
+					modifier = lift_light_sanction_opinion 
+				}
+			}
+			ROOT = { 
+				remove_ideas = { 
+					enforcing_light_eco_sanctions_idea 
+				}
+				reverse_add_opinion_modifier = { 
+					target = ROOT 
+					modifier = lift_light_sanction_opinion 
+				}
+			}
+		}
+		reject_effect = {		#	An effect that can be applied the action is REJECTED (only valid if requires_acceptance is set to YES )
+		}
+		
+		#### AI SECTION ###
+		
+		ai_desire = {		# AI modifiers to use this diplomatic action
+			}
+		ai_acceptance = {		# AI modifiers to accept this diplomatic action, not valid if requires_acceptance is set to NO.
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	### LIFT HEAVY SANCTIONS
+	lift_heavy_sanctions = {
+		
+		#### CONDITIONS TO USE/SEE ACTION ###
+		
+		allowed = {		#	Used for the send window, if not true player/AI wont be able to send the diplomatic request even if can_be_sent is true.
+		}
+		visible = {		#	Conditions to make this diplomatic action appear in the diplomacy screen. 
+			THIS = {
+				OR = { 
+					has_idea = heavy_eco_sanctions_idea 
+				}
+			}
+			ROOT = {
+				OR = { 
+					has_idea = enforcing_heavy_eco_sanctions_idea 
+				}
+			}
+		}
+		selectable = {	#	Conditions to allow player/AI to click the option in the diplomacy screen, this is what the player sees as "prerequisets" to use this action. Must be at least a major power.
+			
+		}
+		cost = 100		# The cost to execute this diplomatic action, by default is political power
+
+		requires_acceptance = no		#	Does this diplomatic request requires acceptance, if set to NO reject_effect is invalid
+		show_acceptance_on_action_button = no #	Should accept/decline tooltip be shown in the user interface when using this diplomatic action on AI countries		
+
+		#### ACTION LOCALISATION ###
+
+		send_description = LIFT_SANCTIONS_LOC		# The text the country that is executing the diplomatic action sees.
+		receive_description = LIFT_SANCTIONS_RECIEVER_LOC	# The text the target country sees when recieving the diplomation action.
+
+
+		#### EFFECTS ###		
+
+		on_sent_effect = {		#	An effect that can be applied when sending the diplomatic action.
+		}
+		complete_effect = {		#	An effect that can be applied the action is ACCEPTED (accepted always if requires_acceptance is set to NO)
+			THIS = { 
+				remove_ideas = { 
+					heavy_eco_sanctions_idea
+				}
+				add_opinion_modifier = { 
+					target = ROOT 
+					modifier = lift_heavy_sanction_opinion 
+				}
+			}
+			ROOT = { 
+				remove_ideas = { 
+					enforcing_heavy_eco_sanctions_idea 
+				}
+				reverse_add_opinion_modifier = { 
+					target = ROOT 
+					modifier = lift_heavy_sanction_opinion 
+				}
+			}
+		}
+		reject_effect = {		#	An effect that can be applied the action is REJECTED (only valid if requires_acceptance is set to YES )
+		}
+		
+		#### AI SECTION ###
+		
+		ai_desire = {		# AI modifiers to use this diplomatic action
+			}
+		ai_acceptance = {		# AI modifiers to accept this diplomatic action, not valid if requires_acceptance is set to NO.
+		}
+	}
+}

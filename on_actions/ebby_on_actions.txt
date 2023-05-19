@@ -1,0 +1,13 @@
+on_actions = {
+	on_capitulation_immediate = {
+		effect = {
+			add_ideas = capitulated_nation_no_call_ally
+		}
+	}
+	
+	on_peace = {
+		effect = {
+			remove_ideas = capitulated_nation_no_call_ally
+		}
+	}
+}
