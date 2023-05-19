@@ -1,0 +1,295 @@
+capital = 934
+2000.1.1 = {
+	add_ideas = {
+		#pop_050
+		systematic_corruption
+		gdp_4
+		sunni
+		multi_ethnic_state_idea
+		stable_growth
+		defence_06
+		edu_01
+		health_01
+		social_02
+		bureau_05
+		police_01
+		volunteer_army
+		no_women_in_military
+		intervention_isolation
+		intelligence_community
+		defense_industry
+		the_military
+		pkk_terror_idea
+		mit
+	}
+	set_technology = {
+		legacy_doctrines = 1
+		modern_blitzkrieg = 1
+		forward_defense = 1
+		encourage_nco_iniative = 1
+		air_land_battle = 1
+
+		infantry_weapons = 1
+		infantry_weapons1 = 1
+		support_weapons = 1
+
+		command_control_equipment = 1
+		command_control_equipment1 = 1
+		command_control_equipment2 = 1
+
+		land_Drone_equipment = 1
+		land_Drone_equipment1 = 1
+
+		Anti_tank_0 = 1
+		Heavy_Anti_tank_0 = 1
+		AT_upgrade_1 = 1
+		Anti_tank_1 = 1
+		Heavy_Anti_tank_1 = 1
+
+		combat_eng_equipment = 1
+
+		Early_APC = 1
+		MBT_1 = 1
+
+		util_vehicle_0 = 1
+		util_vehicle_1 = 1
+		util_vehicle_2 = 1
+		util_vehicle_3 = 1	#Otokar Cobra
+
+		IFV_1 = 1
+		IFV_2 = 1	#ACV-15
+
+		APC_1 = 1
+		APC_2 = 1
+		APC_3 = 1
+		APC_4 = 1	#Ejder
+
+		SP_arty_0 = 1
+		SP_arty_1 = 1	#M52T
+
+		artillery_0 = 1
+
+		Arty_upgrade_1 = 1
+
+		SP_R_arty_0 = 1
+		SP_R_arty_1 = 1	#T-122 Sakariya
+
+		Anti_Air_0 = 1
+		Anti_Air_1 = 1
+		AA_upgrade_1 = 1
+		SP_Anti_Air_0 = 1
+		SP_Anti_Air_1 = 1 #Altigan PMADS
+
+		night_vision_1 = 1
+		night_vision_2 = 1
+		night_vision_3 = 1
+
+		body_armor_1980 = 1
+		body_armor_2000 = 1
+		camouflage = 1
+		camouflage2 = 1
+
+		basic_computing = 1
+		integrated_circuit = 1
+		computing1 = 1
+		decryption1 = 1
+		encryption1 = 1
+
+		radar = 1
+		internet1 = 1
+		fuel_silos =1
+	}
+
+	#Influence
+	init_influence = yes
+	add_to_array = { influence_array = AZE.id }
+	add_to_array = { influence_array_val = 20 }
+	add_to_array = { influence_array = KAZ.id }
+	add_to_array = { influence_array_val = 8 }
+	add_to_array = { influence_array = USA.id }
+	add_to_array = { influence_array_val = 2 }
+	set_variable = { domestic_influence_amount = 70 }
+	startup_influence = yes
+
+	set_popularities = {
+		democratic = 0.0
+		communism = 0.0
+		fascism = 0.0
+		neutrality = 0.0
+		nationalist = 100.0
+	}
+	set_politics = {
+		ruling_party = nationalist
+		last_election = "2016.7.5"
+		election_frequency = 48
+		elections_allowed = no
+	}
+
+	#Politics
+	start_politics_input = yes
+	### Party Popularities
+	set_variable = { party_pop_array^0 = 0 } #Western_Autocracy
+	set_variable = { party_pop_array^1 = 0 } #conservatism
+	set_variable = { party_pop_array^2 = 0 } #liberalism
+	set_variable = { party_pop_array^3 = 0 } #socialism
+	set_variable = { party_pop_array^4 = 0.1 } #Communist-State
+	set_variable = { party_pop_array^5 = 0.2 } #anarchist_communism
+	set_variable = { party_pop_array^6 = 0.3 } #Conservative
+	set_variable = { party_pop_array^7 = 0.2 } #Autocracy
+	set_variable = { party_pop_array^8 = 0.1 } #Mod_Vilayat_e_Faqih
+	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
+	set_variable = { party_pop_array^10 = 0 } #Kingdom
+	set_variable = { party_pop_array^11 = 0 } #Caliphate
+	set_variable = { party_pop_array^12 = 0 } #Neutral_Muslim_Brotherhood
+	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
+	set_variable = { party_pop_array^14 = 0 } #Neutral_conservatism
+	set_variable = { party_pop_array^15 = 0 } #oligarchism
+	set_variable = { party_pop_array^16 = 0 } #Neutral_Libertarian
+	set_variable = { party_pop_array^17 = 0 } #Neutral_green
+	set_variable = { party_pop_array^18 = 0 } #neutral_Social
+	set_variable = { party_pop_array^19 = 0 } #Neutral_Communism
+	set_variable = { party_pop_array^20 = 0.6 } #Nat_Populism
+	set_variable = { party_pop_array^21 = 0.3 } #Nat_Fascism
+	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
+	set_variable = { party_pop_array^23 = 0 } #Monarchist
+
+	### Ruling Party
+	add_to_array = { ruling_party = 20 }
+	startup_politics = yes
+
+			create_country_leader = {
+				name = "Devlet Bahçeli"
+				picture = "Devlet_Bahceli.dds"
+				ideology = Nat_Populism
+				traits = {
+					career_politician
+					nationalist_Nat_Populism
+				}
+			}
+
+
+	create_corps_commander = {
+		name = "Mehmet Gürsoy"
+		picture = "unknown_general.dds"
+		traits = { invader artillery_expert }
+		skill = 3
+		attack_skill = 3
+		defense_skill = 2
+		planning_skill = 1
+		logistics_skill = 3
+	}
+	create_corps_commander = {
+		name = "Ismail Karaosmanoğlu"
+		picture = "unknown_general.dds"
+		traits = { artillery_expert }
+		skill = 2
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 2
+		logistics_skill = 2
+	}
+	create_corps_commander = {
+		name = "Şevket Yerimdar"
+		picture = "unknown_general.dds"
+		traits = { adaptable infantry_leader panzer_expert expert_organizer artillery_expert }
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+	}
+	create_field_marshal = {
+		name = "Muhterem Safa"
+		picture = "unknown_general.dds"
+		traits = { fast_planner logistics_wizard}
+		skill = 4
+		attack_skill = 4
+		defense_skill = 4
+		planning_skill = 4
+		logistics_skill = 4
+	}
+
+	create_field_marshal = {
+		name = "Semih Gündoğan"
+		picture = "unknown_general.dds"
+		traits = { old_guard defensive_doctrine trickster}
+		skill = 4
+		attack_skill = 3
+		defense_skill = 4
+		planning_skill = 3
+		logistics_skill = 2
+	}
+
+	create_corps_commander = {
+		name = "Mehmet Ülkü"
+		picture = "unknown_general.dds"
+		traits = { trait_engineer }
+		skill = 1
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 2
+		logistics_skill = 1
+	}
+
+	create_corps_commander = {
+		name = "Necdet Millet"
+		picture = "unknown_general.dds"
+		traits = { trait_engineer }
+		skill = 2
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 2
+	}
+
+	create_corps_commander = {
+		name = "Ali Türkmen"
+		picture = "unknown_general.dds"
+		traits = { commando }
+		skill = 3
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 3
+		logistics_skill = 2
+	}
+
+	create_corps_commander = {
+		name = "Ahmet Vatansevdi"
+		picture = "unknown_general.dds"
+		traits = { desert_fox }
+		skill = 2
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 1
+	}
+}
+2017.1.1 = {
+	set_technology = {
+		legacy_doctrines = 1
+		modern_blitzkrieg = 1
+		forward_defense = 1
+		encourage_nco_iniative = 1
+		air_land_battle = 1
+
+
+		#No army, but let's give them some basic tech in case they change their mind
+		infantry_weapons = 1
+		command_control_equipment = 1
+		Anti_tank_0 = 1
+		Anti_Air_0 = 1
+		util_vehicle_0 = 1
+
+		night_vision_1 = 1
+
+		microprocessors = 1
+		computing2 = 1
+		decryption2 = 1
+		encryption2 = 1
+		computing3 = 1
+		decryption3 = 1
+		encryption3 = 1
+		DNA_fingerprinting = 1
+		internet2 = 1
+	}
+}

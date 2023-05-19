@@ -1,0 +1,845 @@
+capital = 415
+2000.1.1 = {
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_oob = "TAL_2000_nsb"
+		else = {
+			set_oob = "TAL_2000_nonnsb"
+		}
+	}
+
+	set_convoys = 20
+	set_country_flag = is_civil_war_faction
+	set_variable = { civil_war_original_tag = AFG.id }
+
+	declare_war_on = {
+		target = AFG
+		type = annex_everything
+	}
+
+	diplomatic_relation = {
+		country = TTP
+		relation = military_access
+		active = yes
+	}
+
+
+	every_country = {
+				limit = { OR = {  
+							original_tag = AFG
+							original_tag = TAL
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.359 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = BHR
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.865 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = BAN
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.475 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = BLZ
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.769 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = BHU
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.473 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = BOL
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.867 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = BRA
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.864 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = BRU
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.927 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = CBD
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.673 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = CHI
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.909 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = CBD
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.673 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = COL
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.926 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = COS
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.949 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = DMI
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.94 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = DOM
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.87 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = ECU
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.91 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = ELS
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.741 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = FIJ
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.936 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = GUA
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.691 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = HAI
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.494 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = HON
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.8 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = RAJ
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.61 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = IND
+							original_tag = ACE
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.873 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = PER
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.77 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = IRQ
+							original_tag = KUR
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.741 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = JAM
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.864 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = JOR
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.898 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = KUW
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.858 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = LAO
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.696 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = LEB
+							original_tag = HEZ
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.937 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = MAY
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.887 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = MLT
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.901 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = MEX
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.905 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = MON
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.856 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = BRM
+							original_tag = KAC
+							original_tag = KAR
+							original_tag = SHN
+							original_tag = WAA
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.848 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = NEP
+							original_tag = NPM
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.309 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = NEP
+							original_tag = NPM
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.309 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = NIC
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.672 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = NIC
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.672 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = OMA
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.743 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = PAK
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.427 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = PAN
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.921 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = PAP
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.759 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = PRU
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.907 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = POR
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.916 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = NIC
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.672 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = QAT
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.816 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = SAU
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.67 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = SEY
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.903 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = SIN
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.925 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = SOL
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.766 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = SRI
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.907 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = STL
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.67 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = SUR
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.942 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = SYR
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.756 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = TUR
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.853 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = UAE
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.818 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = SRI
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.907 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = VEN
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.93 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = YEM
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.459 }
+			}
+	every_country = {
+				limit = { OR = {  
+							original_tag = PAL
+ 	} 
+ }
+				set_variable = { literacy_rate = 0.892 }
+			}
+
+	every_country = {
+				limit = { OR = {  
+							original_tag = CAM
+							original_tag = CDI
+							original_tag = EGY
+							original_tag = GAH
+							original_tag = KEN
+							original_tag = MRT
+							original_tag = SWA
+							original_tag = ZIM
+ 	} 
+ }
+				clear_array = agri_crop_allocation
+				clear_array = agri_crop_price
+			}
+
+	every_country = {
+				limit = { OR = {  
+							original_tag = AGL
+							original_tag = BFA
+							original_tag = CAR
+							original_tag = VER
+							original_tag = DRC
+							original_tag = ERI
+							original_tag = GUI
+							original_tag = LES
+							original_tag = LIB
+							original_tag = MAU
+							original_tag = SIE
+							original_tag = SOM
+							original_tag = JUB
+							original_tag = SWS
+							original_tag = SNA
+							original_tag = PUN
+							original_tag = SML
+							original_tag = SSU
+							original_tag = HAI
+							original_tag = AFG
+							original_tag = TAL
+							original_tag = BAN
+							original_tag = BHU
+							original_tag = CBD
+							original_tag = LAO
+							original_tag = SHN
+							original_tag = KAR
+							original_tag = KAC
+							original_tag = WAA
+							original_tag = BRM
+							original_tag = NEP
+							original_tag = NPM
+							original_tag = YEM
+							original_tag = SOL
+							original_tag = MLD
+							original_tag = PLY
+							original_tag = EGU
+ 	} 
+ }
+				add_to_array = { agri_crop_allocation = 0.889 } # Basic = 0
+				add_to_array = { agri_crop_allocation = 0.111 } # Cash = 1
+
+				add_to_array = { agri_crop_price = 15 } # Basic = 0
+				add_to_array = { agri_crop_price = 25 } # Cash = 1
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	add_ideas = {
+		systematic_corruption
+		intervention_isolation
+		sunni
+		rival_government
+		youth_radicalization
+		AFG_idea_Opium_Economy
+		anti_taliban_guerrillas
+		child_soldiers
+		defence_09
+		edu_01
+		health_01
+		social_01
+		bureau_02
+		police_02
+		partial_draft_army
+		no_women_in_military
+		the_ulema
+		foreign_jihadis
+		farmers
+		officer_basic_training
+	}
+
+	set_technology = {
+		legacy_doctrines = 1
+		infantry_mass_assault = 1
+		Guerilla_Warfare = 1
+		early_guerilla_warfare = 1
+
+		infantry_weapons = 1
+		combat_eng_equipment = 1
+		command_control_equipment = 1
+		util_vehicle_0 = 1
+		util_vehicle_1 = 1
+		Anti_tank_0 = 1
+		Heavy_Anti_tank_0 = 1
+		Anti_Air_0 = 1
+
+		basic_computing = 1
+		integrated_circuit = 1
+		computing1 = 1
+		decryption1 = 1
+		encryption1 = 1
+		radar = 1
+		fuel_silos = 1
+	}
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		set_technology = {
+			mbt_tech = 1
+			afv_tech = 1
+			nsb_artillery_0 = 1
+		}
+
+		else = {
+			set_technology = {
+				Early_APC = 1
+				APC_1 = 1
+				MBT_1 = 1
+				IFV_1 = 1
+				artillery_0 = 1
+				SP_arty_0 = 1
+				SP_R_arty_0 = 1
+			}
+		}
+	}
+
+	set_variable = { var = int_investments value = 0 }
+	set_variable = { var = treasury value = 3 }
+	set_variable = { var = corporate_tax_rate value = 20 }
+	set_variable = { var = population_tax_rate value = 20 }
+
+	#Influence system
+	init_influence = yes
+	set_variable = { domestic_influence_amount = 143 }
+	add_to_array = { influence_array = PAK.id }
+	add_to_array = { influence_array_val = 120 }
+	add_to_array = { influence_array = UAE.id }
+	add_to_array = { influence_array_val = 17 }
+	add_to_array = { influence_array = QAT.id }
+	add_to_array = { influence_array_val = 22 }
+	startup_influence = yes
+
+	#Recognition
+	add_to_array = { global.rival_governments = THIS }
+	set_country_flag = rival_government_AFG
+
+	PAK = { set_country_flag = Recognised_@FROM }
+	SAU = { set_country_flag = Recognised_@FROM }
+	UAE = { set_country_flag = Recognised_@FROM }
+
+	add_to_variable = {
+		var = TAL.Granted_Recognition
+		value = 3
+	}
+
+	#Child Soldiers
+	set_country_flag = Conscripting_Child_Soldiers
+	set_variable = { var = child_soldiers value = 5000 }
+	set_variable = { var = child_soldiers_recruitment value = 10 }
+
+	set_popularities = {
+		democratic = 0.0
+		communism = 0.0
+		fascism = 100.0
+		neutrality = 0.0
+		nationalist = 0.0
+	}
+	set_politics = {
+		ruling_party = fascism
+		last_election = "1996.3.25"
+		election_frequency = 60
+		elections_allowed = no
+	}
+
+	start_politics_input = yes
+
+	### Party Popularities
+	set_variable = { party_pop_array^0 = 0 } #Western_Autocracy
+	set_variable = { party_pop_array^1 = 0 } #conservatism
+	set_variable = { party_pop_array^2 = 0 } #liberalism
+	set_variable = { party_pop_array^3 = 0 } #socialism
+	set_variable = { party_pop_array^4 = 0 } #Communist-State
+	set_variable = { party_pop_array^5 = 0 } #anarchist_communism
+	set_variable = { party_pop_array^6 = 0 } #Conservative
+	set_variable = { party_pop_array^7 = 0 } #Autocracy
+	set_variable = { party_pop_array^8 = 0 } #Mod_Vilayat_e_Faqih
+	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
+	set_variable = { party_pop_array^10 = 0 } #Kingdom
+	set_variable = { party_pop_array^11 = 1.0 } #Caliphate
+	set_variable = { party_pop_array^12 = 0 } #Neutral_Muslim_Brotherhood
+	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
+	set_variable = { party_pop_array^14 = 0 } #Neutral_conservatism
+	set_variable = { party_pop_array^15 = 0 } #oligarchism
+	set_variable = { party_pop_array^16 = 0 } #Neutral_Libertarian
+	set_variable = { party_pop_array^17 = 0 } #Neutral_green
+	set_variable = { party_pop_array^18 = 0 } #neutral_Social
+	set_variable = { party_pop_array^19 = 0 } #Neutral_Communism
+	set_variable = { party_pop_array^20 = 0 } #Nat_Populism
+	set_variable = { party_pop_array^21 = 0 } #Nat_Fascism
+	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
+	set_variable = { party_pop_array^23 = 0 } #Monarchist
+
+	### Ruling Party
+	add_to_array = { ruling_party = 11 }
+
+	startup_politics = yes
+
+	create_country_leader = {
+		name = "Mohammed Omar"
+		picture = "Muhammed_Omar.dds"
+		ideology = Caliphate
+		traits = {
+			cleric
+			salafist_Caliphate
+			stubborn
+			ruthless
+		}
+	}
+
+	recruit_character = TAL_Jalaluddin_Haqqani
+	recruit_character = TAL_Abdul_Ghani_Baradar
+	recruit_character = TAL_Mullah_Dadullah
+	recruit_character = TAL_Anis_Haqqani
+	recruit_character = TAL_Hafiz_Rashid
+	recruit_character = TAL_Obaidullah_Akhund
+}
+
+2017.1.1 = {
+	capital = 415
+	oob = "TAL_2017"
+
+	remove_ideas = rival_government
+	remove_ideas = anti_taliban_guerrillas
+
+	#Recognition
+	remove_from_array = { global.rival_governments = THIS }
+	clr_country_flag = rival_government_@AFG
+
+	PAK = { clr_country_flag = Recognised_@FROM }
+	SAU = { clr_country_flag = Recognised_@FROM }
+	UAE = { clr_country_flag = Recognised_@FROM }
+
+	add_ideas = {
+		intervention_isolation
+		systematic_corruption
+
+		sunni
+		Non_State_Actor
+		youth_radicalization
+		defence_09
+		edu_01
+		health_01
+		social_01
+		bureau_02
+		police_01
+		partial_draft_army
+		no_women_in_military
+		the_ulema
+		foreign_jihadis
+		farmers
+	}
+	set_technology = {
+		internet1 = 1 	#1G
+	}
+
+	#Influence system
+	init_influence = yes
+	set_variable = { domestic_influence_amount = 143 }
+	add_to_array = { influence_array = TTP.id }
+	add_to_array = { influence_array_val = 32 }
+	add_to_array = { influence_array = PAK.id }
+	add_to_array = { influence_array_val = 110 }
+	add_to_array = { influence_array = UAE.id }
+	add_to_array = { influence_array_val = 7 }
+	add_to_array = { influence_array = SOV.id }
+	add_to_array = { influence_array_val = 12 }
+	add_to_array = { influence_array = CHI.id }
+	add_to_array = { influence_array_val = 3 }
+	add_to_array = { influence_array = PER.id }
+	add_to_array = { influence_array_val = 5 }
+	add_to_array = { influence_array = QAT.id }
+	add_to_array = { influence_array_val = 22 }
+	startup_influence = yes
+
+	set_variable = { var = debt value = 0 }
+	set_variable = { var = int_investments value = 0 }
+	set_variable = { var = treasury value = 0.6 }
+	set_variable = { var = corporate_tax_rate value = 25 }
+	set_variable = { var = population_tax_rate value = 25 }
+
+	set_popularities = {
+		democratic = 0.0
+		communism = 0.0
+		fascism = 100.0
+		neutrality = 0.0
+		nationalist = 0.0
+	}
+	set_politics = {
+
+		ruling_party = fascism
+		last_election = "2012.3.25"
+		election_frequency = 60
+		elections_allowed = no
+	}
+
+	start_politics_input = yes
+
+	### Party Popularities
+	set_variable = { party_pop_array^0 = 0 } #Western_Autocracy
+	set_variable = { party_pop_array^1 = 0 } #conservatism
+	set_variable = { party_pop_array^2 = 0 } #liberalism
+	set_variable = { party_pop_array^3 = 0 } #socialism
+	set_variable = { party_pop_array^4 = 0 } #Communist-State
+	set_variable = { party_pop_array^5 = 0 } #anarchist_communism
+	set_variable = { party_pop_array^6 = 0 } #Conservative
+	set_variable = { party_pop_array^7 = 0 } #Autocracy
+	set_variable = { party_pop_array^8 = 0 } #Mod_Vilayat_e_Faqih
+	set_variable = { party_pop_array^9 = 0 } #Vilayat_e_Faqih
+	set_variable = { party_pop_array^10 = 0 } #Kingdom
+	set_variable = { party_pop_array^11 = 1.0 } #Caliphate
+	set_variable = { party_pop_array^12 = 0 } #Neutral_Muslim_Brotherhood
+	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
+	set_variable = { party_pop_array^14 = 0 } #Neutral_conservatism
+	set_variable = { party_pop_array^15 = 0 } #oligarchism
+	set_variable = { party_pop_array^16 = 0 } #Neutral_Libertarian
+	set_variable = { party_pop_array^17 = 0 } #Neutral_green
+	set_variable = { party_pop_array^18 = 0 } #neutral_Social
+	set_variable = { party_pop_array^19 = 0 } #Neutral_Communism
+	set_variable = { party_pop_array^20 = 0 } #Nat_Populism
+	set_variable = { party_pop_array^21 = 0 } #Nat_Fascism
+	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
+	set_variable = { party_pop_array^23 = 0 } #Monarchist
+
+	### Ruling Party
+	add_to_array = { ruling_party = 11 }
+
+	startup_politics = yes
+
+	create_country_leader = {
+		name = "Hibatullah Akhundzada"
+		picture = "Hibatullah_Akhundzada.dds"
+		ideology = Caliphate
+		traits = {
+			cleric
+			salafist_Caliphate
+			cautious
+		}
+	}
+
+	retire_character = TAL_Jalaluddin_Haqqani
+	retire_character = TAL_Abdul_Ghani_Baradar
+	retire_character = TAL_Mullah_Dadullah
+	retire_character = TAL_Anis_Haqqani
+	retire_character = TAL_Hafiz_Rashid
+	retire_character = TAL_Obaidullah_Akhund
+
+	#Placed here as these would be kids in 2000
+	recruit_character = TAL_Sirajuddin_Haqqani
+	recruit_character = TAL_Yahya_Haqqani
+	recruit_character = TAL_Abdul_Aziz_Haqqani
+	recruit_character = TAL_Mohammad_Yaqoob
+	recruit_character = TAL_Qari_Fasihuddin
+	recruit_character = TAL_Hamdullah_Mukhlis
+}

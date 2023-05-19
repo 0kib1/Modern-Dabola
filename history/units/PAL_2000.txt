@@ -1,0 +1,177 @@
+﻿division_template = {
+	name = "Infantry Brigade" 	#Infantry Brigade
+	
+	regiments = { 
+		L_Inf_Bat = { x = 0 y = 0 } 
+		L_Inf_Bat = { x = 0 y = 1 }
+		L_Inf_Bat = { x = 0 y = 2 }
+	}
+}
+instant_effect = {
+
+	add_equipment_to_stockpile = {
+		type = Strike_fighter2 #Su-24
+		amount = 30
+		producer = SOV
+	}
+	add_equipment_to_stockpile = {
+		type = naval_plane2 #P-3C
+		amount = 5
+		producer = USA
+	}
+	add_equipment_to_stockpile = {
+		type = transport_plane1 #C-130 and var boeing
+		amount = 30
+		producer = USA
+	}
+	add_equipment_to_stockpile = {
+		type = attack_helicopter1 #AH-1 Cobra
+		amount = 100
+		producer = USA
+	}
+	add_equipment_to_stockpile = {
+		type = transport_helicopter1 #AB-214, AB-206, UH-1H etc
+		amount = 17
+		producer = USA
+	}
+	add_equipment_to_stockpile = {
+		type = transport_helicopter1 #SA-319
+		amount = 10
+		producer = FRA
+	}
+	add_equipment_to_stockpile = {
+		type = transport_helicopter3 #CH-47C
+		amount = 45
+		producer = USA
+	}
+
+	### Land Equipment ###
+
+	#Inf Eq
+
+	add_equipment_to_stockpile = {
+		type = infantry_weapons #Licence produced German G3 rifle
+		amount = 65000
+	}
+
+	#ATGM
+
+	add_equipment_to_stockpile = {
+		type = Anti_tank_0 #Saeghe
+		amount = 800
+	}
+	add_equipment_to_stockpile = {
+		type = Heavy_Anti_tank_1 #Toophan 5/Towsan-1
+		amount = 200
+	}
+
+	#SP-AA
+
+	add_equipment_to_stockpile = {
+		type = SP_Anti_Air_0 #tigercat
+		amount = 15
+		producer = ENG
+	}
+	add_equipment_to_stockpile = {
+		type = SP_Anti_Air_0 #MIB-23 Hawk
+		amount = 150
+		producer = USA
+	}
+	add_equipment_to_stockpile = {
+		type = SP_Anti_Air_1 #rapier
+		amount = 30
+		producer = ENG
+	}
+	add_equipment_to_stockpile = {
+		type = SP_Anti_Air_0	#SA-6/SA-5
+		amount = 208
+		producer = SOV
+	}
+	add_equipment_to_stockpile = {
+		type = SP_Anti_Air_0 #FM-80 Crotale
+		amount = 50
+		producer = FRA
+	}
+
+	#MANPADS
+
+	add_equipment_to_stockpile = {
+		type = Anti_Air_1 #RS-70
+		amount = 50
+		producer = SWE
+	}
+	add_equipment_to_stockpile = {
+		type = Anti_Air_1 #Stinger
+		amount = 120
+		producer = USA
+	}
+	add_equipment_to_stockpile = {
+		type = Anti_Air_0 #SA-7
+		amount = 150
+		producer = SOV
+	}
+
+	### Artillery
+	#Towed
+
+	add_equipment_to_stockpile = {
+		type = artillery_0 #D-30
+		amount = 430
+		producer = SOV
+	}
+	add_equipment_to_stockpile = {
+		type = artillery_0 #Type-59
+		amount = 200
+		producer = CHI
+	}
+	add_equipment_to_stockpile = {
+		type = artillery_0 #M114/M-101
+		amount = 200
+		producer = USA
+	}
+	add_equipment_to_stockpile = {
+		type = artillery_0 #GC-5
+		amount = 80
+		producer = CAN
+	}
+
+	#SP Art
+
+	add_equipment_to_stockpile = {
+		type = SP_arty_0 #Raad-1
+		amount = 60
+	}
+	add_equipment_to_stockpile = {
+		type = SP_arty_1 #M109
+		amount = 220
+		producer = USA
+	}
+	add_equipment_to_stockpile = {
+		type = SP_arty_0 #M-1978
+		amount = 30
+		producer = NKO
+	}
+
+	#MLRS
+
+	add_equipment_to_stockpile = {
+		type = SP_R_arty_0 #Grad
+		amount = 105
+		producer = SOV
+	}
+	add_equipment_to_stockpile = {
+		type = SP_R_arty_0 #var Iranian MLRS
+		amount = 857
+	}
+	add_equipment_to_stockpile = {
+		type = SP_R_arty_1 #Fajr-3
+		amount = 20
+	}
+
+	#C&C
+
+	add_equipment_to_stockpile = {
+		type = command_control_equipment1 #C3
+		amount = 8000
+	}
+}	

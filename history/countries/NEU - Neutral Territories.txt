@@ -1,0 +1,91 @@
+﻿capital = 70
+
+2000.1.1 = {
+	set_convoys = 50000
+	set_stability = 1.0 
+	set_war_support = 1.0
+	set_research_slots = 1
+
+	set_technology = {
+		excavation1 = 1
+		excavation2 = 1
+		excavation3 = 1
+		excavation4 = 1
+		excavation5 = 1
+	}
+
+	set_politics = {
+		ruling_party = fascism
+		last_election = "2000.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		democratic = 20
+		fascism = 20
+		communism = 20
+		neutrality = 20
+		nationalist = 20		
+	}
+
+	add_ideas = {
+		mdmpo_ai_optimisation
+	}
+
+	set_rule = { can_not_declare_war = yes }
+	country_lock_all_division_template = yes
+
+	create_country_leader = {
+		name = "Neutral Leader"
+		picture = "gfx/leaders/NEU/Portrait_Neutral.dds"
+		ideology = Kingdom
+		traits = {
+			mdmpo_trade_opinion
+		}
+	}
+}
+
+2017.1.1 = {
+	set_convoys = 50000
+	set_stability = 1.0 
+	set_war_support = 1.0
+	set_research_slots = 1
+
+	set_technology = {
+		excavation1 = 1
+		excavation2 = 1
+		excavation3 = 1
+		excavation4 = 1
+		excavation5 = 1
+	}
+
+	set_politics = {
+		ruling_party = fascism
+		last_election = "2000.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		democratic = 20
+		fascism = 20
+		communism = 20
+		neutrality = 20
+		nationalist = 20		
+	}
+
+	add_ideas = {
+		mdmpo_ai_optimisation
+	}
+
+	set_rule = { can_not_declare_war = yes }
+	country_lock_all_division_template = yes
+
+	create_country_leader = {
+		name = "Neutral Leader"
+		picture = "gfx/leaders/NEU/Portrait_Neutral.dds"
+		ideology = Kingdom
+		traits = {
+			mdmpo_trade_opinion
+		}
+	}
+}
