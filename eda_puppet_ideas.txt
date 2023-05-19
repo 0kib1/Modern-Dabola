@@ -1,0 +1,32 @@
+ideas = {
+	country = {
+		eda_puppet_demilitarized = {
+			picture = FRA_matignon_agreements 
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = { is_subject = no }
+		
+			modifier = {
+				minimum_training_level = 1
+				autonomy_gain = -0.5
+				mic_to_overlord_factor = 0.75
+				conscription_factor = 0.0
+				autonomy_manpower_share = 0.75
+				recruitable_population_factor = -0.75
+				war_support_factor = 0.0
+			}
+		}
+	}	
+	hidden_ideas = {
+		eda_puppet_recently_modified = {
+			modifier = {}
+		}
+	}
+}

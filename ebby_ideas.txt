@@ -1,0 +1,26 @@
+ideas = {
+    country = {
+        capitulated_nation_no_call_ally {
+			
+			name = capitulated_nation_no_call_ally
+
+			allowed = {
+				always = no
+				TAG = ALL
+			}
+
+			removal_cost = -1
+
+			picture = generic_disjointed_gov2
+			
+			allowed_civil_war= {
+				always = yes
+			}
+			
+			modifier = {
+				ai_call_ally_desire_factor = -10000
+				ai_join_ally_desire_factor = -10000
+			}
+        }
+    }
+}

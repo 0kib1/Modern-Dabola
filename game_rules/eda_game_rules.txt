@@ -1,0 +1,207 @@
+eda_empty_space = {
+	name = "EDA_EMPTY_SPACE"
+	group = "EDA_GENERAL_RULES"
+	icon = ""
+	default = {
+		name = "EMPTY_SPACE_ACTION_ALLOWED"
+		text = "EMPTY_SPACE_ACTION_ALLOWED_TEXT"
+		desc = "EMPTY_SPACE_ACTION_ALLOWED_DESC"
+	}
+	option = {
+		name = "EMPTY_SPACE_ACTION_NOT_ALLOWED"
+		text = "EMPTY_SPACE_ACTION_NOT_ALLOWED_TEXT"
+        desc = "EMPTY_SPACE_ACTION_NOT_ALLOWED_DESC"
+	}	
+}
+
+eda_puppet_actions = {
+	name = "EDA_PUPPET_ACTIONS"
+	group = "EDA_GENERAL_RULES"
+	icon = ""
+	default = {
+		name = "PUPPET_ANY_ACTION_ALLOWED"
+		text = "PUPPET_ANY_ACTION_ALLOWED_TEXT"
+		desc = "PUPPET_ANY_ACTION_ALLOWED_DESC"
+	}
+	option = {
+		name = "PUPPET_ANY_ACTION_NOT_ALLOWED"
+		text = "PUPPET_ANY_ACTION_NOT_ALLOWED_TEXT"
+        desc = "PUPPET_ANY_ACTION_NOT_ALLOWED_DESC"
+	}
+}
+
+eda_relation_actions = {
+	name = "EDA_RELATION_ACTIONS"
+	group = "EDA_GENERAL_RULES"
+	icon = ""
+	default = {
+		name = "RELATION_ANY_ACTION_ALLOWED"
+		text = "RELATION_ANY_ACTION_ALLOWED_TEXT"
+		desc = "RELATION_ANY_ACTION_ALLOWED_DESC"
+	}
+	option = {
+		name = "RELATION_ANY_ACTION_NOT_ALLOWED"
+		text = "RELATION_ANY_ACTION_NOT_ALLOWED_TEXT"
+        desc = "RELATION_ANY_ACTION_NOT_ALLOWED_DESC"
+	}
+}
+
+eda_war_actions = {
+	name = "EDA_WAR_ACTIONS"
+	group = "EDA_GENERAL_RULES"
+	icon = ""
+	default = {
+		name = "WAR_ANY_ACTION_ALLOWED"
+		text = "WAR_ANY_ACTION_ALLOWED_TEXT"
+		desc = "WAR_ANY_ACTION_ALLOWED_DESC"
+	}
+	option = {
+		name = "WAR_ANY_ACTION_NOT_ALLOWED"
+		text = "WAR_ANY_ACTION_NOT_ALLOWED_TEXT"
+        desc = "WAR_ANY_ACTION_NOT_ALLOWED_DESC"
+	}
+}
+
+
+
+########################################################################################################################################################
+
+#####################
+# Puppet Game Rules #
+#####################
+eda_puppet_independence = {
+	name = "EDA_PUPPET_INDEPENDENCE"
+	group = "EDA_PUPPET_RULES"
+	icon = ""
+	default = {
+		name = "PUPPET_INDEPENDENCE_ACTION_ALLOWED"
+		text = "PUPPET_INDEPENDENCE_ACTION_ALLOWED_TEXT"
+		desc = "PUPPET_INDEPENDENCE_ACTION_ALLOWED_DESC"
+	}
+	option = {
+		name = "PUPPET_INDEPENDENCE_ACTION_NOT_ALLOWED"
+		text = "PUPPET_INDEPENDENCE_ACTION_NOT_ALLOWED_TEXT"
+		desc = "PUPPET_INDEPENDENCE_ACTION_NOT_ALLOWED_DESC"
+	}
+}
+eda_puppet_militarize = {
+	name = "EDA_PUPPET_MILITARIZE"
+	group = "EDA_PUPPET_RULES"
+	icon = ""
+	default = {
+		name = "PUPPET_MILITARIZE_ACTION_ALLOWED"
+		text = "PUPPET_MILITARIZE_ACTION_ALLOWED_TEXT"
+		desc = "PUPPET_MILITARIZE_ACTION_ALLOWED_DESC"
+	}
+	option = {
+		name = "PUPPET_MILITARIZE_ACTION_NOT_ALLOWED"
+		text = "PUPPET_MILITARIZE_ACTION_NOT_ALLOWED_TEXT"
+		desc = "PUPPET_MILITARIZE_ACTION_NOT_ALLOWED_DESC"
+	}
+}
+
+
+
+########################################################################################################################################################
+
+#######################
+# Relation Game Rules #
+#######################
+eda_relation_complement = {
+	name = "EDA_RELATION_COMPLEMENT"
+	group = "EDA_RELATION_RULES"
+	icon = ""
+	default = {
+		name = "RELATION_COMPLEMENT_ACTION_ALLOWED"
+		text = "RELATION_COMPLEMENT_ACTION_ALLOWED_TEXT"
+		desc = "RELATION_COMPLEMENT_ACTION_ALLOWED_DESC"
+	}
+	option = {
+		name = "RELATION_COMPLEMENT_ACTION_NOT_ALLOWED"
+		text = "RELATION_COMPLEMENT_ACTION_NOT_ALLOWED_TEXT"
+		desc = "RELATION_COMPLEMENT_ACTION_NOT_ALLOWED_DESC"
+	}
+}
+eda_relation_insult = {
+	name = "EDA_RELATION_INSULT"
+	group = "EDA_RELATION_RULES"
+	icon = ""
+	default = {
+		name = "RELATION_INSULT_ACTION_ALLOWED"
+		text = "RELATION_INSULT_ACTION_ALLOWED_TEXT"
+		desc = "RELATION_INSULT_ACTION_ALLOWED_DESC"
+	}
+	option = {
+		name = "RELATION_INSULT_ACTION_NOT_ALLOWED"
+		text = "RELATION_INSULT_ACTION_NOT_ALLOWED_TEXT"
+		desc = "RELATION_INSULT_ACTION_NOT_ALLOWED_DESC"
+	}
+}
+eda_relation_give_industries = {
+	name = "EDA_RELATION_GIVE_INDUSTRIES"
+	group = "EDA_RELATION_RULES"
+	icon = ""
+	default = {
+		name = "RELATION_GIVE_INDUSTRIES_ACTION_ALLOWED"
+		text = "RELATION_GIVE_INDUSTRIES_ACTION_ALLOWED_TEXT"
+		desc = "RELATION_GIVE_INDUSTRIES_ACTION_ALLOWED_DESC"
+	}
+	option = {
+		name = "RELATION_GIVE_INDUSTRIES_ACTION_NOT_ALLOWED"
+		text = "RELATION_GIVE_INDUSTRIES_ACTION_NOT_ALLOWED_TEXT"
+		desc = "RELATION_GIVE_INDUSTRIES_ACTION_NOT_ALLOWED_DESC"
+	}
+}
+eda_relation_manpower = {
+	name = "EDA_RELATION_MANPOWER"
+	group = "EDA_RELATION_RULES"
+	icon = ""
+	default = {
+		name = "RELATION_MANPOWER_ACTION_ALLOWED"
+		text = "RELATION_MANPOWER_ACTION_ALLOWED_TEXT"
+		desc = "RELATION_MANPOWER_ACTION_ALLOWED_DESC"
+	}
+	option = {
+		name = "RELATION_MANPOWER_ACTION_NOT_ALLOWED"
+		text = "RELATION_MANPOWER_ACTION_NOT_ALLOWED_TEXT"
+		desc = "RELATION_MANPOWER_ACTION_NOT_ALLOWED_DESC"
+	}
+}
+
+
+
+########################################################################################################################################################
+
+##################
+# War Game Rules #
+##################
+eda_war_opinion = {
+	name = "EDA_WAR_OPINION"
+	group = "EDA_WAR_RULES"
+	icon = ""
+	default = {
+		name = "WAR_OPINION_ACTION_ALLOWED"
+		text = "WAR_OPINION_ACTION_ALLOWED_TEXT"
+		desc = "WAR_OPINION_ACTION_ALLOWED_DESC"
+	}
+	option = {
+		name = "WAR_OPINION_ACTION_NOT_ALLOWED"
+		text = "WAR_OPINION_ACTION_NOT_ALLOWED_TEXT"
+		desc = "WAR_OPINION_ACTION_NOT_ALLOWED_DESC"
+	}
+}
+eda_war_peace_deal = {
+	name = "EDA_WAR_PEACE_DEAL"
+	group = "EDA_WAR_RULES"
+	icon = ""
+	default = {
+		name = "WAR_PEACE_DEAL_ACTION_ALLOWED"
+		text = "WAR_PEACE_DEAL_ACTION_ALLOWED_TEXT"
+		desc = "WAR_PEACE_DEAL_ACTION_ALLOWED_DESC"
+	}
+	option = {
+		name = "WAR_PEACE_DEAL_ACTION_NOT_ALLOWED"
+		text = "WAR_PEACE_DEAL_ACTION_NOT_ALLOWED_TEXT"
+		desc = "WAR_PEACE_DEAL_ACTION_NOT_ALLOWED_DESC"
+	}
+}

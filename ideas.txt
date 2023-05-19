@@ -1,0 +1,76 @@
+ideas= {
+		country = {
+		
+	Foreign_Equipment_Production = {
+		picture = generic_infantry_bonus
+		allowed = {always = no}
+		available = {NOT = {ROOT = {has_war_with = ROOT.EqipDude}}}
+		allowed_civil_war = {always = yes}
+		equipment_bonus = { infantry_equipment = {build_cost_ic = -0.25 instant = yes}}
+		}
+		
+	Leasing_Equipment_Production = {
+		picture = generic_infantry_bonus
+		allowed = {always = no }
+		available = {NOT = {ROOT = {has_war_with = ROOT.EqipDudeGiv}}}
+		allowed_civil_war = {always = yes}
+		equipment_bonus = {infantry_equipment = {build_cost_ic = 0.25 instant = yes}}
+		}
+		
+	Foreign_Scientist = {
+	
+		picture = generic_research_bonus
+		allowed  = {always = no }
+		allowed_civil_war = {always = yes}
+		available = {NOT = {ROOT = {has_war_with = ROOT.SciDude}}}
+		modifier = {research_speed_factor = 0.15}
+		removal_cost = -1
+		}
+	
+	Leasing_Foreign_Scientist = {
+	
+		picture = generic_research_bonus
+		allowed = { always = no }
+		allowed_civil_war = {always = yes}  
+		available = {NOT = {ROOT = {has_war_with = ROOT.SciDudeGiv}}}
+		modifier = {research_speed_factor = -0.15}
+		removal_cost = -1
+		}
+		
+	Foreign_Diplomats = {
+	
+		picture = generic_morale_bonus
+		allowed = { always = no}
+		allowed_civil_war = {always = yes}
+		available = {NOT = {ROOT = {has_war_with = ROOT.DipDude}}}
+		modifier = {political_power_gain = 0.25}
+		removal_cost = -1
+		}
+		
+	Leasing_Foreign_Diplomats = {
+		picture = generic_morale_bonus
+		allowed = { always = no}
+		allowed_civil_war = {always = yes}
+		available = {NOT = {ROOT = {has_war_with = ROOT.DipDudeGiv}}}
+		modifier = {political_power_gain = -0.25}
+		removal_cost = -1
+		}
+	}	
+hidden_ideas = {
+	
+	HasSentDemands = {
+		picture = generic_infantry_bonus
+		allowed = {always = no}
+		allowed_civil_war = {always = yes}
+		}
+	Preparewar = {
+		picture = generic_infantry_bonus
+		allowed = {always = no}
+		allowed_civil_war = {always = yes}
+		modifier = {army_speed_factor = 3
+					army_org_regain = 2
+					dig_in_speed_factor = 3}
+		
+		}
+	}
+}

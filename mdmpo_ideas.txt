@@ -1,0 +1,23 @@
+ideas = {
+	country = {
+		mdmpo_ai_optimisation = {
+			picture = mdmpo_ai_spirit
+
+			removal_cost = -1
+
+			modifier = {
+				ai_get_ally_desire_factor = -1000
+				ai_join_ally_desire_factor = -1000
+				join_faction_tension = 1.0
+				conscription = -1
+				industrial_capacity_dockyard = -2.5
+				industrial_capacity_factory = -2.5
+				production_factory_max_efficiency_factor = -3
+				line_change_production_efficiency_factor = -1
+				production_factory_start_efficiency_factor = 0
+				#political_power_gain = -5.0
+				custom_modifier_tooltip = BUL_army_restrictions_mobilization_law_tt
+			}
+		}	
+	}
+}
