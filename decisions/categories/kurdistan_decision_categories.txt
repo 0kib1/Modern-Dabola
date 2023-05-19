@@ -1,0 +1,18 @@
+KUR_war_on_terror_category = {
+	icon = political_actions
+	allowed = {
+		original_tag = KUR
+	}
+	visible = {
+		original_tag = KUR
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_game_rule = {
+					rule = mdmpo_ai_no_decisions
+					option = mdmpo_ai_no_decisions_option_yes
+				}
+			}
+		}
+	}
+}

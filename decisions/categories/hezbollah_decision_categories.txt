@@ -1,0 +1,42 @@
+################
+##### TUR ######
+################
+
+
+HEZ_SYR = {
+	icon = political_actions
+	allowed = {
+		original_tag = HEZ
+	}
+	visible = {
+		original_tag = HEZ
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_game_rule = {
+					rule = mdmpo_ai_no_decisions
+					option = mdmpo_ai_no_decisions_option_yes
+				}
+			}
+		}
+	}
+}
+
+HEZ_YEM = {
+	icon = political_actions
+	allowed = {
+		original_tag = HEZ
+	}
+	visible = {
+		original_tag = HEZ
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_game_rule = {
+					rule = mdmpo_ai_no_decisions
+					option = mdmpo_ai_no_decisions_option_yes
+				}
+			}
+		}
+	}
+}

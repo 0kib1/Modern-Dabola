@@ -1,0 +1,17 @@
+TAI_category = {
+	icon = GFX_decision_generic_taiwan
+	allowed = {
+		original_tag = TAI
+	}
+	visible = {
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_game_rule = {
+					rule = mdmpo_ai_no_decisions
+					option = mdmpo_ai_no_decisions_option_yes
+				}
+			}
+		}
+	}
+}

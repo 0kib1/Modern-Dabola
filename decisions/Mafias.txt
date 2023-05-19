@@ -1,0 +1,1114 @@
+
+
+################# Turkish Mafias Control Prestigie #########
+
+TUR_mafias = {
+
+	TUR_mafia_supportive_1 = {
+		icon = GFX_decision_generic_operation
+
+		available = {
+		NOT = {
+		has_global_flag = MUTUALLY_EXCLUSIVE_WITH_WAR_WITH_MAF
+		 }
+		} 
+
+		visible = {
+			original_tag = TUR
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cost = 75
+		days_remove = 50
+		fire_only_once = yes
+		
+		complete_effect = {
+				set_global_flag = MUTUALLY_EXCLUSIVE_WITH_FUNDING_MAF
+			subtract_from_variable = { treasury = 6.0 }
+			custom_effect_tooltip = 6_billion_expense_tt
+		}
+		remove_effect = {
+		set_global_flag = MAF_PASS_BILOT_1
+		swap_ideas = {
+		add_idea = mafias_level_2
+		remove_idea = mafias_level_1
+		  }
+		}  
+	}
+
+	TUR_mafia_supportive_2 = {
+		icon = GFX_decision_oppression
+
+		available = {
+		} 
+
+		visible = {
+			original_tag = TUR
+			has_global_flag = MAF_PASS_BILOT_1
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cost = 75
+		days_remove = 50
+		fire_only_once = yes
+		
+		complete_effect = {
+	 add_equipment_to_stockpile = {	type = APC_1 amount = -100 }
+	 add_equipment_to_stockpile = {	type = APC_2 amount = -100 }
+	 add_equipment_to_stockpile = {	type = APC_3 amount = -100 }
+	 add_equipment_to_stockpile = {	type = IFV_1 amount = -100 }
+	 add_equipment_to_stockpile = {	type = IFV_2 amount = -100 }
+	 add_equipment_to_stockpile = {	type = IFV_3 amount = -100 }
+		}
+		remove_effect = {
+		set_global_flag = MAF_PASS_BILOT_2
+		swap_ideas = {
+		add_idea = mafias_level_3
+		remove_idea = mafias_level_2
+		  } 		
+		}  
+	}
+
+	TUR_mafia_supportive_3 = {
+		icon = GFX_decision_eng_trade_unions_support
+
+		available = {
+		} 
+
+		visible = {
+			original_tag = TUR
+			has_global_flag = MAF_PASS_BILOT_2
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cost = 75
+		days_remove = 50
+		fire_only_once = yes
+		
+		complete_effect = {
+		add_stability = -0.05
+		add_political_power = -25
+		}
+		remove_effect = {
+		set_global_flag = MAF_PASS_BILOT_3
+		swap_ideas = {
+		add_idea = mafias_level_4
+		remove_idea = mafias_level_3
+		  } 		
+		}  
+	}
+
+	TUR_mafia_supportive_4 = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		available = {
+		} 
+
+		visible = {
+			original_tag = TUR
+			has_global_flag = MAF_PASS_BILOT_3
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cost = 75
+		days_remove = 50
+		fire_only_once = yes
+		
+		complete_effect = {
+		add_political_power = -125
+		}
+		remove_effect = {
+		set_global_flag = MAF_PASS_BILOT_4
+		swap_ideas = {
+		add_idea = mafias_level_5
+		remove_idea = mafias_level_4
+		  } 				
+		}  
+	}
+
+	TUR_mafia_supportive_5 = {
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+		} 
+
+		visible = {
+			original_tag = TUR
+			has_global_flag = MAF_PASS_BILOT_4
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cost = 75
+		days_remove = 50
+		fire_only_once = yes
+		
+		complete_effect = {
+		    add_stability = -0.02
+			subtract_from_variable = { treasury = 25.0 }
+			custom_effect_tooltip = 25_billion_expense_tt
+		}
+		remove_effect = {
+		set_global_flag = MAF_PASS_BILOT_5
+		swap_ideas = {
+		add_idea = mafias_level_6
+		remove_idea = mafias_level_5
+		  } 				
+		}  
+	}
+
+	TUR_mafia_supportive_6 = {
+		icon = GFX_decision_eng_puppet_usa
+
+		available = {
+		} 
+
+		visible = {
+			original_tag = TUR
+			has_global_flag = MAF_PASS_BILOT_5
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cost = 75
+		days_remove = 50
+		fire_only_once = yes
+		
+		complete_effect = {
+		add_war_support = 0.07
+		}
+		remove_effect = {
+		set_global_flag = MAF_PASS_BILOT_6
+		swap_ideas = {
+		add_idea = mafias_level_7
+		remove_idea = mafias_level_6
+		  } 				
+		}   
+	}
+
+	TUR_mafia_supportive_7 = {
+		icon = GFX_decision_hol_war_on_pacifism
+
+		available = {
+		} 
+
+		visible = {
+			original_tag = TUR
+			has_global_flag = MAF_PASS_BILOT_6
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cost = 75
+		days_remove = 50
+		fire_only_once = yes
+		
+		complete_effect = {
+		add_political_power = -50
+		add_stability = -0.02
+		}
+		remove_effect = {
+		set_global_flag = MAF_PASS_BILOT_7
+		set_global_flag = MAF_PUSH_FINISH_ORGANIZATION	
+		set_global_flag = AKP_RULES_THE_STATE
+		swap_ideas = {
+		add_idea = mafias_level_8
+		remove_idea = mafias_level_7
+		  } 		  
+		}   
+	} 
+
+	TUR_mafia_supportive_8 = {
+		icon = GFX_decision_generic_political_discourse
+
+		available = {
+		NOT = {
+		has_global_flag = MUTUALLY_EXCLUSIVE_WITH_FUNDING_MAF
+		} }
+
+		visible = {
+			original_tag = TUR
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cost = 75
+		days_remove = 50
+		fire_only_once = yes
+		
+		complete_effect = {
+		add_stability = 0.05
+		set_global_flag = MUTUALLY_EXCLUSIVE_WITH_WAR_WITH_MAF
+		}
+		remove_effect = {
+		set_global_flag = MAF_PASS_BILOT_1_DEF
+		swap_ideas = {
+		add_idea = mafias_level_2_D
+		remove_idea = mafias_level_1
+		  } 				
+		}   
+	}
+
+	TUR_mafia_supportive_9 = {
+		icon = GFX_decision_oppression
+
+		available = {
+		} 
+
+		visible = {
+			original_tag = TUR
+			has_global_flag = MAF_PASS_BILOT_1_DEF
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cost = 75
+		days_remove = 50
+		fire_only_once = yes
+		
+		complete_effect = {
+		set_global_flag = MAF_PASS_BILOT_2_DEF
+		swap_ideas = {
+		add_idea = police_05
+		remove_idea = police_04
+		  } 				
+		}
+		remove_effect = {
+		swap_ideas = {
+		add_idea = mafias_level_3_D
+		remove_idea = mafias_level_2_D
+		  } 				
+		}   
+	}
+
+	TUR_mafia_supportive_10 = {
+		icon = GFX_decision_category_generic_crisis
+
+		available = {
+		} 
+
+		visible = {
+			original_tag = TUR
+			has_global_flag = MAF_PASS_BILOT_2_DEF
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cost = 75
+		days_remove = 50
+		fire_only_once = yes
+		
+		complete_effect = {
+		add_war_support = 0.02
+		}
+		remove_effect = {
+		set_global_flag = MAF_PASS_BILOT_3_DEF
+		swap_ideas = {
+		add_idea = mafias_level_4_D
+		remove_idea = mafias_level_3_D
+		  } 				
+		}
+	}
+
+	TUR_mafia_supportive_11 = {
+		icon = GFX_decision_generic_prepare_civil_war_new
+
+		available = {
+		} 
+
+		visible = {
+			original_tag = TUR
+			has_global_flag = MAF_PASS_BILOT_3_DEF
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cost = 75
+		days_remove = 50
+		fire_only_once = yes
+		
+		complete_effect = {
+		add_stability = 0.1
+		}
+		remove_effect = {
+		remove_ideas = mafias_level_4_D
+			set_global_flag = AKP_RULES_THE_STATE
+		set_global_flag = MAF_PUSH_FINISH_ORGANIZATION
+		}  
+	} }
+
+TUR_robbing = {	
+
+
+	TUR_target_pentagon = {
+		icon = GFX_decision_infiltrate_state
+
+		available = {
+		has_global_flag = MAF_HACKER_GROUP_CREATED
+		has_global_flag = MAF_COLLECTED_CRIMINALS
+		} 
+
+		visible = {
+			original_tag = TUR
+			has_global_flag = MAF_TIME_FOR_STEAL_TRIGGERED
+			has_global_flag = MAF_FOCUS_ON_DATAS_TRIGGERED
+			has_completed_focus = MAF_weaken_pentagon
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cost = 75
+		days_remove = 70
+		fire_only_once = yes
+		
+		modifier = {
+		decryption = -15
+		}
+		remove_effect = {
+			subtract_from_variable = { treasury = -50.0 }
+			custom_effect_tooltip = 50_billion_revenue_tt
+			USA = { 
+			add_stability = -0.1
+			add_war_support = -0.1
+			add_manpower = -10000
+			}
+	} }
+
+	TUR_target_f35_program = {
+		icon = GFX_decision_infiltrate_state
+
+		available = {
+		has_global_flag = MAF_HACKER_GROUP_CREATED
+		has_global_flag = MAF_COLLECTED_CRIMINALS
+		} 
+
+		visible = {
+			original_tag = TUR
+			has_global_flag = MAF_TIME_FOR_STEAL_TRIGGERED
+			has_global_flag = MAF_FOCUS_ON_DATAS_TRIGGERED
+			has_completed_focus = MAF_target_f35_program
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cost = 75
+		days_remove = 70
+		fire_only_once = yes
+		
+		modifier = {
+		decryption = -15
+		}
+		remove_effect = {
+			subtract_from_variable = { treasury = -250.0 }
+			custom_effect_tooltip = 250_billion_revenue_tt
+			USA = { 
+			add_stability = -0.1
+			add_war_support = -0.1
+			add_manpower = -10000
+			}
+	} }	
+
+	TUR_target_european_weaponary_program = {
+		icon = GFX_decision_infiltrate_state
+
+		available = {
+		has_global_flag = MAF_HACKER_GROUP_CREATED
+		has_global_flag = MAF_COLLECTED_CRIMINALS
+		} 
+
+		visible = {
+			original_tag = TUR
+			has_global_flag = MAF_TIME_FOR_STEAL_TRIGGERED
+			has_global_flag = MAF_FOCUS_ON_DATAS_TRIGGERED
+			has_completed_focus = MAF_target_european_army_documents
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cost = 75
+		days_remove = 70
+		fire_only_once = yes
+		
+		modifier = {
+		decryption = -15
+		}
+		remove_effect = {
+			subtract_from_variable = { treasury = -50.0 }
+			custom_effect_tooltip = 50_billion_revenue_tt
+			GER = { 
+			add_stability = -0.1
+			add_war_support = -0.1
+			add_manpower = -10000
+			}
+			FRA = { 
+			add_stability = -0.1
+			add_war_support = -0.1
+			add_manpower = -10000
+			}
+			ITA = { 
+			add_stability = -0.1
+			add_war_support = -0.1
+			add_manpower = -10000
+			}
+			SPR = { 
+			add_stability = -0.1
+			add_war_support = -0.1
+			add_manpower = -10000
+			}
+	} }	
+
+
+	TUR_target_russian_weaponary_program = {
+		icon = GFX_decision_infiltrate_state
+
+		available = {
+		has_global_flag = MAF_HACKER_GROUP_CREATED
+		has_global_flag = MAF_COLLECTED_CRIMINALS
+		} 
+
+		visible = {
+			original_tag = TUR
+			has_global_flag = MAF_TIME_FOR_STEAL_TRIGGERED
+			has_global_flag = MAF_FOCUS_ON_DATAS_TRIGGERED
+			has_completed_focus = MAF_target_the_russian_weaponary
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cost = 75
+		days_remove = 70
+		fire_only_once = yes
+		
+		modifier = {
+		decryption = -15
+		}
+		remove_effect = {
+			subtract_from_variable = { treasury = -50.0 }
+			custom_effect_tooltip = 50_billion_revenue_tt
+			SOV = { 
+			add_stability = -0.1
+			add_war_support = -0.1
+			add_manpower = -10000
+			}
+	} }	
+
+
+	TUR_target_russian_chemical_program = {
+		icon = GFX_decision_infiltrate_state
+
+		available = {
+		has_global_flag = MAF_HACKER_GROUP_CREATED
+		has_global_flag = MAF_COLLECTED_CRIMINALS
+		} 
+
+		visible = {
+			original_tag = TUR
+			has_global_flag = MAF_TIME_FOR_STEAL_TRIGGERED
+			has_global_flag = MAF_FOCUS_ON_DATAS_TRIGGERED
+			has_completed_focus = MAF_target_russian_biological_tests
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cost = 75
+		days_remove = 70
+		fire_only_once = yes
+		
+		modifier = {
+		decryption = -15
+		}
+		remove_effect = {
+			subtract_from_variable = { treasury = -250.0 }
+			custom_effect_tooltip = 250_billion_revenue_tt
+			SOV = { 
+			add_stability = -0.1
+			add_war_support = -0.1
+			add_manpower = -10000
+			}
+	} }	
+	TUR_spot_light = {
+		icon = GFX_
+
+		available = {
+		always = no
+		} 
+
+		visible = {
+			original_tag = TUR
+			has_global_flag = MAF_TIME_FOR_STEAL_TRIGGERED
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	} 
+
+	TUR_raid_FED = {
+		icon = GFX_decision_infiltrate_state
+
+		available = {
+		has_global_flag = MAF_HACKER_GROUP_CREATED
+		has_global_flag = MAF_COLLECTED_CRIMINALS
+		} 
+
+		visible = {
+			original_tag = TUR
+			has_global_flag = MAF_TIME_FOR_STEAL_TRIGGERED
+			has_global_flag = MAF_FOCUS_ON_BANKS_TRIGGERED
+			has_completed_focus = MAF_mission_to_FED
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cost = 75
+		days_remove = 70
+		fire_only_once = yes
+		
+		
+		modifier = {
+		political_power_cost = 0.1
+		}
+		remove_effect = {
+			subtract_from_variable = { treasury = -250.0 }
+			custom_effect_tooltip = 250_billion_revenue_tt
+			USA = { 
+			subtract_from_variable = { treasury = 250.0 }
+			custom_effect_tooltip = 250_billion_expense_tt
+			}
+	} }
+
+	TUR_raid_FCB = {
+		icon = GFX_decision_infiltrate_state
+
+		available = {
+		has_global_flag = MAF_HACKER_GROUP_CREATED
+		has_global_flag = MAF_COLLECTED_CRIMINALS
+		} 
+
+		visible = {
+			original_tag = TUR
+			has_global_flag = MAF_TIME_FOR_STEAL_TRIGGERED
+			has_global_flag = MAF_FOCUS_ON_BANKS_TRIGGERED
+			has_completed_focus = MAF_mission_to_FRA
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cost = 75
+		days_remove = 70
+		fire_only_once = yes
+		
+		
+		modifier = {
+		political_power_cost = 0.1
+		}
+		remove_effect = {
+			subtract_from_variable = { treasury = -250.0 }
+			custom_effect_tooltip = 250_billion_revenue_tt
+			FRA = { 
+			subtract_from_variable = { treasury = 250.0 }
+			custom_effect_tooltip = 250_billion_expense_tt
+			}
+	} }
+
+	TUR_raid_ECB = {
+		icon = GFX_decision_infiltrate_state
+
+		available = {
+		has_global_flag = MAF_HACKER_GROUP_CREATED
+		has_global_flag = MAF_COLLECTED_CRIMINALS
+		} 
+
+		visible = {
+			original_tag = TUR
+			has_global_flag = MAF_TIME_FOR_STEAL_TRIGGERED
+			has_global_flag = MAF_FOCUS_ON_BANKS_TRIGGERED
+			has_completed_focus = MAF_mission_to_ECB
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cost = 75
+		days_remove = 70
+		fire_only_once = yes
+		
+		
+		modifier = {
+		political_power_cost = 0.1
+		}
+		remove_effect = {
+			subtract_from_variable = { treasury = -250.0 }
+			custom_effect_tooltip = 250_billion_revenue_tt
+			GER = { 
+			subtract_from_variable = { treasury = 250.0 }
+			custom_effect_tooltip = 250_billion_expense_tt
+			}
+	} }	
+
+
+	TUR_raid_UKB = {
+		icon = GFX_decision_infiltrate_state
+
+		available = {
+		has_global_flag = MAF_HACKER_GROUP_CREATED
+		has_global_flag = MAF_COLLECTED_CRIMINALS
+		} 
+
+		visible = {
+			original_tag = TUR
+			has_global_flag = MAF_TIME_FOR_STEAL_TRIGGERED
+			has_global_flag = MAF_FOCUS_ON_BANKS_TRIGGERED
+			has_completed_focus = MAF_mission_to_UK
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cost = 75
+		days_remove = 70
+		fire_only_once = yes
+		
+		
+		modifier = {
+		political_power_cost = 0.1
+		}
+		remove_effect = {
+			subtract_from_variable = { treasury = -250.0 }
+			custom_effect_tooltip = 250_billion_revenue_tt
+			ENG = { 
+			subtract_from_variable = { treasury = 250.0 }
+			custom_effect_tooltip = 250_billion_expense_tt
+			}
+	} }
+
+	TUR_raid_PCOB = {
+		icon = GFX_decision_infiltrate_state
+
+		available = {
+		has_global_flag = MAF_HACKER_GROUP_CREATED
+		has_global_flag = MAF_COLLECTED_CRIMINALS
+		} 
+
+		visible = {
+			original_tag = TUR
+			has_global_flag = MAF_TIME_FOR_STEAL_TRIGGERED
+			has_global_flag = MAF_FOCUS_ON_BANKS_TRIGGERED
+			has_completed_focus = MAF_mission_to_PRC
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cost = 75
+		days_remove = 70
+		fire_only_once = yes
+		
+		modifier = {
+		political_power_cost = 0.1
+		}
+		remove_effect = {
+			subtract_from_variable = { treasury = -250.0 }
+			custom_effect_tooltip = 250_billion_revenue_tt
+			CHI = { 
+			subtract_from_variable = { treasury = 250.0 }
+			custom_effect_tooltip = 250_billion_expense_tt
+			}
+	} }
+
+}
+
+TUR_mafia_organization = {	
+
+
+	TUR_organize_mafias = {
+		icon = GFX_decision_generic_prepare_civil_war_new
+
+		visible = {
+			original_tag = TUR
+		}
+		
+        available = {
+		has_global_flag = TUR_mafias_organized_1
+		has_global_flag = TUR_mafias_organized_2
+		has_global_flag = TUR_mafias_organized_3
+		has_global_flag = TUR_mafias_organized_4
+		has_global_flag = TUR_mafias_organized_5
+		has_global_flag = TUR_mafias_organized_6
+		has_global_flag = TUR_mafias_organized_7
+		has_global_flag = TUR_mafias_organized_8
+		has_global_flag = TUR_mafias_organized_9
+		has_global_flag = TUR_mafias_organized_10
+		}
+		
+        cost = 150
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+	  complete_effect = {  
+      set_global_flag = TUR_mafias_organized
+	  custom_effect_tooltip = MAFIA_JOINT_POWER
+} }
+
+
+	TUR_organize_mafias_1 = {
+		icon = GFX_decision_recruit_operative
+
+		visible = {
+			original_tag = TUR
+		}
+
+		on_map_mode = map_only
+
+		highlight_states = { state = 934 }
+		
+        available = {
+		has_political_power > 100
+		}
+		
+        cost = 75
+		days_remove = 50
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+      modifier = {
+	  political_power_cost = 0.75
+	  }
+	  remove_effect = {  
+      set_global_flag = TUR_mafias_organized_1
+	  custom_effect_tooltip = TUR_mafias_organization
+} }
+
+	TUR_organize_mafias_2 = {
+		icon = GFX_decision_recruit_operative
+
+		visible = {
+			original_tag = TUR
+		}
+
+		on_map_mode = map_only
+
+		highlight_states = { state = 155 }
+		
+        available = {
+		has_political_power > 100
+		}
+		
+        cost = 75
+		days_remove = 50
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+      modifier = {
+	  political_power_cost = 0.75
+	  }
+	  remove_effect = {  
+      set_global_flag = TUR_mafias_organized_2
+	  custom_effect_tooltip = TUR_mafias_organization
+} }
+
+
+	TUR_organize_mafias_3 = {
+		icon = GFX_decision_recruit_operative
+
+		visible = {
+			original_tag = TUR
+		}
+
+		on_map_mode = map_only
+
+		highlight_states = { state = 156 }
+		
+        available = {
+		has_political_power > 100
+		}
+		
+        cost = 75
+		days_remove = 50
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+      modifier = {
+	  political_power_cost = 0.75
+	  }
+	  remove_effect = {  
+      set_global_flag = TUR_mafias_organized_3
+	  custom_effect_tooltip = TUR_mafias_organization
+} }
+
+
+	TUR_organize_mafias_4 = {
+		icon = GFX_decision_recruit_operative
+
+		visible = {
+			original_tag = TUR
+		}
+
+		on_map_mode = map_only
+
+		highlight_states = { state = 157 }
+		
+        available = {
+		has_political_power > 100
+		}
+		
+        cost = 75
+		days_remove = 50
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+      modifier = {
+	  political_power_cost = 0.75
+	  }
+	  remove_effect = {  
+      set_global_flag = TUR_mafias_organized_4
+	  custom_effect_tooltip = TUR_mafias_organization
+} }
+
+
+	TUR_organize_mafias_5 = {
+		icon = GFX_decision_recruit_operative
+
+		visible = {
+			original_tag = TUR
+		}
+
+		on_map_mode = map_only
+
+		highlight_states = { state = 159 }
+		
+        available = {
+		has_political_power > 100
+		}
+		
+        cost = 75
+		days_remove = 50
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+      modifier = {
+	  political_power_cost = 0.75
+	  }
+	  remove_effect = {  
+      set_global_flag = TUR_mafias_organized_5
+	  custom_effect_tooltip = TUR_mafias_organization
+} }
+
+
+	TUR_organize_mafias_6 = {
+		icon = GFX_decision_recruit_operative
+
+		visible = {
+			original_tag = TUR
+		}
+
+		on_map_mode = map_only
+
+		highlight_states = { state = 160 }
+		
+        available = {
+		has_political_power > 100
+		}
+		
+        cost = 75
+		days_remove = 50
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+      modifier = {
+	  political_power_cost = 0.75
+	  }
+	  remove_effect = {  
+      set_global_flag = TUR_mafias_organized_6
+	  custom_effect_tooltip = TUR_mafias_organization
+} }
+
+	TUR_organize_mafias_7 = {
+		icon = GFX_decision_recruit_operative
+
+		visible = {
+			original_tag = TUR
+		}
+
+		on_map_mode = map_only
+
+		highlight_states = { state = 161 }
+		
+        available = {
+		has_political_power > 100
+		}
+		
+        cost = 75
+		days_remove = 50
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+      modifier = {
+	  political_power_cost = 0.75
+	  }
+	  remove_effect = {  
+      set_global_flag = TUR_mafias_organized_7
+	  custom_effect_tooltip = TUR_mafias_organization
+} }
+
+
+	TUR_organize_mafias_8 = {
+		icon = GFX_decision_recruit_operative
+
+		visible = {
+			original_tag = TUR
+		}
+
+		on_map_mode = map_only
+
+		highlight_states = { state = 163 }
+		
+        available = {
+		has_political_power > 100
+		}
+		
+        cost = 75
+		days_remove = 50
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+      modifier = {
+	  political_power_cost = 0.75
+	  }
+	  remove_effect = {  
+      set_global_flag = TUR_mafias_organized_8
+	  custom_effect_tooltip = TUR_mafias_organization
+} }
+
+	TUR_organize_mafias_9 = {
+		icon = GFX_decision_recruit_operative
+
+		visible = {
+			original_tag = TUR
+		}
+
+		on_map_mode = map_only
+
+		highlight_states = { state = 158 }
+		
+        available = {
+		has_political_power > 100
+		}
+		
+        cost = 75
+		days_remove = 50
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+      modifier = {
+	  political_power_cost = 0.75
+	  }
+	  remove_effect = {  
+      set_global_flag = TUR_mafias_organized_9
+	  custom_effect_tooltip = TUR_mafias_organization
+} }
+
+
+	TUR_organize_mafias_10 = {
+		icon = GFX_decision_recruit_operative
+
+		visible = {
+			original_tag = TUR
+		}
+
+		on_map_mode = map_only
+
+		highlight_states = { state = 992 }
+		
+        available = {
+		has_political_power > 100
+		}
+		
+        cost = 75
+		days_remove = 50
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+      modifier = {
+	  political_power_cost = 0.75
+	  }
+	  remove_effect = {  
+      set_global_flag = TUR_mafias_organized_10
+	  custom_effect_tooltip = TUR_mafias_organization
+} }

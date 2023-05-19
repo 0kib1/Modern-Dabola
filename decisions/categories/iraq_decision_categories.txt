@@ -1,0 +1,18 @@
+IRQ_MOBILIZE = {
+	icon = political_actions
+	allowed = {
+		original_tag = IRQ
+	}
+	visible = {
+		original_tag = IRQ
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_game_rule = {
+					rule = mdmpo_ai_no_decisions
+					option = mdmpo_ai_no_decisions_option_yes
+				}
+			}
+		}
+	}
+}

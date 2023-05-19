@@ -1,0 +1,105 @@
+gulf_society = {
+	icon = power_struggle
+	allowed = {
+		is_middle_eastern_nation = yes
+		NOT = {
+			original_tag = ISR
+			original_tag = PER
+			original_tag = PAL
+			original_tag = HAM
+			original_tag = ISI
+			original_tag = AQY
+			original_tag = HOU
+			original_tag = HOR
+			original_tag = TUA
+			#original_tag = NSG
+			original_tag = SHA
+			original_tag = FSA
+			original_tag = NUS
+			original_tag = KUR
+			original_tag = ROJ
+			original_tag = HEZ
+			is_Caucasus = yes
+		}
+	}
+	visible = {
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_game_rule = {
+					rule = mdmpo_ai_no_decisions
+					option = mdmpo_ai_no_decisions_option_yes
+				}
+			}
+		}
+	}
+}
+
+shia_decisions = {
+	icon = power_struggle
+	allowed = {
+		OR = {
+			original_tag = SAU
+			original_tag = BHR
+			original_tag = KUW
+			original_tag = OMA
+			original_tag = QAT
+			original_tag = UAE
+		}
+	}
+	visible = {
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_game_rule = {
+					rule = mdmpo_ai_no_decisions
+					option = mdmpo_ai_no_decisions_option_yes
+				}
+			}
+		}
+	}
+}
+
+gcc_decisions = {
+	allowed = {
+		OR = {
+			original_tag = SAU
+			original_tag = BHR
+			original_tag = KUW
+			original_tag = OMA
+			original_tag = QAT
+			original_tag = UAE
+			original_tag = EGY
+			original_tag = IRQ
+			original_tag = JOR
+			original_tag = MOR
+			original_tag = YEM
+		}
+	}
+	visible = {
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_game_rule = {
+					rule = mdmpo_ai_no_decisions
+					option = mdmpo_ai_no_decisions_option_yes
+				}
+			}
+		}
+	}
+}
+
+subversive_activities = {
+	icon = GFX_decision_cat_espionage
+	visible = {
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_game_rule = {
+					rule = mdmpo_ai_no_decisions
+					option = mdmpo_ai_no_decisions_option_yes
+				}
+			}
+		}
+	}
+}

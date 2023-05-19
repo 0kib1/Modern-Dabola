@@ -1,0 +1,19 @@
+Anti_Bully = {
+	icon = political_actions
+	allowed = {
+		always = yes
+	}
+	visible = {
+		#has_an_AB_war = yes
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_game_rule = {
+					rule = mdmpo_ai_no_decisions
+					option = mdmpo_ai_no_decisions_option_yes
+				}
+			}
+		}
+	}
+	
+}

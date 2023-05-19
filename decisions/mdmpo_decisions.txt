@@ -1,0 +1,56 @@
+mdmpo_decision_category = {
+
+### MPO DECISIONS
+
+	#MRP: Remove AI Debuff
+	mdmpo_decision_remove_ai_debuff = {
+		icon = decision_ger_mefo_bills
+		available = {
+			has_idea = mdmpo_ai_optimisation
+			is_ai = no
+		}
+		visible = {
+			NOT = { tag = MRP }
+			has_idea = mdmpo_ai_optimisation
+		}
+		complete_effect = {
+			FROM = {
+				remove_ideas = { mdmpo_ai_optimisation }
+				set_rule = { can_not_declare_war = no }
+				country_lock_all_division_template = no
+				
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+
+	mdmpo_decision_remove_ai_units = {
+		icon = decision_ger_mefo_bills
+		available = {
+			is_ai = yes
+			has_game_rule = {
+				rule = mdmpo_ai_remove_units
+				option = mdmpo_ai_remove_units_option_yes
+			}
+			NOT = { has_country_flag = mdmpo_removed_ai_units_cflag }
+		}
+		visible = {
+			is_ai = yes
+		}
+		complete_effect = {
+			#remove army and give convoys for trade
+			FROM = {
+				delete_unit = {
+					disband = yes
+				}
+				add_equipment_to_stockpile = {
+					type = convoy
+					amount = 1000
+				}
+			}
+			set_country_flag = mdmpo_removed_ai_units_cflag
+		}
+		ai_will_do = { factor = 9999 }
+	}
+	
+}

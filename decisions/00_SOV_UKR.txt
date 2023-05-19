@@ -1,0 +1,377 @@
+	00_SOV_UKR_category = {
+    00_SOV_UKR = { 
+
+		icon = ger_reichskommissariats
+	
+		fire_only_once = yes
+
+		available = {
+			date > 2000.01.01
+			is_puppet = no
+			has_army_manpower = { size > 99 } 
+			is_neighbor_of = UKR
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		modifier = {
+			war_support_weekly = 0.002
+			navy_intel_factor = -0.2
+			army_intel_factor = -0.2
+			air_intel_factor = -0.2
+			civilian_intel_factor = -0.15
+			production_speed_bunker_factor = 0.4
+		}	
+
+		days_remove = 365
+		
+		visible = {
+		}
+
+		allowed = {
+		   tag = SOV
+		}
+
+		complete_effect = {
+				add_named_threat = { threat = 30 name = GER_demand_memel_threat }
+				SOV = {
+					declare_war_on = {
+						target = UKR
+						type = annex_everything
+					}
+				}					
+			SOV = {
+				add_ideas = SOV_outdated_army_idea 
+			}
+					696 = {
+				add_province_modifier = {
+					static_modifiers = { unplanned_offensive }
+					
+				}
+			}	
+			696 = {
+				add_province_modifier = {
+					static_modifiers = { unplanned_offensive }
+					province = {
+						id = 418
+						id = 3409
+						id = 11541
+						id = 9556
+						id = 11397
+						id = 3531
+
+					}
+				}
+			}	
+			1088 = {
+				add_province_modifier = {
+					static_modifiers = { unplanned_offensive }
+					province = {
+						id = 3455
+						id = 3520
+						id = 11462
+						id = 6565
+						id = 3225
+						id = 9566
+
+					}
+				}
+			}	
+			697 = {
+				add_province_modifier = {
+					static_modifiers = { unplanned_offensive }
+					province = {
+						id = 238
+						id = 6589
+						id = 3568
+						id = 9506
+					}
+				}
+			}	
+			1086 = {
+				add_province_modifier = {
+					static_modifiers = { unplanned_offensive }
+				  province = {
+						id = 11683
+						id = 11546
+						id = 3575
+						id = 11703
+					}
+				}
+			}	
+			333 = {
+				add_province_modifier = {
+					static_modifiers = { unplanned_offensive }
+					province = {
+						id = 6727
+						id = 3701						
+					}
+				}
+			}	
+			695 = {
+				add_province_modifier = {
+					static_modifiers = { unplanned_offensive }
+					province = {
+						id = 11670
+					}
+				}
+			}		
+		}
+    }
+	}  
+
+
+00_SOV_UKR_category = {
+    00_SOV_UKR3 = { 
+
+		icon = ger_reichskommissariats
+	
+		fire_only_once = yes
+
+		available = {
+			date > 2000.01.01
+			is_puppet = no
+			has_army_manpower = { size > 99 } 
+			is_neighbor_of = UKR
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		modifier = {
+			war_support_weekly = 0.001
+			industrial_capacity_factory = 0.25
+			industrial_capacity_dockyard = 0.15
+			consumer_goods_factor = -0.075
+		}	
+
+		days_remove = 365
+		
+		visible = {
+		}
+
+		allowed = {
+		   tag = SOV
+		}
+
+		complete_effect = {
+		}
+	}
+}		
+
+
+00_SOV_UKR_category = { #all out attack
+00_SOV_UKR2 = {
+		icon = ger_reichskommissariats
+	
+		fire_only_once = yes
+
+		available = {
+			UKR = {
+				surrender_progress > 0.20
+			}
+		}
+        allow = {
+            tag = SOV
+         }	
+		complete_effect = {	
+			1076 = { add_core_of = SOV }
+			1075 = { add_core_of = SOV }
+			693 = { add_core_of = SOV }	
+			1030 = { add_core_of = SOV }
+			694 = { add_core_of = SOV }
+			1085 = { add_core_of = SOV }
+					696 = {
+				add_province_modifier = {
+					static_modifiers = { planned_offensive }
+				}
+			}	
+			696 = {
+				add_province_modifier = {
+					static_modifiers = { planned_offensive }
+					province = {
+						id = 418
+						id = 3409
+						id = 11541
+						id = 9556
+						id = 11397
+						id = 3531
+
+					}
+				}
+			}	
+			1088 = {
+				add_province_modifier = {
+					static_modifiers = { planned_offensive }
+					province = {
+						id = 3455
+						id = 3520
+						id = 11462
+						id = 6565
+						id = 3225
+						id = 9566
+
+					}
+				}
+			}	
+			697 = {
+				add_province_modifier = {
+					static_modifiers = { planned_offensive }
+					province = {
+						id = 238
+						id = 6589
+						id = 3568
+						id = 9506
+					}
+				}
+			}	
+			1086 = {
+				add_province_modifier = {
+					static_modifiers = { planned_offensive }
+				  province = {
+						id = 11683
+						id = 11546
+						id = 3575
+						id = 11703
+					}
+				}
+			}	
+			333 = {
+				add_province_modifier = {
+					static_modifiers = { planned_offensive }
+					province = {
+						id = 6727
+						id = 3701						
+					}
+				}
+			}	
+			695 = {
+				add_province_modifier = {
+					static_modifiers = { planned_offensive }
+					province = {
+						id = 11670
+					}
+				}
+			}
+		}		
+	}
+   }
+
+	
+ 
+	
+
+
+
+00_USA_UKR_category = {
+00_USA_UKR = {
+
+		 icon = ger_reichskommissariats
+
+	  available = {
+			UKR = {
+				surrender_progress > 0.40
+			}
+		}
+			
+		fire_only_once = yes		
+				
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		visible = {
+			 = {
+				
+			}
+		}	
+
+		allowed = {
+		   tag = USA
+		}
+
+		complete_effect = {
+			700 = { add_core_of = POL }
+			701 = { add_core_of = HUN }
+			335 = { add_core_of = ROM }
+			POL = { transfer_state = 700 }
+			HUN = { transfer_state = 701 }
+			ROM = { transfer_state = 335 }
+		}
+	}
+}		
+
+
+
+00_UKR_categoryU = {
+00_UKR_4 = {
+
+		 icon = ger_reichskommissariats
+
+	  available = {
+			UKR = {
+				surrender_progress >
+			}
+		}
+			
+		fire_only_once = yes		
+				
+		ai_will_do = {
+			factor = 1000
+		}
+
+		modifier = {
+			war_support_weekly = 0.001
+			consumer_goods_factor = -0.075
+			army_core_defence_factor = 0.1
+			army_core_attack_factor = 0.1
+		}
+		
+		
+		visible = {
+		    }
+			
+
+		 allowed = {
+		   tag = UKR
+		   }
+
+			complete_effect = {
+			every_state = {
+				limit = { state = 700 }
+
+				create_unit = {
+					division = "name = \"Tankova Bryhada\" division_template = \"Tankova Bryhada\" start_experience_factor = 2.5 start_equipment_factor = 1" 
+					owner = UKR
+				}	
+				create_unit = {
+					division = "name = \"Tankova Bryhada\" division_template = \"Tankova Bryhada\" start_experience_factor = 2.5 start_equipment_factor = 1" 
+					owner = UKR
+				}
+				create_unit = {
+					division = "name = \"Tankova Bryhada\" division_template = \"Tankova Bryhada\" start_experience_factor = 2.5 start_equipment_factor = 1" 
+					owner = UKR
+				}	
+				create_unit = {
+					division = "name = \"Tankova Bryhada\" division_template = \"Tankova Bryhada\" start_experience_factor = 2.5 start_equipment_factor = 1" 
+					owner = UKR
+				}
+				create_unit = {
+					division = "name = \"Tankova Bryhada\" division_template = \"Tankova Bryhada\" start_experience_factor = 3.5 start_equipment_factor = 1" 
+					owner = UKR
+				}	
+				create_unit = {
+					division = "name = \"Tankova Bryhada\" division_template = \"Tankova Bryhada\" start_experience_factor = 3.5 start_equipment_factor = 1" 
+					owner = UKR
+				}				
+			}
+		}
+}	}
+			
+			
+			
+	
+

@@ -1,0 +1,1150 @@
+israel_bombing_category = {
+	bomb_iranian_targets = {
+		allowed = { tag = ISR }
+        days_remove = 14
+		available = {
+			or = {
+				SYR = { has_volunteers_amount_from = { tag = PER count > 0 } }
+				FSA = { has_volunteers_amount_from = { tag = PER count > 0 } }
+				NUS = { has_volunteers_amount_from = { tag = PER count > 0 } }
+				ISI = { has_volunteers_amount_from = { tag = PER count > 0 } }
+				SYR = { has_volunteers_amount_from = { tag = HEZ count > 0 } }
+				FSA = { has_volunteers_amount_from = { tag = HEZ count > 0 } }
+				NUS = { has_volunteers_amount_from = { tag = HEZ count > 0 } }
+				ISI = { has_volunteers_amount_from = { tag = HEZ count > 0 } }	
+			}
+
+		}
+
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision bomb_iranian_targets"
+            PER = {
+			    add_manpower = -80
+			}
+		    186 = {
+			    damage_building = {
+				    type = infrastructure
+				    damage = 0.7
+			        }
+			    damage_building = {
+				    type = industrial_complex
+				    damage = 0.7
+			    }
+		    }
+		    189 = {
+			    damage_building = {
+				    type = infrastructure
+				    damage = 0.7
+			        }
+			    damage_building = {
+				    type = dockyard
+				    damage = 0.7
+			    }
+			    damage_building = {
+				    type = naval_base
+				    damage = 0.7
+			    }				
+		    }	
+		    188 = {
+			    damage_building = {
+				    type = infrastructure
+				    damage = 0.7
+			        }
+			    damage_building = {
+				    type = industrial_complex
+				    damage = 0.7
+			    }
+		    }	
+		    set_temp_variable = { treasury_change = -1.5 }
+		    modify_treasury_effect = yes			
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	bomb_syrian_targets = {
+		allowed = { tag = ISR }
+        days_remove = 14
+		available = {
+			or = {
+				SYR = { has_volunteers_amount_from = { tag = PER count > 0 } }
+				FSA = { has_volunteers_amount_from = { tag = PER count > 0 } }
+				NUS = { has_volunteers_amount_from = { tag = PER count > 0 } }
+				ISI = { has_volunteers_amount_from = { tag = PER count > 0 } }
+				SYR = { has_volunteers_amount_from = { tag = HEZ count > 0 } }
+				FSA = { has_volunteers_amount_from = { tag = HEZ count > 0 } }
+				NUS = { has_volunteers_amount_from = { tag = HEZ count > 0 } }
+				ISI = { has_volunteers_amount_from = { tag = HEZ count > 0 } }				
+			}
+		}
+
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision bomb_syrian_targets"
+            SYR = {
+			    add_manpower = -30
+			}
+		    186 = {
+			    damage_building = {
+				    type = infrastructure
+				    damage = 0.7
+			        }
+			    damage_building = {
+				    type = industrial_complex
+				    damage = 0.7
+			    }
+		    }
+		    189 = {
+			    damage_building = {
+				    type = infrastructure
+				    damage = 0.7
+			        }
+			    damage_building = {
+				    type = dockyard
+				    damage = 0.7
+			    }
+			    damage_building = {
+				    type = naval_base
+				    damage = 0.7
+			    }				
+		    }	
+		    188 = {
+			    damage_building = {
+				    type = infrastructure
+				    damage = 0.7
+			        }
+			    damage_building = {
+				    type = industrial_complex
+				    damage = 0.7
+			    }
+		    }
+		    set_temp_variable = { treasury_change = -1 }
+		    modify_treasury_effect = yes			
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	bomb_hezbollah_targets = {
+		allowed = { tag = ISR }
+        days_remove = 14
+		available = {
+			or = {
+				SYR = { has_volunteers_amount_from = { tag = PER count > 0 } }
+				FSA = { has_volunteers_amount_from = { tag = PER count > 0 } }
+				NUS = { has_volunteers_amount_from = { tag = PER count > 0 } }
+				ISI = { has_volunteers_amount_from = { tag = PER count > 0 } }
+				SYR = { has_volunteers_amount_from = { tag = HEZ count > 0 } }
+				FSA = { has_volunteers_amount_from = { tag = HEZ count > 0 } }
+				NUS = { has_volunteers_amount_from = { tag = HEZ count > 0 } }
+				ISI = { has_volunteers_amount_from = { tag = HEZ count > 0 } }	
+			}
+
+		}
+
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision bomb_hezbollah_targets"
+            HEZ = {
+			    add_manpower = -18
+			}
+		    186 = {
+			    damage_building = {
+				    type = infrastructure
+				    damage = 0.7
+			        }
+			    damage_building = {
+				    type = industrial_complex
+				    damage = 0.7
+			    }
+		    }
+		    189 = {
+			    damage_building = {
+				    type = infrastructure
+				    damage = 0.7
+			        }
+			    damage_building = {
+				    type = dockyard
+				    damage = 0.7
+			    }
+			    damage_building = {
+				    type = naval_base
+				    damage = 0.7
+			    }				
+		    }	
+		    188 = {
+			    damage_building = {
+				    type = infrastructure
+				    damage = 0.7
+			        }
+			    damage_building = {
+				    type = industrial_complex
+				    damage = 0.7
+			    }
+		    }
+		    set_temp_variable = { treasury_change = -0.5 }
+		    modify_treasury_effect = yes			
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	bomb_hamas_targets = {
+		allowed = { tag = ISR }
+        days_remove = 14
+		available = {
+			or = {
+			    country_exists = HAM
+			}
+
+		}
+
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision bomb_hamas_targets"
+            HAM = {
+			    add_manpower = -13
+			}
+		    209 = {
+			    damage_building = {
+				    type = infrastructure
+				    damage = 0.7
+			        }
+			    damage_building = {
+				    type = arms_factory
+				    damage = 0.7
+			    }
+		    }
+		    set_temp_variable = { treasury_change = -0.1 }
+		    modify_treasury_effect = yes			
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
+
+israel_palestine_category = {
+
+	palestinian_checkpoints_westbank = {
+		visible = {
+			original_tag = ISR
+			check_variable = { israel_state_selected = 1 }
+		}
+
+		cost = 150
+		days_remove = 5
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision palestinian_checkpoints"
+			subtract_from_variable = { ter_west_bank = 5 }
+			add_to_variable = { hap_west_bank = 20 }
+			custom_effect_tooltip = palestinian_checkpoints_westbanktt
+				clamp_variable = {
+					var = hap_west_bank
+					min = 0
+					max = 100
+				}				
+				clamp_variable = {
+					var = ter_isr
+					min = 0
+					max = 100
+			}
+		}
+	}	
+	palestinian_checkpoints_gaza = {
+		visible = {
+			original_tag = ISR
+			check_variable = { israel_state_selected = 3 }
+		}
+
+		cost = 150
+		days_remove = 5
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision palestinian_checkpoints"
+			add_to_variable = { hap_gaza = 20 }
+			subtract_from_variable = { ter_isr = 5 }
+			custom_effect_tooltip = palestinian_checkpoints_gazatt
+				clamp_variable = {
+					var = hap_gaza
+					min = 0
+					max = 100
+				}				
+				clamp_variable = {
+					var = ter_gaza
+					min = 0
+					max = 100
+			}
+		}
+	}	
+	racial_profiling_westbank = {
+		visible = {
+			original_tag = ISR
+			check_variable = { israel_state_selected = 1 }
+		}
+
+		cost = 150
+		days_remove = 5
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision racial_profiling"
+			add_to_variable = { hap_west_bank = 20 }
+			add_to_variable = { ter_west_bank = 15 }
+			custom_effect_tooltip = racial_profiling_westbanktt
+			clamp_variable = {
+				var = hap_west_bank
+				min = 0
+				max = 100
+			}			
+			clamp_variable = {
+				var = ter_west_bank
+				min = 0
+				max = 100
+		    }
+		}
+	}
+	racial_profiling_gaza = {
+		visible = {
+			original_tag = ISR
+			check_variable = { israel_state_selected = 3 }
+		}
+
+		cost = 150
+		days_remove = 5
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision racial_profiling"
+			add_to_variable = { hap_gaza = 20 }
+			add_to_variable = { ter_gaza = 15 }
+			custom_effect_tooltip = racial_profiling_gazatt
+			clamp_variable = {
+				var = hap_gaza
+				min = 0
+				max = 100
+			}			
+			clamp_variable = {
+				var = ter_gaza
+				min = 0
+				max = 100
+		    }
+		}
+	}	
+	guaranteed_pay_westbank = {
+		visible = {
+			original_tag = ISR
+			check_variable = { israel_state_selected = 1 }
+		}
+
+		cost = 150
+		days_remove = 5
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision guaranteed_pay"
+			subtract_from_variable = { hap_west_bank = 10 }
+			subtract_from_variable = { ter_west_bank = 10 }
+			custom_effect_tooltip = guaranteed_pay_westbanktt
+			clamp_variable = {
+				var = hap_west_bank
+				min = 0
+				max = 100
+			}			
+			clamp_variable = {
+				var = ter_west_bank
+				min = 0
+				max = 100
+		    }
+		}
+	}
+	guaranteed_pay_gaza = {
+		visible = {
+			original_tag = ISR
+			check_variable = { israel_state_selected = 3 }
+		}
+
+		cost = 150
+		days_remove = 5
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision guaranteed_pay"
+			subtract_from_variable = { hap_gaza = 10 }
+			subtract_from_variable = { ter_gaza = 10 }
+			custom_effect_tooltip = guaranteed_pay_gazatt
+			clamp_variable = {
+				var = hap_gaza
+				min = 0
+				max = 100
+			}			
+			clamp_variable = {
+				var = ter_gaza
+				min = 0
+				max = 100
+		    }
+		}
+	}	
+	social_programs_westbank = {
+		visible = {
+			original_tag = ISR
+			check_variable = { israel_state_selected = 1 }
+		}
+
+		cost = 150
+		days_remove = 5
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision social_programs"
+			subtract_from_variable = { ter_west_bank = 5 }
+			add_to_variable = { hap_west_bank = 15 }
+			custom_effect_tooltip = social_programs_westbanktt
+			clamp_variable = {
+				var = hap_west_bank
+				min = 0
+				max = 100
+			}
+			clamp_variable = {
+				var = ter_west_bank
+				min = 0
+				max = 100
+		    }
+		}
+	}
+	social_programs_gaza = {
+		visible = {
+			original_tag = ISR
+			check_variable = { israel_state_selected = 3 }
+		}
+
+		cost = 150
+		days_remove = 5
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision social_programs"
+			subtract_from_variable = { ter_gaza = 5 }
+			add_to_variable = { hap_gaza = 15 }
+			custom_effect_tooltip = social_programs_gazatt
+			clamp_variable = {
+				var = hap_gaza
+				min = 0
+				max = 100
+			}
+			clamp_variable = {
+				var = ter_gaza
+				min = 0
+				max = 100
+		    }
+		}
+	}	
+	raid_strongholds_westbank = {
+		visible = {
+			original_tag = ISR
+			check_variable = { israel_state_selected = 1 }
+		}
+
+		cost = 150
+		days_remove = 180
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision raid_strongholds"
+			add_to_variable = { hap_west_bank = 10 }
+			subtract_from_variable = { ter_west_bank = 20 }
+			hidden_effect = {
+			set_temp_variable = { treasury_change = -10 }
+			modify_treasury_effect = yes	
+			}
+			custom_effect_tooltip = raid_strongholds_westbanktt
+			clamp_variable = {
+				var = hap_west_bank
+				min = 0
+				max = 100
+			}
+			clamp_variable = {
+				var = ter_west_bank
+				min = 0
+				max = 100
+		    }
+		}
+	}
+	raid_strongholds_gaza = {
+		visible = {
+			original_tag = ISR
+			check_variable = { israel_state_selected = 3 }
+		}
+
+		cost = 150
+		days_remove = 180
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision raid_strongholds"
+			add_to_variable = { hap_gaza = 10 }
+			subtract_from_variable = { ter_gaza = 20 }
+			hidden_effect = {
+			set_temp_variable = { treasury_change = -10 }
+			modify_treasury_effect = yes	
+			}
+			custom_effect_tooltip = raid_strongholds_gazatt
+			clamp_variable = {
+				var = hap_gaza
+				min = 0
+				max = 100
+			}
+			clamp_variable = {
+				var = ter_gaza
+				min = 0
+				max = 100
+		    }
+		}
+	}
+	export_our_products_for_cheaper_price = {
+		visible = {
+			original_tag = ISR
+			check_variable = { israel_state_selected = 1 }
+		}
+
+		cost = 150
+		days_remove = 5
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision racial_profiling"
+			subtract_from_variable = { hap_west_bank = 5 }
+			subtract_from_variable = { ter_west_bank = 10 }
+			custom_effect_tooltip = export_our_products_much_cheapertt
+			clamp_variable = {
+				var = hap_west_bank
+				min = 0
+				max = 100
+			}			
+			clamp_variable = {
+				var = ter_west_bank
+				min = 0
+				max = 100
+		    }
+		}
+	}	
+	subsidize_industries = {
+		visible = {
+			original_tag = ISR
+			check_variable = { israel_state_selected = 1 }
+		}
+
+		cost = 150
+		days_remove = 5
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision subsidize_industries"
+			subtract_from_variable = { hap_west_bank = 10 }
+			subtract_from_variable = { ter_west_bank = 10 }
+			hidden_effect = {
+			set_temp_variable = { treasury_change = -1 }
+			modify_treasury_effect = yes	
+			}
+			custom_effect_tooltip = subsidize_industries_tt
+			clamp_variable = {
+				var = hap_west_bank
+				min = 0
+				max = 100
+			}
+			clamp_variable = {
+				var = ter_west_bank
+				min = 0
+				max = 100
+		    }
+		}
+	}
+	
+	set_up_more_iron_domes = {
+		visible = {
+			original_tag = ISR
+			check_variable = { israel_state_selected = 3 }
+		}
+
+		cost = 150
+		days_remove = 180
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision subsidize_industries"
+			add_to_variable = { hap_isr = 10 }
+			add_to_variable = { hap_gaza = 10 }
+			add_to_variable = { defence_israel = 10 }
+			add_to_variable = { ter_gaza = 5 }
+			hidden_effect = {
+			set_temp_variable = { treasury_change = -1 }
+			modify_treasury_effect = yes	
+			}
+			custom_effect_tooltip = set_up_more_iron_domes_tt
+			clamp_variable = {
+				var = hap_isr
+				min = 0
+				max = 100
+			}
+			clamp_variable = {
+				var = hap_gaza
+				min = 0
+				max = 100
+			}	
+			clamp_variable = {
+				var = ter_gaza
+				min = 0
+				max = 100
+			}			
+          	clamp_variable = {
+		    var = defence_israel
+		    min = 0
+		    max = 100
+	        }
+		}
+	}	
+	
+	bring_medical_aid = {
+		visible = {
+			original_tag = ISR
+			check_variable = { israel_state_selected = 3 }
+		}
+
+		cost = 50
+		days_remove = 30
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision bring_medical_aid"
+			subtract_from_variable = { hap_isr = 5 }
+			add_to_variable = { hap_gaza = 10 }
+			subtract_from_variable = { ter_gaza = 8 }
+			hidden_effect = {
+			set_temp_variable = { treasury_change = -0.1 }
+			modify_treasury_effect = yes	
+			}
+			custom_effect_tooltip = bring_medical_aid_tt
+			clamp_variable = {
+				var = hap_isr
+				min = 0
+				max = 100
+			}
+			clamp_variable = {
+				var = hap_gaza
+				min = 0
+				max = 100
+			}			
+          	clamp_variable = {
+		    var = ter_gaza
+		    min = 0
+		    max = 100
+	        }
+		}
+	}	
+	recognize_illegal_bedouin_villages = {
+		visible = {
+			original_tag = ISR
+			check_variable = { israel_state_selected = 2 }
+		}
+
+		cost = 50
+		days_remove = 30
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision recognize_illegal_bedouin_villages"
+			subtract_from_variable = { hap_isr = 5 }
+			subtract_from_variable = { ter_isr = 5 }
+			custom_effect_tooltip = recognize_illegal_bedouin_villagestt
+			clamp_variable = {
+				var = hap_isr
+				min = 0
+				max = 100
+			}			
+          	clamp_variable = {
+		    var = ter_isr
+		    min = 0
+		    max = 100
+	        }
+		}
+	}	
+	police_operations_in_arab_villages = {
+		visible = {
+			original_tag = ISR
+			check_variable = { israel_state_selected = 2 }
+		}
+
+		cost = 50
+		days_remove = 30
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision police_operations_in_arab_villages"
+			add_to_variable = { hap_isr = 5 }
+			subtract_from_variable = { ter_isr = 5 }
+			custom_effect_tooltip = police_operations_in_arab_villagestt
+			clamp_variable = {
+				var = hap_isr
+				min = 0
+				max = 100
+			}			
+          	clamp_variable = {
+		    var = ter_isr
+		    min = 0
+		    max = 100
+	        }
+		}
+	}	
+	support_jewish_businesses = {
+		visible = {
+			original_tag = ISR
+			check_variable = { israel_state_selected = 2 }
+		}
+
+		cost = 50
+		days_remove = 30
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision support_jewish_businesses"
+			add_to_variable = { hap_isr = 25 }
+			add_to_variable = { ter_isr = 25 }
+			custom_effect_tooltip = support_jewish_businessestt
+			clamp_variable = {
+				var = hap_isr
+				min = 0
+				max = 100
+			}			
+          	clamp_variable = {
+		    var = ter_isr
+		    min = 0
+		    max = 100
+	        }
+		}
+	}
+	boycott_bds_supporters = {
+		visible = {
+			original_tag = ISR
+			check_variable = { israel_state_selected = 2 }
+		}
+
+		cost = 50
+		days_remove = 30
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision boycott_bds_supporters"
+			add_to_variable = { hap_isr = 15 }
+			add_to_variable = { ter_isr = 10 }
+			custom_effect_tooltip = boycott_bds_supporterstt
+			clamp_variable = {
+				var = hap_isr
+				min = 0
+				max = 100
+			}			
+          	clamp_variable = {
+		    var = ter_isr
+		    min = 0
+		    max = 100
+	        }
+		}
+	}
+	promises_of_peace_westbank = {
+		visible = {
+			original_tag = ISR
+			check_variable = { israel_state_selected = 1 }
+		}
+
+		cost = 50
+		days_remove = 30
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision promises_of_peace_westbank"
+			add_to_variable = { hap_west_bank = 15 }
+			subtract_from_variable = { ter_west_bank = 5 }
+			custom_effect_tooltip = promises_of_peacewestbanktt
+			clamp_variable = {
+				var = hap_west_bank
+				min = 0
+				max = 100
+			}			
+          	clamp_variable = {
+		    var = ter_west_bank
+		    min = 0
+		    max = 100
+	        }
+		}
+	}	
+	promises_of_peace_israel = {
+		visible = {
+			original_tag = ISR
+			check_variable = { israel_state_selected = 2 }
+		}
+
+		cost = 50
+		days_remove = 30
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision promises_of_peace"
+			add_to_variable = { hap_isr = 15 }
+			subtract_from_variable = { ter_isr = 5 }
+			custom_effect_tooltip = promises_of_peaceisraeltt
+			clamp_variable = {
+				var = hap_isr
+				min = 0
+				max = 100
+			}			
+          	clamp_variable = {
+		    var = ter_isr
+		    min = 0
+		    max = 100
+	        }
+		}
+	}
+	promises_of_peace_gaza = {
+		visible = {
+			original_tag = ISR
+			check_variable = { israel_state_selected = 3 }
+		}
+
+		cost = 50
+		days_remove = 30
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision promises_of_peace_gaza"
+			add_to_variable = { hap_gaza = 15 }
+			subtract_from_variable = { ter_gaza = 5 }
+			custom_effect_tooltip = promises_of_peacegazatt
+			clamp_variable = {
+				var = hap_gaza
+				min = 0
+				max = 100
+			}			
+          	clamp_variable = {
+		    var = ter_gaza
+		    min = 0
+		    max = 100
+	        }
+		}
+	}	
+}
+israel_minorities_category = {
+
+	accept_the_druze = {
+		visible = {
+			original_tag = ISR
+			ROOT = {
+			has_completed_focus = ISR_welcome_minorities
+		}
+	}
+
+		cost = 150
+		days_remove = 8
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision accept_the_druze"
+			add_manpower = 50000
+		}
+	}
+	accept_the_kurds = {
+		visible = {
+			original_tag = ISR
+			ROOT = {
+			has_completed_focus = ISR_welcome_minorities
+		}
+	}
+
+		cost = 150
+		days_remove = 8
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision accept_the_kurds"
+			add_manpower = 50000
+		}
+	}
+	accept_the_araneans = {
+		visible = {
+			original_tag = ISR
+			ROOT = {
+			has_completed_focus = ISR_welcome_minorities
+		}
+	}
+
+		cost = 150
+		days_remove = 8
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision accept_the_araneans"
+			add_manpower = 20000
+		}
+	}
+	accept_the_circassians = {
+		visible = {
+			original_tag = ISR
+			ROOT = {
+				has_completed_focus = ISR_welcome_minorities
+			}
+		}
+
+		cost = 150
+		days_remove = 8
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision accept_the_circassians"
+			add_manpower = 20000
+		}
+	}
+	accept_the_lebanese = {
+		visible = {
+			original_tag = ISR
+			ROOT = {
+				has_completed_focus = ISR_welcome_minorities
+				has_completed_focus = ISR_the_lebanon_war
+			}
+		}
+
+		cost = 150
+		days_remove = 8
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision accept_the_lebanese"
+			add_manpower = 30000
+		}
+	}
+	accept_the_yazidis = {
+		visible = {
+			original_tag = ISR
+			ROOT = {
+				has_completed_focus = ISR_welcome_minorities
+			}
+		}
+
+		cost = 150
+		days_remove = 8
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision accept_the_yazidis"
+			add_manpower = 20000
+		}
+	}
+}
+	
+israel_force_judaism_category = {
+
+	force_egyptians = {
+		visible = {
+		original_tag = ISR
+		ROOT = {
+			has_completed_focus = ISR_pan_judaism_egypt
+		}		
+	    }
+
+		cost = 200
+		days_remove = 210
+		fire_only_once = yes
+
+		complete_effect = {
+		}
+        remove_effect = {
+			EGY = {
+			remove_ideas = sunni
+			add_ideas = judaism
+		    }
+        } 		
+	}
+	force_syrians = {
+		visible = {
+			original_tag = ISR
+			ROOT = {
+			has_completed_focus = ISR_pan_judaism_north
+		}
+	    }
+
+		cost = 150
+		days_remove = 100
+		fire_only_once = yes
+
+		complete_effect = {
+		}
+        remove_effect = {
+		limit = {
+		if = {
+		country_exists = SYR
+		}
+			SYR = {
+			remove_ideas = shia
+			add_ideas = judaism
+		    }
+		}	
+		limit = {
+		if = {
+		country_exists = NUS
+		}
+			NUS = {
+			remove_ideas = sunni
+			add_ideas = judaism
+		    }
+		}	
+		limit = {
+		if = {
+		country_exists = FSA
+		}
+			FSA = {
+			remove_ideas = sunni
+			add_ideas = judaism
+		    }
+		}
+		limit = {
+		if = {
+		country_exists = ISI
+		}
+			ISI = {
+			remove_ideas = sunni
+			add_ideas = judaism
+		    }
+		}			
+        } 
+	}
+	force_lebanese = {
+		visible = {
+			original_tag = ISR
+			ROOT = {
+			has_completed_focus = ISR_pan_judaism_north
+		}
+	}
+
+		cost = 100
+		days_remove = 45
+		fire_only_once = yes
+
+		complete_effect = {
+		}
+        remove_effect = {
+			LEB = {
+			remove_ideas = pluralist
+			add_ideas = judaism
+		    }
+        } 
+	}
+	force_iraqis = {
+		visible = {
+			original_tag = ISR
+			ROOT = {
+				has_completed_focus = ISR_pan_judaism_north
+			}
+		}
+
+		cost = 150
+		days_remove = 8
+		fire_only_once = yes
+
+		complete_effect = {
+		}
+        remove_effect = {
+			IRQ = {
+			remove_ideas = shia
+			add_ideas = judaism
+		    }
+        }
+	}
+	force_jordanians = {
+		visible = {
+		original_tag = ISR
+		ROOT = {
+			has_completed_focus = ISR_pan_judaism_jordan
+		}		
+	}
+
+		cost = 150
+		days_remove = 120
+		fire_only_once = yes
+
+		complete_effect = {
+		}
+        remove_effect = {
+			JOR = {
+			remove_ideas = sunni
+			add_ideas = judaism
+		    }
+        } 		
+	}
+	force_the_gulf_arabs = {
+		visible = {
+			original_tag = ISR
+			ROOT = {
+				has_completed_focus = ISR_pan_judaism_gulf
+			}
+		}
+
+		cost = 200
+		days_remove = 210
+		fire_only_once = yes
+
+		complete_effect = {
+		}
+		remove_effect = {
+		    SAU = {
+			remove_ideas = sunni
+			add_ideas = judaism
+		    }
+			OMA = {
+			remove_ideas = ibadi
+			add_ideas = judaism
+		    }
+			BHR = {
+			remove_ideas = sunni
+			add_ideas = judaism
+		    }
+			UAE = {
+			remove_ideas = sunni
+			add_ideas = judaism
+		    }
+			QAT = {
+			remove_ideas = sunni
+			add_ideas = judaism
+		    }
+			KUW = {
+			remove_ideas = sunni
+			add_ideas = judaism
+		    }			
+		}	
+	}	
+	force_turks = {
+		visible = {
+			original_tag = ISR
+			ROOT = {
+				has_completed_focus = ISR_pan_judaism_turkey
+			}
+		}
+
+		cost = 200
+		days_remove = 210
+		fire_only_once = yes
+
+		complete_effect = {
+		}
+        remove_effect = {
+			TUR = {
+			remove_ideas = sunni
+			add_ideas = judaism
+		    }
+        }
+	}		
+}

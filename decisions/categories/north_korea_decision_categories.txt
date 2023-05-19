@@ -1,0 +1,67 @@
+NKO_united_front_department = {
+	icon = GFX_decision_category_generic_propaganda
+	allowed = {
+		original_tag = NKO
+	}
+	visible = {
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_game_rule = {
+					rule = mdmpo_ai_no_decisions
+					option = mdmpo_ai_no_decisions_option_yes
+				}
+			}
+		}
+	}
+	visible_when_empty = yes
+}
+
+NKO_Arduous_March = {
+    icon = GFX_decision_attract_foreign_investor
+	allowed = {
+		original_tag = NKO
+	}
+    visible = {
+        OR = {
+			has_completed_focus = NKO_Songun
+			has_completed_focus = NKO_Prioritizing_the_Arduous_March
+			}
+		NOT = { has_completed_focus = NKO_Continue_Ryugyong_Hotel }
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_game_rule = {
+					rule = mdmpo_ai_no_decisions
+					option = mdmpo_ai_no_decisions_option_yes
+				}
+			}
+		}
+	}
+}
+
+NKO_Power_struggle = {
+    icon = GFX_decision_category_generic_communism
+    visible = {
+        NOT = {
+			OR = {
+				has_completed_focus = NKO_Kim_Jong_Nam
+				has_completed_focus = NKO_Kim_Jong_un
+				has_completed_focus = NKO_Junta
+			}
+		}
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_game_rule = {
+					rule = mdmpo_ai_no_decisions
+					option = mdmpo_ai_no_decisions_option_yes
+				}
+			}
+		}
+	}
+	allowed = {
+		original_tag = NKO
+	}
+
+}

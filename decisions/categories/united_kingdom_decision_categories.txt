@@ -1,0 +1,39 @@
+################
+##### TUR ######
+################
+
+ENG_AFG = {
+	icon = political_actions
+	allowed = {
+		original_tag = ENG
+	}
+	visible = {
+		original_tag = ENG
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_game_rule = {
+					rule = mdmpo_ai_no_decisions
+					option = mdmpo_ai_no_decisions_option_yes
+				}
+			}
+		}
+	}
+}
+decisions_ENG = {
+	icon = united_kingdom
+	allowed = {
+		original_tag = ENG
+	}
+	visible = {
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_game_rule = {
+					rule = mdmpo_ai_no_decisions
+					option = mdmpo_ai_no_decisions_option_yes
+				}
+			}
+		}
+	}
+}

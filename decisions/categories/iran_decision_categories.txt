@@ -1,0 +1,47 @@
+################
+##### TUR ######
+################
+
+
+PER_SYR = {
+	icon = political_actions
+	allowed = {
+		original_tag = PER
+	}
+	visible = {
+		original_tag = PER
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_game_rule = {
+					rule = mdmpo_ai_no_decisions
+					option = mdmpo_ai_no_decisions_option_yes
+				}
+			}
+		}
+	}
+}
+
+PER_soleimani = {
+	icon = political_actions
+	allowed = {
+		original_tag = PER
+	}
+	visible = {
+		original_tag = PER
+		OR = {
+			has_country_flag = soleimani_iraq
+			has_country_flag = soleimani_prepare
+			has_country_flag = soleimani_war
+		}
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_game_rule = {
+					rule = mdmpo_ai_no_decisions
+					option = mdmpo_ai_no_decisions_option_yes
+				}
+			}
+		}
+	}
+}

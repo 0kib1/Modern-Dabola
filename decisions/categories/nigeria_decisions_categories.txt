@@ -1,0 +1,22 @@
+####Nigeria Decisions - Author: Angriest Bird
+NIG_religious_divide_decisions_category = {
+	icon = eng_organize_the_blackshirts
+	allowed = { tag = NIG }
+	visible = {
+		tag = NIG
+		OR = {
+			has_completed_focus = NIG_convert_the_christians
+			has_completed_focus = NIG_suppresion_of_islam
+		}
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_game_rule = {
+					rule = mdmpo_ai_no_decisions
+					option = mdmpo_ai_no_decisions_option_yes
+				}
+			}
+		}
+	}
+	visibility_type = map_and_decisions_view
+}

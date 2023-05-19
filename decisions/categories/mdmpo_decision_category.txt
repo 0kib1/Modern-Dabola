@@ -1,0 +1,7 @@
+mdmpo_decision_category = {
+	icon = generic
+	priority = 99999
+	visible = {
+		date > 1935.12.31
+	}
+}

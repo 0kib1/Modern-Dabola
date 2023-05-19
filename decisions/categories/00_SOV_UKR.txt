@@ -1,0 +1,36 @@
+00_SOV_UKR_category = {
+	icon = military_operation
+	
+	allowed = {
+		Tag = SOV
+	}
+
+	visible = {
+	}
+
+	priority = 300
+}
+00_USA_UKR_category = {
+	icon = military_operation
+	
+	allowed = {
+		Tag = USA
+	}
+
+	visible = {
+	}
+
+	priority = 300
+}
+00_UKR_categoryU = {
+	icon = military_operation
+	
+	allowed = {
+		Tag = UKR
+	}
+
+	visible = {
+	}
+
+	priority = 300
+}

@@ -1,0 +1,2310 @@
+opposition_category = {
+
+	Division_add = {
+
+		allowed = {
+			has_government = communism
+			NOT = {
+				OR = {
+				has_idea = agrarian_economy
+				has_idea = developed
+				has_idea = industrialized
+				has_idea = Division
+				is_arabic_nation = yes
+				}
+			}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_government = communism
+			NOT = {
+				OR = {
+				has_idea = agrarian_economy
+				has_idea = developed
+				has_idea = industrialized
+				has_idea = Division
+				is_arabic_nation = yes
+				}
+			}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				add_ideas = Division
+				}
+		}
+
+	Division_remove = {
+
+		allowed = {
+			has_idea = Division
+				OR = {
+				NOT = { has_government = communism }
+				has_idea = agrarian_economy
+				has_idea = developed
+				has_idea = industrialized
+			}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {			
+			has_idea = Division
+				OR = {
+				NOT = { has_government = communism }
+				has_idea = agrarian_economy
+				has_idea = developed
+				has_idea = industrialized
+			}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = Division
+				}
+		}
+
+
+
+	pop_protection_emerging_limited_rights = {
+
+		allowed = {
+			communism < 0.2
+			has_idea = limited_rights
+			NOT = {
+				has_idea = pop_protection_emerging_limited_rights3
+				has_idea = pop_protection_emerging_limited_rights2
+				has_idea = pop_protection_emerging_limited_rights1
+			}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			communism < 0.2
+			has_idea = limited_rights
+			NOT = {
+				has_idea = pop_protection_emerging_limited_rights3
+				has_idea = pop_protection_emerging_limited_rights2
+				has_idea = pop_protection_emerging_limited_rights1
+			}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+			if = { limit = { communism < 0.01 }
+				add_ideas = pop_protection_emerging_limited_rights3
+			}
+			else_if = { limit = { communism < 0.05 }
+				add_ideas = pop_protection_emerging_limited_rights2
+			}
+			else = {
+				add_ideas = pop_protection_emerging_limited_rights1
+			}
+		}
+	}
+
+	pop_protection_emerging_limited_rights_remove3 = {
+
+		allowed = {
+			has_idea = pop_protection_emerging_limited_rights3
+				OR = {
+					communism > 0.01
+					NOT = { has_idea = limited_rights }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_emerging_limited_rights3
+				OR = {
+					communism > 0.01
+					NOT = { has_idea = limited_rights }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_emerging_limited_rights3
+				}
+		}
+
+	pop_protection_emerging_limited_rights_remove2 = {
+
+		allowed = {
+			has_idea = pop_protection_emerging_limited_rights2
+				OR = {
+					communism > 0.05
+					NOT = { has_idea = limited_rights }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_emerging_limited_rights2
+				OR = {
+					communism > 0.05
+					NOT = { has_idea = limited_rights }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_emerging_limited_rights2
+				}
+		}
+
+	pop_protection_emerging_limited_rights_remove1 = {
+
+		allowed = {
+			has_idea = pop_protection_emerging_limited_rights1
+				OR = {
+					communism > 0.1
+					NOT = { has_idea = limited_rights }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_emerging_limited_rights1
+				OR = {
+					communism > 0.1
+					NOT = { has_idea = limited_rights }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_emerging_limited_rights1
+				}
+		}
+
+	pop_protection_western_limited_rights = {
+
+		allowed = {
+			democratic < 0.2
+			has_idea = limited_rights
+			NOT = {
+				has_idea = pop_protection_western_limited_rights3
+				has_idea = pop_protection_western_limited_rights2
+				has_idea = pop_protection_western_limited_rights1
+			}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			democratic < 0.2
+			has_idea = limited_rights
+			NOT = {
+				has_idea = pop_protection_western_limited_rights3
+				has_idea = pop_protection_western_limited_rights2
+				has_idea = pop_protection_western_limited_rights1
+			}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+			if = { limit = { democratic < 0.01 }
+				add_ideas = pop_protection_western_limited_rights3
+			}
+			else_if = { limit = { democratic < 0.05 }
+				add_ideas = pop_protection_western_limited_rights2
+			}
+			else = {
+				add_ideas = pop_protection_western_limited_rights1
+			}
+		}
+	}
+
+	pop_protection_western_limited_remove3 = {
+
+		allowed = {
+			has_idea = pop_protection_western_limited_rights3
+				OR = {
+					democratic > 0.01
+					NOT = { has_idea = limited_rights }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_western_limited_rights3
+				OR = {
+					democratic > 0.01
+					NOT = { has_idea = limited_rights }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_western_limited_rights3
+				}
+		}
+
+	pop_protection_western_limited_remove2 = {
+
+		allowed = {
+			has_idea = pop_protection_western_limited_rights2
+				OR = {
+					democratic > 0.05
+					NOT = { has_idea = limited_rights }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_western_limited_rights2
+				OR = {
+					democratic > 0.05
+					NOT = { has_idea = limited_rights }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_western_limited_rights2
+				}
+		}
+
+	pop_protection_western_limited_remove1 = {
+
+		allowed = {
+			has_idea = pop_protection_western_limited_rights1
+				OR = {
+					democratic > 0.1
+					NOT = { has_idea = limited_rights }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_western_limited_rights1
+				OR = {
+					democratic > 0.1
+					NOT = { has_idea = limited_rights }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_western_limited_rights1
+				}
+		}
+
+	pop_protection_non_alligned_limited_rights = {
+
+		allowed = {
+			neutrality < 0.2
+			has_idea = limited_rights
+			NOT = {
+				has_idea = pop_protection_non_alligned_limited_rights3
+				has_idea = pop_protection_non_alligned_limited_rights2
+				has_idea = pop_protection_non_alligned_limited_rights1
+			}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			neutrality < 0.2
+			has_idea = limited_rights
+			NOT = {
+				has_idea = pop_protection_non_alligned_limited_rights3
+				has_idea = pop_protection_non_alligned_limited_rights2
+				has_idea = pop_protection_non_alligned_limited_rights1
+			}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+			if = { limit = { neutrality < 0.01 }
+				add_ideas = pop_protection_non_alligned_limited_rights3
+			}
+			else_if = { limit = { neutrality < 0.05 }
+				add_ideas = pop_protection_non_alligned_limited_rights2
+			}
+			else = {
+				add_ideas = pop_protection_non_alligned_limited_rights1
+			}
+		}
+	}
+
+	pop_protection_non_alligned_limited_rights_remove3 = {
+
+		allowed = {
+			has_idea = pop_protection_non_alligned_limited_rights3
+				OR = {
+					neutrality > 0.01
+					NOT = { has_idea = limited_rights }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_non_alligned_limited_rights3
+				OR = {
+					neutrality > 0.01
+					NOT = { has_idea = limited_rights }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_non_alligned_limited_rights3
+				}
+		}
+
+	pop_protection_non_alligned_limited_rights_remove2 = {
+
+		allowed = {
+			has_idea = pop_protection_non_alligned_limited_rights2
+				OR = {
+					neutrality > 0.05
+					NOT = { has_idea = limited_rights }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_non_alligned_limited_rights2
+				OR = {
+					neutrality > 0.05
+					NOT = { has_idea = limited_rights }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_non_alligned_limited_rights2
+				}
+		}
+
+	pop_protection_non_alligned_limited_rights_remove1 = {
+
+		allowed = {
+			has_idea = pop_protection_non_alligned_limited_rights1
+				OR = {
+					neutrality > 0.1
+					NOT = { has_idea = limited_rights }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_non_alligned_limited_rights1
+				OR = {
+					neutrality > 0.1
+					NOT = { has_idea = limited_rights }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_non_alligned_limited_rights1
+				}
+		}
+
+	pop_protection_nationalist_limited_rights = {
+
+		allowed = {
+			NOT = { has_idea = Division }
+			nationalist < 0.2
+			has_idea = limited_rights
+			NOT = {
+				has_idea = pop_protection_nationalist_limited_rights3
+				has_idea = pop_protection_nationalist_limited_rights2
+				has_idea = pop_protection_nationalist_limited_rights1
+			}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			NOT = { has_idea = Division }
+			nationalist < 0.2
+			has_idea = limited_rights
+			NOT = {
+				has_idea = pop_protection_nationalist_limited_rights3
+				has_idea = pop_protection_nationalist_limited_rights2
+				has_idea = pop_protection_nationalist_limited_rights1
+			}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+			if = { limit = { nationalist < 0.01 }
+				add_ideas = pop_protection_nationalist_limited_rights3
+			}
+			else_if = { limit = { nationalist < 0.05 }
+				add_ideas = pop_protection_nationalist_limited_rights2
+			}
+			else = {
+				add_ideas = pop_protection_nationalist_limited_rights1
+			}
+		}
+	}
+
+	pop_protection_nationalist_limited_rights_remove3 = {
+
+		allowed = {
+			has_idea = pop_protection_nationalist_limited_rights3
+				OR = {
+					nationalist > 0.01
+					NOT = { has_idea = limited_rights }
+					has_idea = Division
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_nationalist_limited_rights3
+				OR = {
+					nationalist > 0.01
+					NOT = { has_idea = limited_rights }
+					has_idea = Division
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_nationalist_limited_rights3
+				}
+		}
+
+	pop_protection_nationalist_limited_rights_remove2 = {
+
+		allowed = {
+			has_idea = pop_protection_nationalist_limited_rights2
+				OR = {
+					nationalist > 0.05
+					NOT = { has_idea = limited_rights }
+					has_idea = Division
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_nationalist_limited_rights2
+				OR = {
+					nationalist > 0.05
+					NOT = { has_idea = limited_rights }
+					has_idea = Division
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_nationalist_limited_rights2
+				}
+		}
+
+	pop_protection_nationalist_limited_rights_remove1 = {
+
+		allowed = {
+			has_idea = pop_protection_nationalist_limited_rights1
+				OR = {
+					nationalist > 0.1
+					NOT = { has_idea = limited_rights }
+					has_idea = Division
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_nationalist_limited_rights1
+				OR = {
+					nationalist > 0.1
+					NOT = { has_idea = limited_rights }
+					has_idea = Division
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_nationalist_limited_rights1
+				}
+		}
+
+
+	pop_protection_emerging_small_control = {
+
+		allowed = {
+			communism < 0.2
+			has_idea = small_control
+			NOT = {
+				has_idea = pop_protection_emerging_small_control4
+				has_idea = pop_protection_emerging_small_control3
+				has_idea = pop_protection_emerging_small_control2
+				has_idea = pop_protection_emerging_small_control1
+			}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			communism < 0.2
+			has_idea = small_control
+			NOT = {
+				has_idea = pop_protection_emerging_small_control4
+				has_idea = pop_protection_emerging_small_control3
+				has_idea = pop_protection_emerging_small_control2
+				has_idea = pop_protection_emerging_small_control1
+			}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+			if = { limit = { communism < 0.01 }
+				add_ideas = pop_protection_emerging_small_control4
+			}
+			else_if = { limit = { communism < 0.05 }
+				add_ideas = pop_protection_emerging_small_control3
+			}
+			else_if = { limit = { communism < 0.1 }
+				add_ideas = pop_protection_emerging_small_control2
+			}
+			else = {
+				add_ideas = pop_protection_emerging_small_control1
+			}
+		}
+	}
+
+	pop_protection_emerging_small_control_remove4 = {
+
+		allowed = {
+			has_idea = pop_protection_emerging_small_control4
+				OR = {
+					communism > 0.01
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_emerging_small_control4
+				OR = {
+					communism > 0.01
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_emerging_small_control4
+				}
+		}
+
+	pop_protection_emerging_small_control_remove3 = {
+
+		allowed = {
+			has_idea = pop_protection_emerging_small_control3
+				OR = {
+					communism > 0.05
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_emerging_small_control3
+				OR = {
+					communism > 0.05
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_emerging_small_control3
+				}
+		}
+
+	pop_protection_emerging_small_control_remove2 = {
+
+		allowed = {
+			has_idea = pop_protection_emerging_small_control2
+				OR = {
+					communism > 0.1
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_emerging_small_control2
+				OR = {
+					communism > 0.1
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_emerging_small_control2
+				}
+		}
+
+	pop_protection_emerging_small_control_remove1 = {
+
+		allowed = {
+			has_idea = pop_protection_emerging_small_control1
+				OR = {
+					communism > 0.2
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_emerging_small_control1
+				OR = {
+					communism > 0.2
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_emerging_small_control1
+				}
+		}
+
+	pop_protection_western_small_control = {
+
+		allowed = {
+			democratic < 0.2
+			has_idea = small_control
+			NOT = {
+				has_idea = pop_protection_western_small_control4
+				has_idea = pop_protection_western_small_control3
+				has_idea = pop_protection_western_small_control2
+				has_idea = pop_protection_western_small_control1
+			}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			democratic < 0.2
+			has_idea = small_control
+			NOT = {
+				has_idea = pop_protection_western_small_control4
+				has_idea = pop_protection_western_small_control3
+				has_idea = pop_protection_western_small_control2
+				has_idea = pop_protection_western_small_control1
+			}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+			if = { limit = { democratic < 0.01 }
+				add_ideas = pop_protection_western_small_control4
+			}
+			else_if = { limit = { democratic < 0.05 }
+				add_ideas = pop_protection_western_small_control3
+			}
+			else_if = { limit = { democratic < 0.1 }
+				add_ideas = pop_protection_western_small_control2
+			}
+			else = {
+				add_ideas = pop_protection_western_small_control1
+			}
+		}
+	}
+
+	pop_protection_western_small_control_remove4 = {
+
+		allowed = {
+			has_idea = pop_protection_western_small_control4
+				OR = {
+					democratic > 0.01
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_western_small_control4
+				OR = {
+					democratic > 0.01
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_western_small_control4
+				}
+		}
+
+	pop_protection_western_small_control_remove3 = {
+
+		allowed = {
+			has_idea = pop_protection_western_small_control3
+				OR = {
+					democratic > 0.05
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_western_small_control3
+				OR = {
+					democratic > 0.05
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_western_small_control3
+				}
+		}
+
+	pop_protection_western_small_control_remove2 = {
+
+		allowed = {
+			has_idea = pop_protection_western_small_control2
+				OR = {
+					democratic > 0.1
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_western_small_control2
+				OR = {
+					democratic > 0.1
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_western_small_control2
+				}
+		}
+
+	pop_protection_western_small_control_remove1 = {
+
+		allowed = {
+			has_idea = pop_protection_western_small_control1
+				OR = {
+					democratic > 0.2
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_western_small_control1
+				OR = {
+					democratic > 0.2
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_western_small_control1
+				}
+		}
+
+	pop_protection_non_alligned_small_control = {
+
+		allowed = {
+			neutrality < 0.2
+			has_idea = small_control
+			NOT = {
+				has_idea = pop_protection_non_alligned_small_control4
+				has_idea = pop_protection_non_alligned_small_control3
+				has_idea = pop_protection_non_alligned_small_control2
+				has_idea = pop_protection_non_alligned_small_control1
+			}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			neutrality < 0.2
+			has_idea = small_control
+			NOT = {
+				has_idea = pop_protection_non_alligned_small_control4
+				has_idea = pop_protection_non_alligned_small_control3
+				has_idea = pop_protection_non_alligned_small_control2
+				has_idea = pop_protection_non_alligned_small_control1
+			}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+			if = { limit = { neutrality < 0.01 }
+				add_ideas = pop_protection_non_alligned_small_control4
+			}
+			else_if = { limit = { neutrality < 0.05 }
+				add_ideas = pop_protection_non_alligned_small_control3
+			}
+			else_if = { limit = { neutrality < 0.1 }
+				add_ideas = pop_protection_non_alligned_small_control2
+			}
+			else = {
+				add_ideas = pop_protection_non_alligned_small_control1
+			}
+		}
+	}
+
+	pop_protection_non_alligned_small_control_remove4 = {
+
+		allowed = {
+			has_idea = pop_protection_non_alligned_small_control4
+				OR = {
+					neutrality > 0.01
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_non_alligned_small_control4
+				OR = {
+					neutrality > 0.01
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_non_alligned_small_control4
+				}
+		}
+
+	pop_protection_non_alligned_small_control_remove3 = {
+
+		allowed = {
+			has_idea = pop_protection_non_alligned_small_control3
+				OR = {
+					neutrality > 0.05
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_non_alligned_small_control3
+				OR = {
+					neutrality > 0.05
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_non_alligned_small_control3
+				}
+		}
+
+	pop_protection_non_alligned_small_control_remove2 = {
+
+		allowed = {
+			has_idea = pop_protection_non_alligned_small_control2
+				OR = {
+					neutrality > 0.1
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_non_alligned_small_control2
+				OR = {
+					neutrality > 0.1
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_non_alligned_small_control2
+				}
+		}
+
+	pop_protection_non_alligned_small_control_remove1 = {
+
+		allowed = {
+			has_idea = pop_protection_non_alligned_small_control1
+				OR = {
+					neutrality > 0.2
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_non_alligned_small_control1
+				OR = {
+					neutrality > 0.2
+					NOT = { has_idea = small_control }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_non_alligned_small_control1
+				}
+		}
+
+	pop_protection_nationalist_small_control = {
+
+		allowed = {
+			NOT = { has_idea = Division }
+			nationalist < 0.2
+			has_idea = small_control
+			NOT = {
+				has_idea = pop_protection_nationalist_small_control4
+				has_idea = pop_protection_nationalist_small_control3
+				has_idea = pop_protection_nationalist_small_control2
+				has_idea = pop_protection_nationalist_small_control1
+			}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			NOT = { has_idea = Division }
+			nationalist < 0.2
+			has_idea = small_control
+			NOT = {
+				has_idea = pop_protection_nationalist_small_control4
+				has_idea = pop_protection_nationalist_small_control3
+				has_idea = pop_protection_nationalist_small_control2
+				has_idea = pop_protection_nationalist_small_control1
+			}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+			if = { limit = { nationalist < 0.01 }
+				add_ideas = pop_protection_nationalist_small_control4
+			}
+			else_if = { limit = { nationalist < 0.05 }
+				add_ideas = pop_protection_nationalist_small_control3
+			}
+			else_if = { limit = { nationalist < 0.1 }
+				add_ideas = pop_protection_nationalist_small_control2
+			}
+			else = {
+				add_ideas = pop_protection_nationalist_small_control1
+			}
+		}
+	}
+
+	pop_protection_nationalist_small_control_remove4 = {
+
+		allowed = {
+			has_idea = pop_protection_nationalist_small_control4
+				OR = {
+					nationalist > 0.01
+					NOT = { has_idea = small_control }
+					has_idea = Division
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_nationalist_small_control4
+				OR = {
+					nationalist > 0.01
+					NOT = { has_idea = small_control }
+					has_idea = Division
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_nationalist_small_control4
+				}
+		}
+
+	pop_protection_nationalist_small_control_remove3 = {
+
+		allowed = {
+			has_idea = pop_protection_nationalist_small_control3
+				OR = {
+					nationalist > 0.05
+					NOT = { has_idea = small_control }
+					has_idea = Division
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_nationalist_small_control3
+				OR = {
+					nationalist > 0.05
+					NOT = { has_idea = small_control }
+					has_idea = Division
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_nationalist_small_control3
+				}
+		}
+
+	pop_protection_nationalist_small_control_remove2 = {
+
+		allowed = {
+			has_idea = pop_protection_nationalist_small_control2
+				OR = {
+					nationalist > 0.1
+					NOT = { has_idea = small_control }
+					has_idea = Division
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_nationalist_small_control2
+				OR = {
+					nationalist > 0.1
+					NOT = { has_idea = small_control }
+					has_idea = Division
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_nationalist_small_control2
+				}
+		}
+
+	pop_protection_nationalist_small_control_remove1 = {
+
+		allowed = {
+			has_idea = pop_protection_nationalist_small_control1
+				OR = {
+					nationalist > 0.2
+					NOT = { has_idea = small_control }
+					has_idea = Division
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_nationalist_small_control1
+				OR = {
+					nationalist > 0.2
+					NOT = { has_idea = small_control }
+					has_idea = Division
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_nationalist_small_control1
+				}
+		}
+
+	pop_protection_emerging_freedom_of_speech = {
+
+		allowed = {
+			communism < 0.2
+			NOT = {
+				OR = {
+				has_idea = small_control
+				has_idea = limited_rights
+				has_idea = total_control
+				}
+			}
+			NOT = {
+				has_idea = pop_protection_emerging_freedom_of_speech4
+				has_idea = pop_protection_emerging_freedom_of_speech3
+				has_idea = pop_protection_emerging_freedom_of_speech2
+				has_idea = pop_protection_emerging_freedom_of_speech1
+			}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			communism < 0.2
+			NOT = {
+				OR = {
+				has_idea = small_control
+				has_idea = limited_rights
+				has_idea = total_control
+				}
+			}
+			NOT = {
+				has_idea = pop_protection_emerging_freedom_of_speech4
+				has_idea = pop_protection_emerging_freedom_of_speech3
+				has_idea = pop_protection_emerging_freedom_of_speech2
+				has_idea = pop_protection_emerging_freedom_of_speech1
+			}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+			if = { limit = { communism < 0.01 }
+				add_ideas = pop_protection_emerging_freedom_of_speech4
+			}
+			else_if = { limit = { communism < 0.05 }
+				add_ideas = pop_protection_emerging_freedom_of_speech3
+			}
+			else_if = { limit = { communism < 0.1 }
+				add_ideas = pop_protection_emerging_freedom_of_speech2
+			}
+			else = {
+				add_ideas = pop_protection_emerging_freedom_of_speech1
+			}
+		}
+	}
+
+	pop_protection_emerging_freedom_of_speech_remove4 = {
+
+		allowed = {
+			has_idea = pop_protection_emerging_freedom_of_speech4
+				OR = {
+					communism > 0.01
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_emerging_freedom_of_speech4
+				OR = {
+					communism > 0.01
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_emerging_freedom_of_speech4
+				}
+		}
+
+	pop_protection_emerging_freedom_of_speech_remove3 = {
+
+		allowed = {
+			has_idea = pop_protection_emerging_freedom_of_speech3
+				OR = {
+					communism > 0.05
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_emerging_freedom_of_speech3
+				OR = {
+					communism > 0.05
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_emerging_freedom_of_speech3
+				}
+		}
+
+	pop_protection_emerging_freedom_of_speech_remove2 = {
+
+		allowed = {
+			has_idea = pop_protection_emerging_freedom_of_speech2
+				OR = {
+					communism > 0.1
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_emerging_freedom_of_speech2
+				OR = {
+					communism > 0.1
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_emerging_freedom_of_speech2
+				}
+		}
+
+	pop_protection_emerging_freedom_of_speech_remove1 = {
+
+		allowed = {
+			has_idea = pop_protection_emerging_freedom_of_speech1
+				OR = {
+					communism > 0.2
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_emerging_freedom_of_speech1
+				OR = {
+					communism > 0.2
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_emerging_freedom_of_speech1
+				}
+		}
+
+	pop_protection_western_freedom_of_speech = {
+
+		allowed = {
+			democratic < 0.2
+			NOT = {
+				OR = {
+				has_idea = small_control
+				has_idea = limited_rights
+				has_idea = total_control
+				}
+			}
+			NOT = {
+				has_idea = pop_protection_western_freedom_of_speech4
+				has_idea = pop_protection_western_freedom_of_speech3
+				has_idea = pop_protection_western_freedom_of_speech2
+				has_idea = pop_protection_western_freedom_of_speech1
+			}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			democratic < 0.2
+			NOT = {
+				OR = {
+				has_idea = small_control
+				has_idea = limited_rights
+				has_idea = total_control
+				}
+			}
+			NOT = {
+				has_idea = pop_protection_western_freedom_of_speech4
+				has_idea = pop_protection_western_freedom_of_speech3
+				has_idea = pop_protection_western_freedom_of_speech2
+				has_idea = pop_protection_western_freedom_of_speech1
+			}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+			if = { limit = { democratic < 0.01 }
+				add_ideas = pop_protection_western_freedom_of_speech4
+			}
+			else_if = { limit = { democratic < 0.05 }
+				add_ideas = pop_protection_western_freedom_of_speech3
+			}
+			else_if = { limit = { democratic < 0.1 }
+				add_ideas = pop_protection_western_freedom_of_speech2
+			}
+			else = {
+				add_ideas = pop_protection_western_freedom_of_speech1
+			}
+		}
+	}
+
+	pop_protection_western_freedom_of_speech_remove4 = {
+
+		allowed = {
+			has_idea = pop_protection_western_freedom_of_speech4
+				OR = {
+					democratic > 0.01
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_western_freedom_of_speech4
+				OR = {
+					democratic > 0.01
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_western_freedom_of_speech4
+				}
+		}
+
+	pop_protection_western_freedom_of_speech_remove3 = {
+
+		allowed = {
+			has_idea = pop_protection_western_freedom_of_speech3
+				OR = {
+					democratic > 0.05
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_western_freedom_of_speech3
+				OR = {
+					democratic > 0.05
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_western_freedom_of_speech3
+				}
+		}
+
+	pop_protection_western_freedom_of_speech_remove2 = {
+
+		allowed = {
+			has_idea = pop_protection_western_freedom_of_speech2
+				OR = {
+					democratic > 0.1
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_western_freedom_of_speech2
+				OR = {
+					democratic > 0.1
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_western_freedom_of_speech2
+				}
+		}
+
+	pop_protection_western_freedom_of_speech_remove1 = {
+
+		allowed = {
+			has_idea = pop_protection_western_freedom_of_speech1
+				OR = {
+					democratic > 0.2
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_western_freedom_of_speech1
+				OR = {
+					democratic > 0.2
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_western_freedom_of_speech1
+				}
+		}
+
+	pop_protection_non_alligned_freedom_of_speech = {
+
+		allowed = {
+			neutrality < 0.2
+			NOT = {
+				OR = {
+				has_idea = small_control
+				has_idea = limited_rights
+				has_idea = total_control
+				}
+			}
+			NOT = {
+				has_idea = pop_protection_non_alligned_freedom_of_speech4
+				has_idea = pop_protection_non_alligned_freedom_of_speech3
+				has_idea = pop_protection_non_alligned_freedom_of_speech2
+				has_idea = pop_protection_non_alligned_freedom_of_speech1
+			}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			neutrality < 0.2
+			NOT = {
+				OR = {
+				has_idea = small_control
+				has_idea = limited_rights
+				has_idea = total_control
+				}
+			}
+			NOT = {
+				has_idea = pop_protection_non_alligned_freedom_of_speech4
+				has_idea = pop_protection_non_alligned_freedom_of_speech3
+				has_idea = pop_protection_non_alligned_freedom_of_speech2
+				has_idea = pop_protection_non_alligned_freedom_of_speech1
+			}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+			if = { limit = { neutrality < 0.01 }
+				add_ideas = pop_protection_non_alligned_freedom_of_speech4
+			}
+			else_if = { limit = { neutrality < 0.05 }
+				add_ideas = pop_protection_non_alligned_freedom_of_speech3
+			}
+			else_if = { limit = { neutrality < 0.1 }
+				add_ideas = pop_protection_non_alligned_freedom_of_speech2
+			}
+			else = {
+				add_ideas = pop_protection_non_alligned_freedom_of_speech1
+			}
+		}
+	}
+
+	pop_protection_non_alligned_freedom_of_speech_remove4 = {
+
+		allowed = {
+			has_idea = pop_protection_non_alligned_freedom_of_speech4
+				OR = {
+					neutrality > 0.01
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_non_alligned_freedom_of_speech4
+				OR = {
+					neutrality > 0.01
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_non_alligned_freedom_of_speech4
+				}
+		}
+
+	pop_protection_non_alligned_freedom_of_speech_remove3 = {
+
+		allowed = {
+			has_idea = pop_protection_non_alligned_freedom_of_speech3
+				OR = {
+					neutrality > 0.05
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_non_alligned_freedom_of_speech3
+				OR = {
+					neutrality > 0.05
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_non_alligned_freedom_of_speech3
+				}
+		}
+
+	pop_protection_non_alligned_freedom_of_speech_remove2 = {
+
+		allowed = {
+			has_idea = pop_protection_non_alligned_freedom_of_speech2
+				OR = {
+					neutrality > 0.1
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_non_alligned_freedom_of_speech2
+				OR = {
+					neutrality > 0.1
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_non_alligned_freedom_of_speech2
+				}
+		}
+
+	pop_protection_non_alligned_freedom_of_speech_remove1 = {
+
+		allowed = {
+			has_idea = pop_protection_non_alligned_freedom_of_speech1
+				OR = {
+					neutrality > 0.2
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_non_alligned_freedom_of_speech1
+				OR = {
+					neutrality > 0.2
+					NOT = { has_idea = freedom_of_speech }
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_non_alligned_freedom_of_speech1
+				}
+		}
+
+	pop_protection_nationalist_freedom_of_speech = {
+
+		allowed = {
+			NOT = { has_idea = Division }
+			nationalist < 0.2
+			NOT = {
+				OR = {
+				has_idea = small_control
+				has_idea = limited_rights
+				has_idea = total_control
+				}
+			}
+			NOT = {
+				has_idea = pop_protection_nationalist_freedom_of_speech4
+				has_idea = pop_protection_nationalist_freedom_of_speech3
+				has_idea = pop_protection_nationalist_freedom_of_speech2
+				has_idea = pop_protection_nationalist_freedom_of_speech1
+			}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			NOT = { has_idea = Division }
+			nationalist < 0.2
+			NOT = {
+				OR = {
+				has_idea = small_control
+				has_idea = limited_rights
+				has_idea = total_control
+				}
+			}
+			NOT = {
+				has_idea = pop_protection_nationalist_freedom_of_speech4
+				has_idea = pop_protection_nationalist_freedom_of_speech3
+				has_idea = pop_protection_nationalist_freedom_of_speech2
+				has_idea = pop_protection_nationalist_freedom_of_speech1
+			}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+			if = { limit = { nationalist < 0.01 }
+				add_ideas = pop_protection_nationalist_freedom_of_speech4
+			}
+			else_if = { limit = { nationalist < 0.05 }
+				add_ideas = pop_protection_nationalist_freedom_of_speech3
+			}
+			else_if = { limit = { nationalist < 0.1 }
+				add_ideas = pop_protection_nationalist_freedom_of_speech2
+			}
+			else = {
+				add_ideas = pop_protection_nationalist_freedom_of_speech1
+			}
+		}
+	}
+
+	pop_protection_nationalist_freedom_of_speech_remove4 = {
+
+		allowed = {
+			has_idea = pop_protection_nationalist_freedom_of_speech4
+				OR = {
+					nationalist > 0.01
+					NOT = { has_idea = freedom_of_speech }
+					has_idea = Division
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_nationalist_freedom_of_speech4
+				OR = {
+					nationalist > 0.01
+					NOT = { has_idea = freedom_of_speech }
+					has_idea = Division
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_nationalist_freedom_of_speech4
+				}
+		}
+
+	pop_protection_nationalist_freedom_of_speech_remove3 = {
+
+		allowed = {
+			has_idea = pop_protection_nationalist_freedom_of_speech3
+				OR = {
+					nationalist > 0.05
+					NOT = { has_idea = freedom_of_speech }
+					has_idea = Division
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_nationalist_freedom_of_speech3
+				OR = {
+					nationalist > 0.05
+					NOT = { has_idea = freedom_of_speech }
+					has_idea = Division
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_nationalist_freedom_of_speech3
+				}
+		}
+
+	pop_protection_nationalist_freedom_of_speech_remove2 = {
+
+		allowed = {
+			has_idea = pop_protection_nationalist_freedom_of_speech2
+				OR = {
+					nationalist > 0.1
+					NOT = { has_idea = freedom_of_speech }
+					has_idea = Division
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_nationalist_freedom_of_speech2
+				OR = {
+					nationalist > 0.1
+					NOT = { has_idea = freedom_of_speech }
+					has_idea = Division
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_nationalist_freedom_of_speech2
+				}
+		}
+
+	pop_protection_nationalist_freedom_of_speech_remove1 = {
+
+		allowed = {
+			has_idea = pop_protection_nationalist_freedom_of_speech1
+				OR = {
+					nationalist > 0.2
+					NOT = { has_idea = freedom_of_speech }
+					has_idea = Division
+				}
+		}
+
+		available = {
+			always = no
+		}
+
+		visible = {
+			always = no
+		}
+
+		activation = {
+			has_idea = pop_protection_nationalist_freedom_of_speech1
+				OR = {
+					nationalist > 0.2
+					NOT = { has_idea = freedom_of_speech }
+					has_idea = Division
+				}
+		}
+
+		days_mission_timeout = 0
+		selectable_mission = yes
+		complete_effect = {
+		}
+		timeout_effect = {
+				remove_ideas = pop_protection_nationalist_freedom_of_speech1
+				}
+		}
+
+}

@@ -1,0 +1,30 @@
+statehood_category = {
+	icon = GFX_decision_category_saf_anti_colonialist_crusade
+	visible = {
+		has_idea = Lacks_International_Recognition
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_game_rule = {
+					rule = mdmpo_ai_no_decisions
+					option = mdmpo_ai_no_decisions_option_yes
+				}
+			}
+		}
+	}
+}
+
+recognition_category = {
+	icon = GFX_decision_category_saf_anti_colonialist_crusade
+	visible = {
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_game_rule = {
+					rule = mdmpo_ai_no_decisions
+					option = mdmpo_ai_no_decisions_option_yes
+				}
+			}
+		}
+	}
+}

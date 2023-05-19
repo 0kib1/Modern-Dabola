@@ -1,0 +1,19 @@
+################
+##### Decisions for quick help ######
+################
+
+
+Help_Decisions = {
+	visible = {
+		NOT = { has_country_flag = Help_Disabled }
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_game_rule = {
+					rule = mdmpo_ai_no_decisions
+					option = mdmpo_ai_no_decisions_option_yes
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+leader_traits = {
+
+	### Neutral Leader Traits
+	
+	mdmpo_trade_opinion = {
+		trade_opinion_factor = 1.00
+	}
+
+}
